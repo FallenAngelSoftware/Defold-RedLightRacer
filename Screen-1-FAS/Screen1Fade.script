@@ -1,6 +1,9 @@
 function init(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
+
+	Screen1FadeStatus = 0
+	Screen1FadeAlpha = 1
 end
 
 function final(self)
@@ -11,8 +14,27 @@ end
 function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
-end
 
+	if CurrentScreen == 1 then
+		if Screen1FadeStatus == 0 and Screen1FadeAlpha > 0 then
+			Screen1FadeAlpha = Screen1FadeAlpha - 0.01
+			go.set( "#Screen1FadeSprite", "tint", vmath.vector4( 1, 1, 1, Screen1FadeAlpha) )
+		end
+
+		if Screen1FadeStatus == 1 and Screen1FadeAlpha < 1 then
+			Screen1FadeAlpha = Screen1FadeAlpha + 0.01
+			go.set( "#Screen1FadeSprite", "tint", vmath.vector4( 1, 1, 1, Screen1FadeAlpha) )
+
+			if Screen1FadeAlpha == 1 then
+				CurrentScreen = 2
+				ScreenFadeStatus = 0
+			end
+		end
+	else
+		go.set( "#Screen1FadeSprite", "tint", vmath.vector4( 1, 1, 1, 0) )
+	end
+end
+	
 function on_message(self, message_id, message, sender)
 	-- Add message-handling code here
 	-- Remove this function if not needed

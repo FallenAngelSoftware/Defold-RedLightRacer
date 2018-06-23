@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /Screen-1-FAS/FAS-Screen.collectionc
+main_collection = /Screen-1-FAS/Screen1.collectionc
 
 [script]
 shared_state = 1
@@ -12,5 +12,5 @@ width = 360
 height = 640
 
 [input]
-game_binding = /input/FAS-Screen.input_bindingc
+game_binding = /input/GameInput.input_bindingc
 

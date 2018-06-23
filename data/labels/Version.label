@@ -1,12 +1,12 @@
 size {
-  x: 350.0
+  x: 128.0
   y: 32.0
   z: 0.0
   w: 0.0
 }
 scale {
-  x: 1.3
-  y: 1.5
+  x: 1.0
+  y: 1.0
   z: 1.0
   w: 0.0
 }
@@ -33,6 +33,6 @@ tracking: 0.0
 pivot: PIVOT_CENTER
 blend_mode: BLEND_MODE_ALPHA
 line_break: false
-text: "www.FallenAngelSoftware.com"
+text: "Pre-Alpha 0.0.2"
 font: "/data/fonts/GameFont.font"
 material: "/builtins/fonts/label.material"

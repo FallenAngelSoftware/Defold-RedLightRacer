@@ -1,6 +1,6 @@
 components {
-  id: "ScreenFade"
-  component: "/data/gui/ScreenFade.gui"
+  id: "Screen2Fade"
+  component: "/data/gui/Screen2Fade.gui"
   position {
     x: 0.0
     y: 0.0
@@ -14,8 +14,8 @@ components {
   }
 }
 components {
-  id: "ScreenFade1"
-  component: "/Screen-1-FAS/ScreenFade.script"
+  id: "ScreenFade2"
+  component: "/Screen-2-Title/Screen2Fade.script"
   position {
     x: 0.0
     y: 0.0
@@ -29,7 +29,7 @@ components {
   }
 }
 embedded_components {
-  id: "ScreenFadeSprite"
+  id: "Screen2FadeSprite"
   type: "sprite"
   data: "tile_set: \"/data/atlases/ScreenFade.atlas\"\n"
   "default_animation: \"ScreenFade\"\n"
