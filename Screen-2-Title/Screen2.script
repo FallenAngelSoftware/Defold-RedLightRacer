@@ -18,14 +18,14 @@ function update(self, dt)
 	
 	if CurrentScreen ~= 2 then
 		local pos = go.get_position()
-		if pos.z > -2 then
-			pos.z = pos.z - 100
+		if pos.z > -1 then
+			pos.z = pos.z - 1000
 			go.set_position(pos)
 		end
 	elseif CurrentScreen == 2 then
 		local pos = go.get_position()
-		if pos.z < -1 then
-			pos.z = pos.z + 100
+		if pos.z < 0 then
+			pos.z = 0
 			go.set_position(pos)
 		end
 	end

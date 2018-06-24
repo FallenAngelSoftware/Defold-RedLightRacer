@@ -24,6 +24,12 @@ function update(self, dt)
 		if Screen2FadeStatus == 1 and Screen2FadeAlpha < 1 then
 			Screen2FadeAlpha = Screen2FadeAlpha + 0.01
 			go.set( "#Screen2FadeSprite", "tint", vmath.vector4( 1, 1, 1, Screen2FadeAlpha) )
+
+			if Screen2FadeAlpha == 1 then
+				CurrentScreen = 1
+				Screen1FadeStatus = 0
+				Screen1FadeAlpha = 1
+			end
 		end
 	else
 		go.set( "#Screen2FadeSprite", "tint", vmath.vector4( 1, 1, 1, 0) )

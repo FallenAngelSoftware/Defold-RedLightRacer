@@ -39,14 +39,14 @@ function update(self, dt)
 
 	if CurrentScreen ~= 1 then
 		local pos = go.get_position()
-		if pos.z > -2 then
-			pos.z = pos.z - 100
+		if pos.z > -1 then
+			pos.z = pos.z - 1000
 			go.set_position(pos)
 		end
 	elseif CurrentScreen == 1 then
 		local pos = go.get_position()
-		if pos.z < -1 then
-			pos.z = pos.z + 100
+		if pos.z < 0 then
+			pos.z = 0
 			go.set_position(pos)
 		end
 	end
@@ -62,7 +62,8 @@ function on_input(self, action_id, action)
 	-- Remove this function if not needed
 
 	if action_id == hash("GotoNextScreen") then
-		Screen1FadeStatus = 1
+		if CurrentScreen == 1 then Screen1FadeStatus = 1
+		end
 	end
 end
 

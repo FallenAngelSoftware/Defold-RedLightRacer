@@ -1,5 +1,6 @@
 [bootstrap]
 main_collection = /Screen-1-FAS/Screen1.collectionc
+render = /builtins/render/default.renderc
 
 [script]
 shared_state = 1

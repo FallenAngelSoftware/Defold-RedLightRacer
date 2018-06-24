@@ -27,7 +27,8 @@ function update(self, dt)
 
 			if Screen1FadeAlpha == 1 then
 				CurrentScreen = 2
-				ScreenFadeStatus = 0
+				Screen2FadeStatus = 0
+				Screen2FadeAlpha = 1
 			end
 		end
 	else
