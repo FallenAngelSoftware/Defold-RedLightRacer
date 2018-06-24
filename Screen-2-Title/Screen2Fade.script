@@ -14,7 +14,7 @@ end
 function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
-
+	
 	if CurrentScreen == 2 then
 		if Screen2FadeStatus == 0 and Screen2FadeAlpha > 0 then
 			Screen2FadeAlpha = Screen2FadeAlpha - 0.01

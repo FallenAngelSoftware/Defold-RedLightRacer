@@ -1,19 +1,4 @@
 components {
-  id: "Screen-2-Title"
-  component: "/data/gui/Screen-2-Title.gui"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-components {
   id: "Title-Screen"
   component: "/Screen-2-Title/Screen2.script"
   position {
@@ -34,7 +19,7 @@ components {
   position {
     x: 180.0
     y: 625.0
-    z: 0.0
+    z: 1.0
   }
   rotation {
     x: 0.0
@@ -49,7 +34,97 @@ components {
   position {
     x: 180.0
     y: 13.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
     z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "ButtonSTARTText"
+  component: "/data/labels/ButtonSTARTText.label"
+  position {
+    x: 180.0
+    y: 350.0
+    z: 2.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "ButtonOptionsText"
+  component: "/data/labels/ButtonOptionsText.label"
+  position {
+    x: 180.0
+    y: 300.0
+    z: 2.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "ButtonHowToPlayText"
+  component: "/data/labels/ButtonHowToPlayText.label"
+  position {
+    x: 180.0
+    y: 250.0
+    z: 2.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "ButtonHighScoresText"
+  component: "/data/labels/ButtonHighScoresText.label"
+  position {
+    x: 180.0
+    y: 200.0
+    z: 2.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "ButtonAboutText"
+  component: "/data/labels/ButtonAboutText.label"
+  position {
+    x: 180.0
+    y: 150.0
+    z: 2.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "ButtonExitText"
+  component: "/data/labels/ButtonExitText.label"
+  position {
+    x: 180.0
+    y: 100.0
+    z: 2.0
   }
   rotation {
     x: 0.0
@@ -69,6 +144,26 @@ embedded_components {
   position {
     x: 180.0
     y: 562.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "Title-BG"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/Title-BG.atlas\"\n"
+  "default_animation: \"Title-BG\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 320.0
     z: 0.0
   }
   rotation {
@@ -79,17 +174,117 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "sprite"
+  id: "ButtonExit"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/Title-BG.atlas\"\n"
-  "default_animation: \"Title-BG\"\n"
+  data: "tile_set: \"/data/atlases/Button.atlas\"\n"
+  "default_animation: \"Button\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
     x: 180.0
-    y: 320.0
-    z: -1.0
+    y: 100.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ButtonAbout"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/Button.atlas\"\n"
+  "default_animation: \"Button\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 150.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ButtonHighScores"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/Button.atlas\"\n"
+  "default_animation: \"Button\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 200.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ButtonHowToPlay"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/Button.atlas\"\n"
+  "default_animation: \"Button\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 250.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ButtonOptions"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/Button.atlas\"\n"
+  "default_animation: \"Button\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 300.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ButtonSTART"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/Button.atlas\"\n"
+  "default_animation: \"Button\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 350.0
+    z: 1.0
   }
   rotation {
     x: 0.0

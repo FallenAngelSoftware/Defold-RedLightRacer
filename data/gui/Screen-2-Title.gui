@@ -1,8 +1,4 @@
 script: ""
-textures {
-  name: "Title-BG"
-  texture: "/data/atlases/Title-BG.atlas"
-}
 background_color {
   x: 0.0
   y: 0.0
