@@ -18,7 +18,7 @@ components {
   component: "/data/labels/Version.label"
   position {
     x: 180.0
-    y: 625.0
+    y: 627.0
     z: 0.01
   }
   rotation {
@@ -33,7 +33,7 @@ components {
   component: "/data/labels/Copyright.label"
   position {
     x: 180.0
-    y: 13.0
+    y: 16.0
     z: 0.01
   }
   rotation {
@@ -48,7 +48,7 @@ components {
   component: "/data/labels/ButtonSTARTText.label"
   position {
     x: 180.0
-    y: 350.0
+    y: 450.0
     z: 0.05
   }
   rotation {
@@ -63,7 +63,7 @@ components {
   component: "/data/labels/ButtonOptionsText.label"
   position {
     x: 180.0
-    y: 300.0
+    y: 400.0
     z: 0.05
   }
   rotation {
@@ -78,7 +78,7 @@ components {
   component: "/data/labels/ButtonHowToPlayText.label"
   position {
     x: 180.0
-    y: 250.0
+    y: 350.0
     z: 0.05
   }
   rotation {
@@ -93,7 +93,7 @@ components {
   component: "/data/labels/ButtonHighScoresText.label"
   position {
     x: 180.0
-    y: 200.0
+    y: 300.0
     z: 0.05
   }
   rotation {
@@ -108,7 +108,7 @@ components {
   component: "/data/labels/ButtonAboutText.label"
   position {
     x: 180.0
-    y: 150.0
+    y: 250.0
     z: 0.05
   }
   rotation {
@@ -123,7 +123,7 @@ components {
   component: "/data/labels/ButtonExitText.label"
   position {
     x: 180.0
-    y: 100.0
+    y: 200.0
     z: 0.05
   }
   rotation {
@@ -143,7 +143,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 562.0
+    y: 558.0
     z: 0.01
   }
   rotation {
@@ -183,7 +183,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 100.0
+    y: 200.0
     z: 0.01
   }
   rotation {
@@ -203,7 +203,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 150.0
+    y: 250.0
     z: 0.01
   }
   rotation {
@@ -223,7 +223,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 200.0
+    y: 300.0
     z: 0.01
   }
   rotation {
@@ -243,7 +243,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 250.0
+    y: 350.0
     z: 0.01
   }
   rotation {
@@ -263,7 +263,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 300.0
+    y: 400.0
     z: 0.01
   }
   rotation {
@@ -283,8 +283,28 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 350.0
+    y: 450.0
     z: 0.01
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "GetItOnGooglePlay"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/GetItOnGooglePlay.atlas\"\n"
+  "default_animation: \"GooglePlayLogo\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 90.0
+    z: 0.5
   }
   rotation {
     x: 0.0
