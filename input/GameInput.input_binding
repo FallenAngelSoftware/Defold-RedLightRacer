@@ -10,3 +10,7 @@ mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "GotoNextScreen"
 }
+mouse_trigger {
+  input: MOUSE_BUTTON_LEFT
+  action: "ClickGUI"
+}

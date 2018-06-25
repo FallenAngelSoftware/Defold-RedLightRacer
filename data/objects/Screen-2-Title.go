@@ -48,7 +48,7 @@ components {
   component: "/data/labels/ButtonSTARTText.label"
   position {
     x: 180.0
-    y: 450.0
+    y: 430.0
     z: 0.05
   }
   rotation {
@@ -63,7 +63,7 @@ components {
   component: "/data/labels/ButtonOptionsText.label"
   position {
     x: 180.0
-    y: 400.0
+    y: 380.0
     z: 0.05
   }
   rotation {
@@ -78,7 +78,7 @@ components {
   component: "/data/labels/ButtonHowToPlayText.label"
   position {
     x: 180.0
-    y: 350.0
+    y: 330.0
     z: 0.05
   }
   rotation {
@@ -93,7 +93,7 @@ components {
   component: "/data/labels/ButtonHighScoresText.label"
   position {
     x: 180.0
-    y: 300.0
+    y: 280.0
     z: 0.05
   }
   rotation {
@@ -108,7 +108,7 @@ components {
   component: "/data/labels/ButtonAboutText.label"
   position {
     x: 180.0
-    y: 250.0
+    y: 230.0
     z: 0.05
   }
   rotation {
@@ -123,8 +123,53 @@ components {
   component: "/data/labels/ButtonExitText.label"
   position {
     x: 180.0
-    y: 200.0
+    y: 180.0
     z: 0.05
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "TitleHighScore"
+  component: "/data/labels/TitleHighScore.label"
+  position {
+    x: 180.0
+    y: 479.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "TitleHighScoreName"
+  component: "/data/labels/TitleHighScoreName.label"
+  position {
+    x: 180.0
+    y: 497.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "MouseXY"
+  component: "/data/labels/MouseXY.label"
+  position {
+    x: 5.0
+    y: 630.0
+    z: 0.0
   }
   rotation {
     x: 0.0
@@ -143,7 +188,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 558.0
+    y: 567.0
     z: 0.01
   }
   rotation {
@@ -183,7 +228,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 200.0
+    y: 180.0
     z: 0.01
   }
   rotation {
@@ -203,7 +248,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 250.0
+    y: 230.0
     z: 0.01
   }
   rotation {
@@ -223,7 +268,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 300.0
+    y: 280.0
     z: 0.01
   }
   rotation {
@@ -243,7 +288,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 350.0
+    y: 330.0
     z: 0.01
   }
   rotation {
@@ -263,7 +308,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 400.0
+    y: 380.0
     z: 0.01
   }
   rotation {
@@ -283,7 +328,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 450.0
+    y: 430.0
     z: 0.01
   }
   rotation {
@@ -303,8 +348,68 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 90.0
+    y: 81.0
     z: 0.5
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ScreenLine1"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  "default_animation: \"ScreenLine\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 512.0
+    z: 0.01
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ScreenLine2"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  "default_animation: \"ScreenLine\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 463.0
+    z: 0.01
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "ScreenLine3"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  "default_animation: \"ScreenLine\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 144.0
+    z: 0.01
   }
   rotation {
     x: 0.0

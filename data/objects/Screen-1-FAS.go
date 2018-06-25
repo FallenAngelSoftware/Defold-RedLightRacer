@@ -43,6 +43,21 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "MouseXY"
+  component: "/data/labels/MouseXY.label"
+  position {
+    x: 5.0
+    y: 630.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "FAS-Statue"
   type: "sprite"
