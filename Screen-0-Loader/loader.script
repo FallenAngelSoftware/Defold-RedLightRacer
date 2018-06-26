@@ -29,5 +29,7 @@ function on_message(self, message_id, message, sender)
     elseif message_id == hash("proxy_loaded") then
         msg.post(sender, "init")
         msg.post(sender, "enable")
-    end
+    elseif message_id == hash("ScreenFaded") then
+        msg.post("/loader#loader", "load_level", { level = NextScreen })
+    end   
 end
