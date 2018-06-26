@@ -1,6 +1,6 @@
 font: "/data/fonts/Unvoll.ttf"
 material: "/builtins/fonts/font.material"
-size: 15
+size: 23
 antialias: 1
 alpha: 1.0
 outline_alpha: 1.0

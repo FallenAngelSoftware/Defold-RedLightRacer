@@ -20,32 +20,12 @@ instances {
   }
 }
 instances {
-  id: "Screen1Fade"
-  prototype: "/data/objects/Screen1Fade.go"
+  id: "ScreenFade"
+  prototype: "/data/objects/ScreenFade.go"
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
     z: 1.0
-  }
-}
-collection_instances {
-  id: "Screen2"
-  collection: "/Screen-2-Title/Screen2.collection"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
   }
   rotation {
     x: 0.0

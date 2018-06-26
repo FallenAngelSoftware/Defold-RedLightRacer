@@ -35,6 +35,7 @@ function init(self)
 	self.gui_pred = render.predicate({"gui"})
 	self.text_pred = render.predicate({"text"})
 	self.particle_pred = render.predicate({"particle"})
+	self.test = render.predicate({"test"})
 
 	self.clear_color = vmath.vector4(0, 0, 0, 0)
 	self.clear_color.x = sys.get_config("render.clear_color_red", 0)
@@ -65,7 +66,7 @@ function update(self)
 
 	-- default is stretch projection. copy from builtins and change for different projection
 	--
-	render.set_projection(stretch_projection(-1, 1))
+	render.set_projection(stretch_projection(-1, 2))
 
 	render.draw(self.tile_pred)
 	render.draw(self.particle_pred)
@@ -79,6 +80,7 @@ function update(self)
 	render.enable_state(render.STATE_STENCIL_TEST)
 	render.draw(self.gui_pred)
 	render.draw(self.text_pred)
+	render.draw(self.test)
 	render.disable_state(render.STATE_STENCIL_TEST)
 
 	render.set_depth_mask(false)

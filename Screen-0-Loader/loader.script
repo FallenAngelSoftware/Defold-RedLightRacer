@@ -1,0 +1,33 @@
+--[[
+___________________________________________________________________________________________________
+            Defold "Maxima 3.5" Cross-Platform Open-Source 2-D Video Game Engine
+__________           .___ .____    .__       .__     __    __________                            
+\______   \ ____   __| _/ |    |   |__| ____ |  |___/  |_  \______   \_____    ____  ___________ TM
+ |       _// __ \ / __ |  |    |   |  |/ ___\|  |  \   __\  |       _/\__  \ _/ ___\/ __ \_  __ \
+ |    |   \  ___// /_/ |  |    |___|  / /_/  >   Y  \  |    |    |   \ / __ \\  \__\  ___/|  | \/
+ | ___|_  /\___  >____ |  |_______ \__\___  /|___|  /__|    |____|_  /(____  /\___  >___  >__|   
+ \/     \/     \/                 \/ /_____/      \/               \/      \/     \/    \/       
+
+        Android/iOS SmartPhones/Tablets & HTML5 Enabled Desktop/Laptop Internet Browsers
+
+                  (C)opyright 2018, By Team "www.FallenAngelSoftware.com"
+___________________________________________________________________________________________________
+]]
+
+function init(self)
+    NextScreen = 2
+    FadeAwayCurrentScreen = false
+    
+    msg.post("#proxy_level_1", "load")
+    msg.post(".", "acquire_input_focus")
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash("load_level") then
+        local proxy = "#proxy_level_" .. message.level
+        msg.post(proxy, "load")
+    elseif message_id == hash("proxy_loaded") then
+        msg.post(sender, "init")
+        msg.post(sender, "enable")
+    end
+end
