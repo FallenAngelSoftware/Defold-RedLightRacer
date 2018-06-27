@@ -30,9 +30,6 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("hide_level_select") then
 		msg.post("#", "disable")
 		self.active = false
-	elseif message_id == hash("ScreenFaded") then
-		msg.post("/loader#loader", "load_level", { level = NextScreen })
-		msg.post("#", "hide_level_select")
 	end
 end
 

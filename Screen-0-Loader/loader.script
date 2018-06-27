@@ -15,8 +15,10 @@ ________________________________________________________________________________
 ]]
 
 function init(self)
+    ScreenFadeStatus = 0
+    ScreenFadeAlpha = 1
+        
     NextScreen = 2
-    FadeAwayCurrentScreen = false
     
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")
@@ -31,7 +33,5 @@ function on_message(self, message_id, message, sender)
         msg.post(sender, "enable")
     elseif message_id == hash("ScreenFaded") then
         msg.post("#proxy_level_2", "load")
-
---        msg.post("/loader#loader", "load_level", { level = NextScreen })
     end   
 end
