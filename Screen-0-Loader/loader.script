@@ -17,7 +17,8 @@ ________________________________________________________________________________
 function init(self)
     ScreenFadeStatus = 0
     ScreenFadeAlpha = 1
-        
+
+    CurrentScreen = 0
     NextScreen = 2
     
     msg.post("#proxy_level_1", "load")
@@ -29,9 +30,13 @@ function on_message(self, message_id, message, sender)
         local proxy = "#proxy_level_" .. message.level
         msg.post(proxy, "load")
     elseif message_id == hash("proxy_loaded") then
+        if (CurrentScreen > 0) then
+            msg.post("#proxy_level_" .. CurrentScreen, "unload")
+        end
         msg.post(sender, "init")
         msg.post(sender, "enable")
     elseif message_id == hash("ScreenFaded") then
-        msg.post("#proxy_level_2", "load")
+        print(NextScreen)
+        msg.post("#proxy_level_" .. NextScreen, "load")
     end   
 end

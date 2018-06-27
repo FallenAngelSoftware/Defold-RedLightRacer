@@ -2,6 +2,12 @@ function init(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
 
+	CurrentScreen = 2
+	NextScreen = 3
+
+	ScreenFadeStatus = 0
+	ScreenFadeAlpha = 1
+		
 	label.set_text("#TitleHighScoreName", "''The Fallen Angel''")
 	label.set_text("#TitleHighScore", "10000")
 	

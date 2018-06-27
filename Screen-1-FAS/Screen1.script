@@ -2,6 +2,9 @@ function init(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
 
+	CurrentScreen = 1
+	NextScreen = 2
+	
 	msg.post(".", "acquire_input_focus")
 	
 	go.set("#FAS-Statue", "scale.x", 0.65)

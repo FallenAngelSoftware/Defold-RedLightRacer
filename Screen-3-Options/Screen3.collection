@@ -1,7 +1,7 @@
-name: "Screen-2-Title"
+name: "Screen-3-Options"
 instances {
-  id: "Screen-2-Title"
-  prototype: "/data/objects/Screen-2-Title.go"
+  id: "Screen-3-Options"
+  prototype: "/data/objects/Screen-3-Options.go"
   position {
     x: 0.0
     y: 0.0
