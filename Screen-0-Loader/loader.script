@@ -30,6 +30,8 @@ function on_message(self, message_id, message, sender)
         msg.post(sender, "init")
         msg.post(sender, "enable")
     elseif message_id == hash("ScreenFaded") then
-        msg.post("/loader#loader", "load_level", { level = NextScreen })
+        msg.post("#proxy_level_2", "load")
+
+--        msg.post("/loader#loader", "load_level", { level = NextScreen })
     end   
 end

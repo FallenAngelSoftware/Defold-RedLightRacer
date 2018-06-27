@@ -25,7 +25,7 @@ function update(self, dt)
 		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 
 		if ScreenFadeAlpha == 1 then
-			msg.post("#", "ScreenFaded")
+			msg.post("level:/loader#loader", "ScreenFaded") -- msg.post("#", "ScreenFaded")
 		end
 	end
 end
