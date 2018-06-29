@@ -10,6 +10,8 @@ function init(self)
 		
 	label.set_text("#ScreenHeader", "OPTIONS")
 
+	ButtonSelectedByKeyboard = 0
+	
 	msg.post(".", "acquire_input_focus")
 end
 

@@ -1,0 +1,4 @@
+tile_set: "/data/atlases/FAS-Statue.atlas"
+default_animation: "FAS-Statue"
+material: "/builtins/materials/sprite.material"
+blend_mode: BLEND_MODE_ALPHA

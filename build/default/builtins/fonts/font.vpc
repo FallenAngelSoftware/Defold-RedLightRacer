@@ -1,11 +1,9 @@
-
 #ifndef GL_ES
 #define lowp
 #define mediump
 #define highp
 #endif
 
-#line 0
 uniform mediump mat4 view_proj;
 
 varying mediump vec2 var_texcoord0;

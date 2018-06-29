@@ -25,10 +25,17 @@ function on_input(self, action_id, action)
 			
 				NextScreen = 3
 				ScreenFadeStatus = 1
-							
+
+				ButtonSelectedByKeyboard = 1
+											
 				ButtonClicked = node
 				ScreenFadeAlphaHalf = 0.25
 			end
 		end
+
+		local leftArrow = gui.get_node("ButtonSelectorLeft")
+		gui.set_position(  leftArrow, vmath.vector3( 30, 430-(ButtonSelectedByKeyboard*50), 1 )  )
+		local rightArrow = gui.get_node("ButtonSelectorRight")
+		gui.set_position(  rightArrow, vmath.vector3( 330, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 	end
 end
