@@ -20,6 +20,8 @@ function init(self)
 
     CurrentScreen = 0
     NextScreen = 2
+
+    ButtonClicked = -1
     
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")

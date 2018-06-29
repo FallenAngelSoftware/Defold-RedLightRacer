@@ -21,9 +21,18 @@ function update(self, dt)
 	end
 
 	if ScreenFadeStatus == 1 and ScreenFadeAlpha < 1 then
+			
 		ScreenFadeAlpha = ScreenFadeAlpha + 0.01
 		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 
+		if (ScreenFadeAlpha > 0.2 and ScreenFadeAlpha < 0.21) then
+			if (CurrentScreen == 2) then
+				msg.post("Screen-2-Title", "ResetButtonScale")
+			elseif (CurrentScreen == 3) then
+				msg.post("Screen-3-Options", "ResetButtonScale")
+			end
+		end
+		
 		if ScreenFadeAlpha == 1 then
 			msg.post("level:/loader#loader", "ScreenFaded")
 		end
