@@ -61,3 +61,35 @@ embedded_components {
     w: 1.0
   }
 }
+embedded_components {
+  id: "proxy_level_4"
+  type: "collectionproxy"
+  data: "collection: \"/Screen-4-HowToPlay/Screen4.collection\"\nexclude: false\n"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "proxy_level_5"
+  type: "collectionproxy"
+  data: "collection: \"/Screen-5-HighScores/Screen5.collection\"\nexclude: false\n"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}

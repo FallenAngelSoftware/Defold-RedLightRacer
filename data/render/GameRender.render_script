@@ -80,9 +80,11 @@ function update(self)
 	render.enable_state(render.STATE_STENCIL_TEST)
 	render.draw(self.gui_pred)
 	render.draw(self.text_pred)
-	render.draw(self.test)
 	render.disable_state(render.STATE_STENCIL_TEST)
 
+	render.set_projection(stretch_projection(-1, 2))
+	render.draw(self.test)
+	
 	render.set_depth_mask(false)
 	render.draw_debug2d()
 end
