@@ -25,7 +25,9 @@ function init(self)
     ScreenFadeAlphaHalf = 0.5
 
     ButtonSelectedByKeyboard = 0
-            
+
+    DelayAllUserInput = 0
+    
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")
 end
