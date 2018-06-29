@@ -40,9 +40,7 @@ function on_input(self, action_id, action)
 
 	local mX = action.screen_x
 	local mY = action.screen_y	
-	mX = math.floor( mX * (360/WindowWidthTrue) )
-	mY = math.floor( mY * (640/WindowHeightTrue) )
-	label.set_text("#MouseXY", "X:" .. tostring(mX) .. "/Y:" .. tostring(mY) )
+	label.set_text( "#MouseXY", "[" .. tostring(math.floor( mX * (360/WindowWidthTrue) )) .. "," .. tostring(math.floor( mY * (640/WindowHeightTrue) )) .. "]" )
 end
 
 function on_reload(self)
