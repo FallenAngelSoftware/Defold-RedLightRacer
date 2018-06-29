@@ -1,4 +1,4 @@
-script: ""
+script: "/data/gui_script/TitleGUI.gui_script"
 fonts {
   name: "GameFont"
   font: "/data/fonts/GameFont.font"
@@ -164,7 +164,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "Button/Button"
-  id: "ButtonsOptions"
+  id: "ButtonOptions"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -237,7 +237,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: true
-  parent: "ButtonsOptions"
+  parent: "ButtonOptions"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -281,7 +281,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "Button/Button"
-  id: "ButtonsHowToPlay"
+  id: "ButtonHowToPlay"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -354,7 +354,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: true
-  parent: "ButtonsHowToPlay"
+  parent: "ButtonHowToPlay"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -398,7 +398,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "Button/Button"
-  id: "ButtonsHighScores"
+  id: "ButtonHighScores"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -471,7 +471,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: true
-  parent: "ButtonsHighScores"
+  parent: "ButtonHighScores"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -515,7 +515,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "Button/Button"
-  id: "ButtonsAbout"
+  id: "ButtonAbout"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -588,7 +588,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: true
-  parent: "ButtonsAbout"
+  parent: "ButtonAbout"
   layer: ""
   inherit_alpha: true
   alpha: 1.0
@@ -632,7 +632,7 @@ nodes {
   type: TYPE_BOX
   blend_mode: BLEND_MODE_ALPHA
   texture: "Button/Button"
-  id: "ButtonsExit"
+  id: "ButtonExit"
   xanchor: XANCHOR_NONE
   yanchor: YANCHOR_NONE
   pivot: PIVOT_CENTER
@@ -705,7 +705,7 @@ nodes {
   }
   adjust_mode: ADJUST_MODE_FIT
   line_break: true
-  parent: "ButtonsExit"
+  parent: "ButtonExit"
   layer: ""
   inherit_alpha: true
   alpha: 1.0

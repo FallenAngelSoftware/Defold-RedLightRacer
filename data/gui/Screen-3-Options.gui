@@ -1,4 +1,4 @@
-script: ""
+script: "/data/gui_script/OptionsGUI.gui_script"
 fonts {
   name: "GameFont"
   font: "/data/fonts/GameFont.font"
@@ -17,7 +17,7 @@ nodes {
   position {
     x: 180.0
     y: 23.0
-    z: 0.0
+    z: 0.1
     w: 1.0
   }
   rotation {
@@ -71,7 +71,7 @@ nodes {
   position {
     x: 0.0
     y: 0.0
-    z: 0.0
+    z: 0.75
     w: 1.0
   }
   rotation {
