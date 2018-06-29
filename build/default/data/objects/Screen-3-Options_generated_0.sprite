@@ -1,0 +1,4 @@
+tile_set: "/data/atlases/Title-BG.atlas"
+default_animation: "Title-BG"
+material: "/builtins/materials/sprite.material"
+blend_mode: BLEND_MODE_ALPHA

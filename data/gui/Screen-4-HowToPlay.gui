@@ -1,4 +1,4 @@
-script: "/data/gui_script/OptionsGUI.gui_script"
+script: "/data/gui_script/HowToPlayGUI.gui_script"
 fonts {
   name: "GameFont"
   font: "/data/fonts/GameFont.font"
