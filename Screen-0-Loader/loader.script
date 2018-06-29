@@ -22,7 +22,8 @@ function init(self)
     NextScreen = 2
 
     ButtonClicked = -1
-    
+    ScreenFadeAlphaHalf = 0.5
+        
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")
 end

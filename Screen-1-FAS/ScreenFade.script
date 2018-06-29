@@ -17,15 +17,25 @@ function update(self, dt)
 
 	if ScreenFadeStatus == 0 and ScreenFadeAlpha > 0 then
 		ScreenFadeAlpha = ScreenFadeAlpha - 0.01
+
+		if (ScreenFadeAlpha < 0) then
+			ScreenFadeAlpha = 0
+		end
+
 		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 	end
 
 	if ScreenFadeStatus == 1 and ScreenFadeAlpha < 1 then
 			
 		ScreenFadeAlpha = ScreenFadeAlpha + 0.01
+		
+		if (ScreenFadeAlpha > 1) then
+			ScreenFadeAlpha = 1
+		end
+		
 		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 
-		if (ScreenFadeAlpha > 0.2 and ScreenFadeAlpha < 0.21) then
+		if (ScreenFadeAlpha > ScreenFadeAlphaHalf) then
 			if (CurrentScreen == 2) then
 				msg.post("Screen-2-Title", "ResetButtonScale")
 			elseif (CurrentScreen == 3) then
