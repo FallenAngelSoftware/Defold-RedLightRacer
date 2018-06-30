@@ -26,6 +26,16 @@ end
 function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
+
+	FPS_FrameCount = (FPS_FrameCount + 1)
+	local currentTime = socket.gettime()
+	if ( currentTime > (FPS_LastSecond + 1) ) then
+		FPS_Average = FPS_FrameCount
+		FPS_LastSecond = socket.gettime()
+		FPS_FrameCount = 0
+	end
+
+	label.set_text(   "#MouseXY", "FPS=" .. tostring(FPS_Average) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )
 end
 
 function on_message(self, message_id, message, sender)
@@ -38,9 +48,8 @@ function on_input(self, action_id, action)
 	-- Add input-handling code here
 	-- Remove this function if not needed
 
-	local mX = action.screen_x
-	local mY = action.screen_y	
-	label.set_text( "#MouseXY", "[" .. tostring(math.floor( mX * (360/WindowWidthTrue) )) .. "," .. tostring(math.floor( mY * (640/WindowHeightTrue) )) .. "]" )
+	mX = action.screen_x
+	mY = action.screen_y	
 end
 
 function on_reload(self)

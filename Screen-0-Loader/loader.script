@@ -27,6 +27,13 @@ function init(self)
     ButtonSelectedByKeyboard = 0
     
     DelayAllUserInput = 0
+
+    FPS_LastSecond = socket.gettime()
+    FPS_FrameCount = 0
+    FPS_Average = 0
+
+    mX = 0
+    mY = 0
     
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")
