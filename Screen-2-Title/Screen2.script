@@ -27,28 +27,8 @@ function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
 
-	FPS_FrameCount = (FPS_FrameCount + 1)
-	local currentTime = socket.gettime()
-	if ( currentTime > (FPS_LastSecond + 1) ) then
-		FPS_TenSeconds[FPS_CurrentSecond] = FPS_FrameCount
-		if (FPS_CurrentSecond < 10) then
-			FPS_CurrentSecond = (FPS_CurrentSecond + 1)
-		else
-			FPS_CurrentSecond = 0
-		end
-
-		for index = 0, 10 do
-			FPS_Average = (FPS_Average + FPS_TenSeconds[index])
-		end
-
-		FPS_Average = (FPS_Average / 12)
-		FPS_Average = math.floor(FPS_Average)
-
-		FPS_LastSecond = socket.gettime()
-		FPS_FrameCount = 0
-	end
-	
-	label.set_text(   "#MouseXY", "FPS=" .. tostring(FPS_Average) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )
+	local m = require "data/modules.FPSandMouseXY"
+	m.UpdateFPSandMouseXY()
 end
 
 function on_message(self, message_id, message, sender)
