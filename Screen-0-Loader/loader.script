@@ -30,6 +30,11 @@ function init(self)
 
     FPS_LastSecond = socket.gettime()
     FPS_FrameCount = 0
+    FPS_TenSeconds = {}
+    for index = 0, 10 do
+        FPS_TenSeconds[index] = 0
+    end
+    FPS_CurrentSecond = 0
     FPS_Average = 0
 
     mX = 0
