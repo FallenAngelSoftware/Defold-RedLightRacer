@@ -10,16 +10,16 @@ function M.ClearHighScores()
 	for i = 0, 2 do
 		HighScoresName[i] = {}
 		HighScoresName[i][0] = "The Fallen Angel"
-		HighScoresName[i][1] = "The Fallen Angel"
-		HighScoresName[i][2] = "The Fallen Angel"
-		HighScoresName[i][3] = "The Fallen Angel"
-		HighScoresName[i][4] = "The Fallen Angel"
-		HighScoresName[i][5] = "The Fallen Angel"
-		HighScoresName[i][6] = "The Fallen Angel"
-		HighScoresName[i][7] = "The Fallen Angel"
-		HighScoresName[i][8] = "The Fallen Angel"
-		HighScoresName[i][9] = "The Fallen Angel"
-	end
+		HighScoresName[i][1] = "Garry Kitchen"
+		HighScoresName[i][2] = "Andre' LaMothe"
+		HighScoresName[i][3] = "Defold Engine"
+		HighScoresName[i][4] = "D.J. Fading Twilight"
+		HighScoresName[i][5] = "Kubuntu Linux"
+		HighScoresName[i][6] = "NeoPaint"
+		HighScoresName[i][7] = "GoldWave"
+		HighScoresName[i][8] = "You!"
+		HighScoresName[i][9] = "& Them!"
+		end
 
 	HighScoresLevel = {}
 	for i = 0, 2 do
