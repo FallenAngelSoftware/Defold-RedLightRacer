@@ -25,7 +25,10 @@ function init(self)
     ScreenFadeAlphaHalf = 0.5
 
     ButtonSelectedByKeyboard = 0
-    
+
+    ArrowsSelectedByKeyboard = 0
+    ArrowClicked = 0
+        
     DelayAllUserInput = 0
 
     FPS_LastSecond = socket.gettime()

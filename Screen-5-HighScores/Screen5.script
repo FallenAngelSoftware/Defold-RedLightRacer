@@ -10,6 +10,14 @@ function init(self)
 		
 	label.set_text("#ScreenHeader", "HIGH SCORES")
 
+	if (GameMode == 0) then
+		label.set_text("#HighScoresGameMode", "CHILD MODE")
+	elseif (GameMode == 1) then
+		label.set_text("#HighScoresGameMode", "TEEN MODE")
+	elseif (GameMode == 2) then
+		label.set_text("#HighScoresGameMode", "ADULT MODE")
+	end
+		
 	ButtonSelectedByKeyboard = 0
 	
 	msg.post(".", "acquire_input_focus")
@@ -28,14 +36,6 @@ function update(self, dt)
 
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY()
-
-
-
-
-
-
-
-	
 end
 
 function on_message(self, message_id, message, sender)

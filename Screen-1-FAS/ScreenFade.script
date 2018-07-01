@@ -40,6 +40,10 @@ function update(self, dt)
 				msg.post("Screen-2-Title", "ResetButtonScale")
 			elseif (CurrentScreen == 3) then
 				msg.post("Screen-3-Options", "ResetButtonScale")
+			elseif (CurrentScreen == 4) then
+				msg.post("Screen-4-HowToPlay", "ResetButtonScale")
+			elseif (CurrentScreen == 5) then
+				msg.post("Screen-5-HighScores", "ResetButtonScale")
 			end
 		end
 		

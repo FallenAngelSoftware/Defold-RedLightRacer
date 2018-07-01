@@ -58,6 +58,21 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "HighScoresGameMode"
+  component: "/data/labels/HighScoresGameMode.label"
+  position {
+    x: 180.0
+    y: 560.0
+    z: 0.75
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "BG"
   type: "sprite"
