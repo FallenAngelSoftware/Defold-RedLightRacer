@@ -8,8 +8,8 @@ function init(self)
 	ScreenFadeStatus = 0
 	ScreenFadeAlpha = 1
 		
-	label.set_text("#TitleHighScoreName", "''The Fallen Angel''")
-	label.set_text("#TitleHighScore", "10000")
+	label.set_text("#TitleHighScoreName", "''" .. HighScoresName[GameMode][0] .. "''")
+	label.set_text("#TitleHighScore", HighScoresScore[GameMode][0])
 
 	ButtonSelectedByKeyboard = 0
 	

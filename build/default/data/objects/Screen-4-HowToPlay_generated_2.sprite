@@ -1,0 +1,4 @@
+tile_set: "/data/atlases/ScreenLine.atlas"
+default_animation: "ScreenLine"
+material: "/builtins/materials/sprite.material"
+blend_mode: BLEND_MODE_ALPHA

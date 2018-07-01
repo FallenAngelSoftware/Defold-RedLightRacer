@@ -1,0 +1,4 @@
+tile_set: "/data/atlases/RLR-Logo.atlas"
+default_animation: "RLR-Logo"
+material: "/builtins/materials/sprite.material"
+blend_mode: BLEND_MODE_ALPHA

@@ -20,13 +20,4 @@ function on_input(self, action_id, action)
 			ScreenFadeStatus = 1
 		end
 	end
-
---	if action_id == hash("touch") then -- and action.pressed and self.active then
---		local node = gui.get_node("ButtonOptions")
---		if gui.pick_node(node, action.x, action.y) then
---			NextScreen = 3
---			ScreenFadeStatus = 1
---			print("Pressed")
---		end
---	end	
 end

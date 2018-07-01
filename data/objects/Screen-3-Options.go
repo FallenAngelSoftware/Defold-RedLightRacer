@@ -61,8 +61,8 @@ components {
 embedded_components {
   id: "BG"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/Title-BG.atlas\"\n"
-  "default_animation: \"Title-BG\"\n"
+  data: "tile_set: \"/data/atlases/TitleFaded-BG.atlas\"\n"
+  "default_animation: \"TitleFaded-BG\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""

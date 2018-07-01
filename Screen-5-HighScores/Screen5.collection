@@ -1,6 +1,6 @@
 name: "Screen-3-Options"
 instances {
-  id: "Screen-4-HowToPlay"
+  id: "Screen-5-HighScores"
   prototype: "/data/objects/Screen-5-HighScores.go"
   position {
     x: 0.0

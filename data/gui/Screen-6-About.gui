@@ -1,0 +1,14 @@
+script: "/data/gui_script/AboutGUI.gui_script"
+fonts {
+  name: "GameFont"
+  font: "/data/fonts/GameFont.font"
+}
+background_color {
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  w: 0.0
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+max_nodes: 512
