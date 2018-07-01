@@ -1,7 +1,50 @@
+function LoadHighScoresText(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
+	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
+	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
+	gui.set_pivot(text_nodes[TotalNumberOfTexts], gui.PIVOT_W)
+	gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
+	TotalNumberOfTexts = (TotalNumberOfTexts + 1)	
+end
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
+
+	TotalNumberOfTexts = 0
+	text_nodes = {}
+
+	LoadHighScoresText("NAME:", 40, 480+25, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0)
+	LoadHighScoresText("LEVEL:", 230, 480+25, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0)
+	LoadHighScoresText("SCORE:", 280, 480+25, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0)
+			
+	local screenY = 480
+	for index = 0, 9 do
+		LoadHighScoresText( index+1 .. ".", 10, screenY-(index*37), 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 )
+		LoadHighScoresText( HighScoresName[GameMode][index], 40, screenY-(index*37), 0.6, 1.0, 1.0, 1.0, 1.0, 1.0 )
+
+		if (HighScoresLevel[GameMode][index] < 10) then
+			LoadHighScoresText( HighScoresLevel[GameMode][index], 230, screenY-(index*37), 0.6, 1.0, 1.0, 1.0, 1.0, 1.0 )
+		else
+			LoadHighScoresText( "Won!", 230, screenY-(index*37), 0.6, 1.0, 1.0, 1.0, 1.0, 1.0 )
+		end
+		
+		LoadHighScoresText( HighScoresScore[GameMode][index], 280, screenY-(index*37), 0.6, 1.0, 1.0, 1.0, 1.0, 1.0 )
+		
+	end
+
+
+
+
+
+
+
+
+
+
+
+
 end
 
 function on_message(self, message_id, message, sender)

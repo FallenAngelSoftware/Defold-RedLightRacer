@@ -42,6 +42,11 @@ function init(self)
 	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 
 	screenY = (screenY - 100)
+	LoadStafTextLine("Video Game Director:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	
+	screenY = (screenY - 100)
 	LoadStafTextLine("Original Game Concept By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
@@ -141,7 +146,7 @@ function init(self)
 	screenY = (screenY - 100)
 	LoadStafTextLine("iOS Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
-	LoadStafTextLine("- Apple iPad Air Gen1 -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	LoadStafTextLine("- Apple iPad Air Gen1 Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 										
 	

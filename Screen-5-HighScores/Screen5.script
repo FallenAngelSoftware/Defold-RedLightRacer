@@ -28,6 +28,14 @@ function update(self, dt)
 
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY()
+
+
+
+
+
+
+
+	
 end
 
 function on_message(self, message_id, message, sender)
