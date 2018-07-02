@@ -50,8 +50,6 @@ function init(self)
 
     PlayRedLightRacerVoice = true
     
-    msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-    
     GameMode = 2
     
     HighScoresName = {}
@@ -98,7 +96,32 @@ function init(self)
         HighScoresScore[i][8] = 2000
         HighScoresScore[i][9] = 1000
     end
-        
+
+    local my_file_path = sys.get_save_file("RedLightRacer", "RLR_PreAlpha1.cfg")
+    local GameOptionsAndHighScoresTable = sys.load(my_file_path)
+    if not next(GameOptionsAndHighScoresTable) then
+        print("Game data file not found.")
+    else
+--       pprint(GameOptionsAndHighScoresTable)
+                
+        MusicVolume = table.remove(GameOptionsAndHighScoresTable, 1)
+        EffectsVolume = table.remove(GameOptionsAndHighScoresTable, 1)
+        GameMode = table.remove(GameOptionsAndHighScoresTable, 1)
+
+        for mode = 0, 2 do
+            for rank = 0, 9 do
+                HighScoresName[mode][rank] = table.remove(GameOptionsAndHighScoresTable, 1)
+                HighScoresLevel[mode][rank] = table.remove(GameOptionsAndHighScoresTable, 1)
+                HighScoresScore[mode][rank] = table.remove(GameOptionsAndHighScoresTable, 1)
+            end
+        end  
+    end
+
+    msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
+    
+    sound.set_group_gain("music", MusicVolume)
+    sound.set_group_gain("effects", EffectsVolume)
+         
     msg.post("#proxy_level_0", "load")
     msg.post(".", "acquire_input_focus")
 end

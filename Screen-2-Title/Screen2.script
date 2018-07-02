@@ -19,7 +19,23 @@ function init(self)
 		msg.post("Audio#RedLightRacer", "play_sound", {delay = 0, gain = EffectsVolume})
 		PlayRedLightRacerVoice = false
 	end
-			
+	
+	local GameOptionsAndHighScoresTable = {}
+	table.insert(GameOptionsAndHighScoresTable, MusicVolume)
+	table.insert(GameOptionsAndHighScoresTable, EffectsVolume)
+	table.insert(GameOptionsAndHighScoresTable, GameMode)
+	for mode = 0, 2 do
+		for rank = 0, 9 do
+			table.insert(GameOptionsAndHighScoresTable, HighScoresName[mode][rank])
+			table.insert(GameOptionsAndHighScoresTable, HighScoresLevel[mode][rank])
+			table.insert(GameOptionsAndHighScoresTable, HighScoresScore[mode][rank])
+		end
+	end 
+	local my_file_path = sys.get_save_file("RedLightRacer", "RLR_PreAlpha1.cfg")
+	if not sys.save(my_file_path, GameOptionsAndHighScoresTable) then
+		print("Save Failed!")
+	end
+
 	msg.post(".", "acquire_input_focus")
 end
 

@@ -98,6 +98,7 @@ function on_input(self, action_id, action)
 						MusicVolume = 1
 					end
 					sound.set_group_gain("music", MusicVolume)
+					msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 				elseif (ArrowsSelectedByKeyboard == 1) then
 					if (EffectsVolume > 0) then
 						EffectsVolume = (EffectsVolume - 0.25)
@@ -143,6 +144,7 @@ function on_input(self, action_id, action)
 					else
 						MusicVolume = 0
 					end
+					msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 					sound.set_group_gain("music", MusicVolume)
 				elseif (ArrowsSelectedByKeyboard == 1) then
 					if (EffectsVolume < 1) then
@@ -262,6 +264,7 @@ function on_input(self, action_id, action)
 						else
 							MusicVolume = 1
 						end
+						msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 						sound.set_group_gain("music", MusicVolume)
 					elseif (ArrowsSelectedByKeyboard == 1) then
 						if (EffectsVolume > 0) then
@@ -318,6 +321,7 @@ function on_input(self, action_id, action)
 						else
 							MusicVolume = 0
 						end
+						msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 						sound.set_group_gain("music", MusicVolume)
 					elseif (ArrowsSelectedByKeyboard == 1) then
 						if (EffectsVolume < 1) then
