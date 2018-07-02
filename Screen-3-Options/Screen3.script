@@ -26,6 +26,10 @@ function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
 
+	if (DelayAllUserInput > 0) then
+		DelayAllUserInput = (DelayAllUserInput - 1)
+	end
+	
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY()
 end

@@ -13,6 +13,8 @@ function init(self)
 
 	ButtonSelectedByKeyboard = 0
 
+	ArrowsSelectedByKeyboard = 0
+	
 	msg.post("Audio#RedLightRacer", "play_sound", {delay = 0, gain = EffectsVolume})
 			
 	msg.post(".", "acquire_input_focus")
