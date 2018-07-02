@@ -1,4 +1,4 @@
 sound: "/data/audio/Title-BGM.ogg"
 looping: 1
-group: "master"
+group: "music"
 gain: 1.0

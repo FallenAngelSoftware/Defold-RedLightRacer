@@ -90,8 +90,9 @@ function on_input(self, action_id, action)
 					else
 						MusicVolume = 1
 					end
-					msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-					msg.post("Audio#Title-BGM", "set_gain", { gain = MusicVolume })
+--					msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+--					msg.post("Audio#Title-BGM", "set_gain", { gain = MusicVolume })
+					sound.set_group_gain("music", MusicVolume)
 				end
 					
 				NextScreen = 3
@@ -124,8 +125,9 @@ function on_input(self, action_id, action)
 					else
 						MusicVolume = 0
 					end
-					msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-					msg.post("Audio#Title-BGM", "set_gain", { gain = MusicVolume })
+--					msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+--					msg.post("Audio#Title-BGM", "set_gain", { gain = MusicVolume })
+					sound.set_group_gain("music", MusicVolume)
 				end
 				
 				NextScreen = 3

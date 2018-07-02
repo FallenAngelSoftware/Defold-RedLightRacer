@@ -3,7 +3,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/data/audio/Title-BGM.ogg\"\n"
   "looping: 1\n"
-  "group: \"master\"\n"
+  "group: \"music\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -23,7 +23,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/data/audio/MenuClick.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"effects\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -43,7 +43,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/data/audio/MenuMove.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"effects\"\n"
   "gain: 1.0\n"
   ""
   position {
@@ -63,7 +63,7 @@ embedded_components {
   type: "sound"
   data: "sound: \"/data/audio/RedLightRacer.ogg\"\n"
   "looping: 0\n"
-  "group: \"master\"\n"
+  "group: \"effects\"\n"
   "gain: 1.0\n"
   ""
   position {

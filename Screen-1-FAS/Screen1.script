@@ -16,7 +16,7 @@ end
 function final(self)
 	-- Add finalization code here
 	-- Remove this function if not needed
-
+	
 	msg.post(".", "release_input_focus")
 end
 
