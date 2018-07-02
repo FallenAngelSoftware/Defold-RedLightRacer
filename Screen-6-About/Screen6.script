@@ -8,9 +8,6 @@ function init(self)
 	ScreenFadeStatus = 0
 	ScreenFadeAlpha = 1
 
-	
-
-
 	msg.post(".", "acquire_input_focus")
 end
 

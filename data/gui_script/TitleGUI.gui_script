@@ -60,8 +60,8 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				sound.play("#MenuClick", { delay = 0, gain = EffectsVolume } )
-				
+				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+								
 				if (ButtonSelectedByKeyboard == 0) then
 					NextScreen = 1
 				else
@@ -91,8 +91,8 @@ function on_input(self, action_id, action)
 
 			DelayAllUserInput = 20
 
-			sound.play("#MenuMove", { delay = 0, gain = EffectsVolume } )
-						
+			msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+									
 			local leftArrow = gui.get_node("ButtonSelectorLeft")
 			gui.set_position(  leftArrow, vmath.vector3( 30, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 			local rightArrow = gui.get_node("ButtonSelectorRight")
@@ -106,8 +106,8 @@ function on_input(self, action_id, action)
 
 			DelayAllUserInput = 20
 
-			sound.play("#MenuMove", { delay = 0, gain = EffectsVolume } )
-						
+			msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+									
 			local leftArrow = gui.get_node("ButtonSelectorLeft")
 			gui.set_position(  leftArrow, vmath.vector3( 30, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 			local rightArrow = gui.get_node("ButtonSelectorRight")
@@ -136,8 +136,8 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				sound.play("#MenuClick", { delay = 0, gain = EffectsVolume } )
-				
+				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+								
 				NextScreen = 3
 				ScreenFadeStatus = 1
 
@@ -153,8 +153,8 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				sound.play("#MenuClick", { delay = 0, gain = EffectsVolume } )
-				
+				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+								
 				NextScreen = 4
 				ScreenFadeStatus = 1
 
@@ -170,8 +170,8 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				sound.play("#MenuClick", { delay = 0, gain = EffectsVolume } )
-				
+				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+								
 				NextScreen = 5
 				ScreenFadeStatus = 1
 
@@ -187,8 +187,8 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				sound.play("#MenuClick", { delay = 0, gain = EffectsVolume } )
-				
+				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+								
 				NextScreen = 6
 				ScreenFadeStatus = 1
 
@@ -204,8 +204,8 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				sound.play("#MenuClick", { delay = 0, gain = EffectsVolume } )
-				
+				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+								
 				NextScreen = 2
 				ScreenFadeStatus = 1
 

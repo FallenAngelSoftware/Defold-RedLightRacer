@@ -1,7 +1,7 @@
 name: "level"
 instances {
-  id: "Screen-0-Loader"
-  prototype: "/data/objects/Screen-0-Loader.go"
+  id: "Audio"
+  prototype: "/data/objects/Audio.go"
   position {
     x: 0.0
     y: 0.0

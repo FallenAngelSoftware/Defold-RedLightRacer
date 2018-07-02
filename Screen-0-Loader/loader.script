@@ -48,7 +48,7 @@ function init(self)
     MusicVolume = 1.0
     EffectsVolume = 1.0
 
---    msg.post("#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+    msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
     
     GameMode = 2
     
@@ -106,14 +106,10 @@ function on_message(self, message_id, message, sender)
         local proxy = "#proxy_level_" .. message.level
         msg.post(proxy, "load")
     elseif message_id == hash("proxy_loaded") then
---        if (CurrentScreen > 0) then
---            msg.post("#proxy_level_" .. CurrentScreen, "unload")
---        end
         msg.post(sender, "init")
         msg.post(sender, "enable")
     elseif message_id == hash("ScreenFaded") then
         msg.post("#proxy_level_" .. CurrentScreen, "unload")
-        --        msg.post("#proxy_level_" .. NextScreen, "load")
     elseif message_id == hash("proxy_unloaded") then
         msg.post("#proxy_level_" .. NextScreen, "load")
     end
