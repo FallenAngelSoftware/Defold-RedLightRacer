@@ -90,7 +90,7 @@ components {
 }
 components {
   id: "Screen-2-Title"
-  component: "/data/gui/Screen-2-Title.gui"
+  component: "/data/gui/Screen-2-Title-GUI.gui"
   position {
     x: 0.0
     y: 0.0
@@ -105,7 +105,7 @@ components {
 }
 components {
   id: "level_select"
-  component: "/data/gui/level_select.gui"
+  component: "/data/gui/level_select_gui.gui"
   position {
     x: 0.0
     y: 0.0

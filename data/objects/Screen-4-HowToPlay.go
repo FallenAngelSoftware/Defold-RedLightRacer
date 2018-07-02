@@ -1,6 +1,6 @@
 components {
   id: "Screen-4-HowToPlay"
-  component: "/data/gui/Screen-4-HowToPlay.gui"
+  component: "/data/gui/Screen-4-HowToPlay-GUI.gui"
   position {
     x: 0.0
     y: 0.0

@@ -1,6 +1,6 @@
 components {
-  id: "Screen1Fade"
-  component: "/Screen-0-Defold/ScreenFade.script"
+  id: "ScreenFaded"
+  component: "/Screen-Loader/ScreenFade.script"
   position {
     x: 0.0
     y: 0.0
@@ -18,13 +18,13 @@ embedded_components {
   type: "sprite"
   data: "tile_set: \"/data/atlases/ScreenFade.atlas\"\n"
   "default_animation: \"ScreenFade\"\n"
-  "material: \"/Screen-3-Options/test.material\"\n"
+  "material: \"/Screen-Loader/test.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
   ""
   position {
     x: 180.0
     y: 320.0
-    z: 0.0
+    z: 1.0
   }
   rotation {
     x: 0.0

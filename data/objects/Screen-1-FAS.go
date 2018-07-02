@@ -1,6 +1,6 @@
 components {
   id: "FAS-Website"
-  component: "/data/gui/Screen-1-FAS.gui"
+  component: "/data/gui/Screen-1-FAS-GUI.gui"
   position {
     x: 0.0
     y: 0.0
@@ -49,6 +49,21 @@ components {
   position {
     x: 5.0
     y: 630.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "FAS"
+  component: "/data/gui/Screen-1-FAS-GUI.gui"
+  position {
+    x: 0.0
+    y: 0.0
     z: 0.0
   }
   rotation {

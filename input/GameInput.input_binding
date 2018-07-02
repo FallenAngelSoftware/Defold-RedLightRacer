@@ -26,6 +26,10 @@ key_trigger {
   input: KEY_ENTER
   action: "EnterGUI"
 }
+key_trigger {
+  input: KEY_SPACE
+  action: "EnterGUI"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "GotoNextScreen"

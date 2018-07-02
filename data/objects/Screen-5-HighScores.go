@@ -1,6 +1,6 @@
 components {
   id: "Screen-5-HighScores"
-  component: "/data/gui/Screen-5-HighScores.gui"
+  component: "/data/gui/Screen-5-HighScores-GUI.gui"
   position {
     x: 0.0
     y: 0.0

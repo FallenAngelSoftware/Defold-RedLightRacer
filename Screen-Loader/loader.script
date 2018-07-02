@@ -21,6 +21,8 @@ function init(self)
     CurrentScreen = 0
     NextScreen = 1
 
+    NextProxyLoaded = false
+    
     ScreenDisplayTimer = 0
     
     ButtonClicked = -1
@@ -127,15 +129,18 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
-    if message_id == hash("load_level") then
-        local proxy = "#proxy_level_" .. message.level
-        msg.post(proxy, "load")
+    if message_id == hash("ScreenFaded") then
+        msg.post("#proxy_level_" .. CurrentScreen, "disable")
+        msg.post("#proxy_level_" .. CurrentScreen, "final")
+        msg.post("#proxy_level_" .. CurrentScreen, "unload")
+        print(CurrentScreen .. " unload")
+    elseif message_id == hash("proxy_unloaded") then
+        msg.post("#proxy_level_" .. NextScreen, "load")
+        print(NextScreen .. " load")
     elseif message_id == hash("proxy_loaded") then
         msg.post(sender, "init")
         msg.post(sender, "enable")
-    elseif message_id == hash("ScreenFaded") then
-        msg.post("#proxy_level_" .. CurrentScreen, "unload")
-    elseif message_id == hash("proxy_unloaded") then
-        msg.post("#proxy_level_" .. NextScreen, "load")
+        NextProxyLoaded = true
+        print("proxy_loaded")
     end
 end

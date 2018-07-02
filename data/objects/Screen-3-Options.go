@@ -1,6 +1,6 @@
 components {
   id: "Screen-3-Options"
-  component: "/data/gui/Screen-3-Options.gui"
+  component: "/data/gui/Screen-3-Options-GUI.gui"
   position {
     x: 0.0
     y: 0.0

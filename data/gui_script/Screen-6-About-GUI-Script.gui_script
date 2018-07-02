@@ -1,0 +1,201 @@
+function LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
+	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
+	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
+
+	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+		gui.set_adjust_mode( text_nodes[TotalNumberOfTexts], gui.ADJUST_FIT )
+	else
+		gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
+	end
+	
+	TotalNumberOfTexts = (TotalNumberOfTexts + 1)	
+end
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	msg.post("#", "show_level_select")
+	self.active = false
+	
+	
+	TotalNumberOfTexts = 0
+	text_nodes = {}
+	local screenY = -30
+	LoadStafTextLine("TM", 290, screenY+20, 0.7, 0.7, 1.0, 1.0, 1.0, 0.0)
+--	screenY = (screenY - 30)
+	LoadStafTextLine("''Red Light Racer''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Copyright 2018, By Team ''Fallen Angel Software''", 180, screenY, 0.61, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.FallenAngelSoftware.com)", 180, screenY, 0.95, 1.0, 1.0, 1.0, 1.0, 1.0)
+	
+	screenY = (screenY - 100)
+	LoadStafTextLine("Game Made On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Genuine Kubuntu 18.04 64Bit L.T.S. Linux", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.Kubuntu.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+		
+	screenY = (screenY - 100)
+	LoadStafTextLine("Video Game Made With:", 180, screenY, 0.8, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Defold'' Cross-Platform 2-D Engine", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.Defold.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+		
+	screenY = (screenY - 100)
+	LoadStafTextLine("Defold ''Maxima 3.5'' 2-D Video Game Engine By:", 180, screenY, 0.64, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Video Game Directed By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	
+	screenY = (screenY - 100)
+	LoadStafTextLine("Original Game Concept By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Lead Game Designer:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Lead Game Programmer:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Lead Game Tester:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Support Game Programmers:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Mathias_Westerdahl''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''andres.strangequest''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''sicher''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Erik_Angelin''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''carlfredriknybergbro''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''britzl''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Pkeod''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Mattias_Hedberg''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Vincent''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''sven''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("''Neo's Kiss'' G.U.I. System By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	
+	screenY = (screenY - 100)
+	LoadStafTextLine("Lead Graphic Artist:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Support Graphic Artist:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Oshi Bobo''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.OshiBobo.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Lead Music/Effects Artist:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''D.J. Fading Twilight''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Graphics Edited In:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''NeoPaint''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.NeoSoftware.com/NPW.html)", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 1.0)
+	
+	screenY = (screenY - 100)
+	LoadStafTextLine("Audio Edited In:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''GoldWave''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.GoldWave.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("HTML5 Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Genuine Windows 10 Pro 64Bit", 180, screenY, 0.91, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- Microsoft Edge -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- Mozilla Firefox -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- Google Chrome -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- Opera -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Android Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- Samsung Galaxy S7 Edge SmartPhone -", 180, screenY, 0.75, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- ASUS Nexus 7 Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- EKEN Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("iOS Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("- Apple iPad Air Gen1 Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+										
+	
+	screenY = ( screenY - (640/2) )
+	LoadStafTextLine("A 110% By Team ''www.FallenAngelSoftware.com''!", 180, screenY, 0.6, 1.0, 1.0, 1.0, 1.0, 0.0)		
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("show_level_select") then
+		msg.post("#", "enable")
+		self.active = true
+	elseif message_id == hash("hide_level_select") then
+		msg.post("#", "disable")
+		self.active = false
+	end
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+
+	for index = 0, (TotalNumberOfTexts-1) do
+		currentPos = gui.get_position(text_nodes[index])
+		if (index == 0) then
+			gui.set_position(  text_nodes[index], vmath.vector3( 180+110, currentPos.y+1.5, 0  )  )
+		else
+			gui.set_position(  text_nodes[index], vmath.vector3( 180, currentPos.y+1.5, 0  )  )
+		end
+	end
+
+	local lastTextPos = gui.get_position(text_nodes[TotalNumberOfTexts-1])
+	if ( lastTextPos.y > (640+25) ) then
+		ScreenFadeStatus = 1
+	end
+	
+end
+
+function on_input(self, action_id, action)
+
+end

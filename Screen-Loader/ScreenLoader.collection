@@ -185,7 +185,7 @@ embedded_instances {
   id: "guis"
   data: "components {\n"
   "  id: \"level_select\"\n"
-  "  component: \"/data/gui/level_select.gui\"\n"
+  "  component: \"/data/gui/level_select_gui.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"

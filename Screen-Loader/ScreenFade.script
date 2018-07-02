@@ -1,0 +1,62 @@
+function init(self)
+	-- Add initialization code here
+	-- Remove this function if not needed
+
+	ScreenFadeStatus = 0
+	ScreenFadeAlpha = 1
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+
+	if (NextProxyLoaded == true) then
+		if (ScreenFadeStatus == 0 and ScreenFadeAlpha > 0) then
+			ScreenFadeAlpha = (ScreenFadeAlpha - 0.1)
+
+			if (ScreenFadeAlpha < 0) then
+				ScreenFadeAlpha = 0
+			end
+
+			if (ScreenFadeAlpha == 0) then
+				NextProxyLoaded = false
+			end
+			
+			go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
+		end
+	end
+		
+	if (ScreenFadeStatus == 1 and ScreenFadeAlpha < 1) then
+		ScreenFadeAlpha = (ScreenFadeAlpha + 0.1)
+		
+		if (ScreenFadeAlpha > 1) then
+			ScreenFadeAlpha = 1
+		end
+		
+		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
+
+		if ScreenFadeAlpha == 1 then
+			msg.post("level:/loader#loader", "ScreenFaded")
+		end
+	end
+end
+	
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
