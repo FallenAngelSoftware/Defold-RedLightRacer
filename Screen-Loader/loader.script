@@ -19,7 +19,7 @@ function init(self)
     ScreenFadeAlpha = 1
 
     CurrentScreen = 0
-    NextScreen = 2
+    NextScreen = 1
 
     ScreenDisplayTimer = 0
     
@@ -99,7 +99,7 @@ function init(self)
         HighScoresScore[i][9] = 1000
     end
         
-    msg.post("#proxy_level_1", "load")
+    msg.post("#proxy_level_0", "load")
     msg.post(".", "acquire_input_focus")
 end
 

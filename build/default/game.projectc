@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /Screen-0-Loader/Screen0.collectionc
+main_collection = /Screen-Loader/ScreenLoader.collectionc
 render = /data/render/GameRender.renderc
 
 [script]

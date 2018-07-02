@@ -1,6 +1,6 @@
 components {
   id: "loader"
-  component: "/Screen-0-Loader/loader.script"
+  component: "/Screen-Loader/loader.script"
   position {
     x: 0.0
     y: 0.0
@@ -97,6 +97,22 @@ embedded_components {
   id: "proxy_level_6"
   type: "collectionproxy"
   data: "collection: \"/Screen-6-About/Screen6.collection\"\nexclude: false\n"
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "proxy_level_0"
+  type: "collectionproxy"
+  data: "collection: \"/Screen-0-Defold/Screen0.collection\"\nexclude: false\n"
   position {
     x: 0.0
     y: 0.0

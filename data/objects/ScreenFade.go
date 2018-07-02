@@ -1,6 +1,6 @@
 components {
   id: "Screen1Fade"
-  component: "/Screen-1-FAS/ScreenFade.script"
+  component: "/Screen-0-Defold/ScreenFade.script"
   position {
     x: 0.0
     y: 0.0
