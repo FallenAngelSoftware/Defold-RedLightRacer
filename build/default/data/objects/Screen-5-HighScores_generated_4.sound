@@ -1,0 +1,4 @@
+sound: "/data/audio/MenuMove.ogg"
+looping: 0
+group: "master"
+gain: 1.0

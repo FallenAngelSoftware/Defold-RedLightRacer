@@ -26,7 +26,6 @@ function update(self, dt)
 	end
 
 	if ScreenFadeStatus == 1 and ScreenFadeAlpha < 1 then
-			
 		ScreenFadeAlpha = ScreenFadeAlpha + 0.1
 		
 		if (ScreenFadeAlpha > 1) then

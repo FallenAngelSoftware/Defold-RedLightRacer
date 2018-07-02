@@ -4,6 +4,8 @@ function init(self)
 
 	CurrentScreen = 1
 	NextScreen = 2
+
+	ScreenDisplayTimer = 300
 	
 	msg.post(".", "acquire_input_focus")
 	
@@ -22,6 +24,12 @@ function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
 
+	if (ScreenDisplayTimer > 0) then
+		ScreenDisplayTimer = (ScreenDisplayTimer - 1)
+	else
+		ScreenFadeStatus = 1
+	end
+	
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY()
 end

@@ -21,6 +21,8 @@ function init(self)
     CurrentScreen = 0
     NextScreen = 2
 
+    ScreenDisplayTimer = 0
+    
     ButtonClicked = -1
     ScreenFadeAlphaHalf = 0.5
 
@@ -43,7 +45,10 @@ function init(self)
     mX = 0
     mY = 0
 
-    GameMode = 1
+    MusicVolume = 1
+    EffectsVolume = 1
+    
+    GameMode = 2
     
     HighScoresName = {}
     for i = 0, 2 do
@@ -90,6 +95,7 @@ function init(self)
         HighScoresScore[i][9] = 1000
     end
     
+    sound.play("/loader#Title-BGM", { delay = 1, gain = MusicVolume } )
     
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")
