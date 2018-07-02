@@ -48,6 +48,8 @@ function init(self)
     MusicVolume = 1.0
     EffectsVolume = 1.0
 
+    PlayRedLightRacerVoice = true
+    
     msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
     
     GameMode = 2

@@ -15,7 +15,10 @@ function init(self)
 
 	ArrowsSelectedByKeyboard = 0
 	
-	msg.post("Audio#RedLightRacer", "play_sound", {delay = 0, gain = EffectsVolume})
+	if (PlayRedLightRacerVoice == true) then
+		msg.post("Audio#RedLightRacer", "play_sound", {delay = 0, gain = EffectsVolume})
+		PlayRedLightRacerVoice = false
+	end
 			
 	msg.post(".", "acquire_input_focus")
 end
