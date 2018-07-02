@@ -2,8 +2,24 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
+	
+	ArrowsSelectedByKeyboard = 0
+		
+	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+		gui.set_adjust_mode( gui.get_node("SelectorLine"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("SelectorLeft"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("SelectorLeft1"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("SelectorLeft2"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("SelectorRight"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("SelectorRight1"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("SelectorRight2"), gui.ADJUST_FIT )
+				
+		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
+		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
+	end
 
-	if (MusicVolume == 1) then
+	if (MusicVolume == 1.0) then
 		label.set_text("#OptionsMusicVolume", "100%")
 	elseif (MusicVolume == 0.75) then
 		label.set_text("#OptionsMusicVolume", "75%")
@@ -11,11 +27,11 @@ function init(self)
 		label.set_text("#OptionsMusicVolume", "50%")
 	elseif (MusicVolume == 0.25) then
 		label.set_text("#OptionsMusicVolume", "25%")
-	elseif (MusicVolume == 0) then
+	elseif (MusicVolume == 0.0) then
 		label.set_text("#OptionsMusicVolume", "0%")
 	end	
 
-	if (EffeectsVolume == 1) then
+	if (EffectsVolume == 1.0) then
 		label.set_text("#OptionsEffectsVolume", "100%")
 	elseif (EffectsVolume == 0.75) then
 		label.set_text("#OptionsEffectsVolume", "75%")
@@ -23,7 +39,7 @@ function init(self)
 		label.set_text("#OptionsEffectsVolume", "50%")
 	elseif (EffectsVolume == 0.25) then
 		label.set_text("#OptionsEffectsVolume", "25%")
-	elseif (EffectsVolume == 0) then
+	elseif (EffectsVolume == 0.0) then
 		label.set_text("#OptionsEffectsVolume", "0%")
 	end	
 		
@@ -38,7 +54,9 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("ResetButtonScale") then
-		gui.set_scale( ButtonClicked, vmath.vector3(1, 1, 1) )
+		if (ButtonClicked ~= -1) then
+			gui.set_scale( ButtonClicked, vmath.vector3(1, 1, 1) )
+		end
 	elseif message_id == hash("show_level_select") then
 		msg.post("#", "enable")
 		self.active = true
@@ -49,6 +67,77 @@ function on_message(self, message_id, message, sender)
 end
 
 function on_input(self, action_id, action)
+	ArrowClicked = -1
+
+	if (DelayAllUserInput == 0) then
+		if action_id == hash("LEFT") then
+			if (ArrowsSelectedByKeyboard == 0) then
+				node = gui.get_node("SelectorLeft")
+			elseif (ArrowsSelectedByKeyboard == 1) then
+				node = gui.get_node("SelectorLeft1")
+			elseif (ArrowsSelectedByKeyboard == 2) then
+				node = gui.get_node("SelectorLeft2")
+			end
+
+			if (ScreenFadeAlpha == 0) then
+				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
+
+				sound.play("#MenuMove", { delay = 0, gain = EffectsVolume } )
+
+				if (ArrowsSelectedByKeyboard == 0) then
+					if (MusicVolume > 0) then
+						MusicVolume = (MusicVolume - 0.25)
+					else
+						MusicVolume = 1
+					end
+					
+--					msg.post("/Title-BGM#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+--					msg.post( "#Title-BGM","set_gain", { gain = MusicVolume } )
+				end
+					
+				NextScreen = 3
+				ScreenFadeStatus = 1
+
+				ArrowsSelectedByKeyboard = 0
+				ArrowClicked = node
+			end
+		end
+	end
+
+	if (DelayAllUserInput == 0) then
+		if action_id == hash("RIGHT") then
+			if (ArrowsSelectedByKeyboard == 0) then
+				node = gui.get_node("SelectorRight")
+			elseif (ArrowsSelectedByKeyboard == 1) then
+				node = gui.get_node("SelectorRight1")
+			elseif (ArrowsSelectedByKeyboard == 2) then
+				node = gui.get_node("SelectorRight2")
+			end
+			
+			if (ScreenFadeAlpha == 0) then
+				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
+
+				sound.play("#MenuMove", { delay = 0, gain = EffectsVolume } )
+
+				if (ArrowsSelectedByKeyboard == 0) then
+					if (MusicVolume < 1) then
+						MusicVolume = (MusicVolume + 0.25)
+					else
+						MusicVolume = 0
+					end
+				end
+				
+				NextScreen = 3
+				ScreenFadeStatus = 1
+
+				ArrowsSelectedByKeyboard = 0
+				ArrowClicked = node
+			end
+		end
+	end
+
+	ButtonClicked = -1
+	
 	local node
 	
 	if (DelayAllUserInput == 0) then

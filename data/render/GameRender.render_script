@@ -47,6 +47,8 @@ function init(self)
 end
 
 function update(self)
+	sysinfo = sys.get_sys_info()
+	
 	WindowWidthTrue = render.get_window_width()
 	WindowHeightTrue = render.get_window_height()
 		
@@ -66,8 +68,12 @@ function update(self)
 
 	-- default is stretch projection. copy from builtins and change for different projection
 	--
-	render.set_projection(stretch_projection(-1, 2))
-
+	if (sysinfo.system_name == "Android" or sysinfo.system_name == "iOS") then
+		render.set_projection(stretch_projection(-1, 2))
+	else
+		render.set_projection(fixed_fit_projection(-1, 2))
+	end
+		
 	render.draw(self.tile_pred)
 	render.draw(self.particle_pred)
 	render.draw_debug3d()
@@ -82,7 +88,12 @@ function update(self)
 	render.draw(self.text_pred)
 	render.disable_state(render.STATE_STENCIL_TEST)
 
-	render.set_projection(stretch_projection(-1, 2))
+	if (sysinfo.system_name == "Android" or sysinfo.system_name == "iOS") then
+		render.set_projection(stretch_projection(-1, 2))
+	else
+		render.set_projection(fixed_fit_projection(-1, 2))
+	end
+	
 	render.draw(self.test)
 	
 	render.set_depth_mask(false)

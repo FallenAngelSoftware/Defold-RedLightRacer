@@ -2,7 +2,13 @@ function LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, g
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
-	gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
+
+	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+		gui.set_adjust_mode( text_nodes[TotalNumberOfTexts], gui.ADJUST_FIT )
+	else
+		gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
+	end
+	
 	TotalNumberOfTexts = (TotalNumberOfTexts + 1)	
 end
 
@@ -10,7 +16,8 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
-
+	
+	
 	TotalNumberOfTexts = 0
 	text_nodes = {}
 	local screenY = -30

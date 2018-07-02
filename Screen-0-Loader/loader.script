@@ -45,8 +45,10 @@ function init(self)
     mX = 0
     mY = 0
 
-    MusicVolume = 1
-    EffectsVolume = 1
+    MusicVolume = 1.0
+    EffectsVolume = 1.0
+
+--    msg.post("#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
     
     GameMode = 2
     
@@ -94,9 +96,7 @@ function init(self)
         HighScoresScore[i][8] = 2000
         HighScoresScore[i][9] = 1000
     end
-    
-    sound.play("/loader#Title-BGM", { delay = 1, gain = MusicVolume } )
-    
+        
     msg.post("#proxy_level_1", "load")
     msg.post(".", "acquire_input_focus")
 end

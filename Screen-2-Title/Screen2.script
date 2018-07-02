@@ -12,8 +12,6 @@ function init(self)
 	label.set_text("#TitleHighScore", HighScoresScore[GameMode][0])
 
 	ButtonSelectedByKeyboard = 0
-
-	sound.play("#RedLightRacer", { delay = 1, gain = EffectsVolume } )
 	
 	msg.post(".", "acquire_input_focus")
 end

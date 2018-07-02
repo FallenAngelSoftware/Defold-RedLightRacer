@@ -2,6 +2,18 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
+
+	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+		gui.set_adjust_mode( gui.get_node("ButtonSTART"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonOptions"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonHowToPlay"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonHighScores"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonAbout"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonExit"), gui.ADJUST_FIT )
+		
+		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
+		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
+	end
 end
 
 function on_message(self, message_id, message, sender)

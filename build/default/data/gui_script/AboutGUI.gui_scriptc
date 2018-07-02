@@ -1,10 +1,16 @@
 
-¸x
-ÔCfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+àz
+ûDfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
-	gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
+
+	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+		gui.set_adjust_mode( text_nodes[TotalNumberOfTexts], gui.ADJUST_FIT )
+	else
+		gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
+	end
+	
 	TotalNumberOfTexts = (TotalNumberOfTexts + 1)	
 end
 
@@ -12,7 +18,8 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
-
+	
+	
 	TotalNumberOfTexts = 0
 	text_nodes = {}
 	local screenY = -30
@@ -195,8 +202,7 @@ end
 
 function on_input(self, action_id, action)
 end
-#data/gui_script/AboutGUI.gui_script¹4LJ $=data/gui_script/AboutGUI.gui_script½ 	 
-1}4	  4
+#data/gui_script/AboutGUI.gui_scriptº5LJ $=data/gui_script/AboutGUI.gui_script¾ 	 BŽ4	  4
  4 74 7  '  >  >9
 	4	 7		4
   4 6
@@ -204,11 +210,15 @@ end
 4 7   > =	4	 7		4
   4 6
 
-4 7   > =	4	 7		4
+4 7   > =	4	 7				
+ T	€4	 7				 T		€4	 7		4
   4 6
 
-4 7	>	4	 	 	5	 G  ADJUST_STRETCHset_adjust_modeset_colorset_scalevector3
-vmathnew_text_nodeguiTotalNumberOfTextstext_nodestext  2screenX  2screenY  2scaleX  2scaleY  2scaleZ  2red  2green  2blue  2 Ý(  @î‚	—4  7% % >4  7% % >) : '  5 2  5 'âÿ4	 %
+4 7>	T	€4	 7		4
+  4 6
+
+4 7>	4	 	 	5	 G  ADJUST_STRETCHADJUST_FITset_adjust_modeiOSAndroidsystem_namesysinfoset_colorset_scalevector3
+vmathnew_text_nodeguiTotalNumberOfTextstext_nodestext  CscreenX  CscreenY  CscaleX  CscaleY  CscaleZ  Cred  Cgreen  Cblue  C Ý(  @î‚˜4  7% % >4  7% % >) : '  5 2  5 'âÿ4	 %
  '" ( ( ' '	 '
  '  >
 4	 % '´  ' ' ' '	 '
@@ -333,25 +343,14 @@ vmathnew_text_nodeguiTotalNumberOfTextstext_nodes
 4	 %? '´  ( ' ' '	 '
  '  >
 G  4A 110% By Team ''www.FallenAngelSoftware.com''!#- Apple iPad Air Gen1 Tablet -iOS Version Tested On:- EKEN Tablet -- ASUS Nexus 7 Tablet -*- Samsung Galaxy S7 Edge SmartPhone -Android Version Tested On:- Opera -- Google Chrome -- Mozilla Firefox -- Microsoft Edge -!Genuine Windows 10 Pro 64BitHTML5 Version Tested On:(www.GoldWave.com)''GoldWave''Audio Edited In:#(www.NeoSoftware.com/NPW.html)''NeoPaint''Graphics Edited In:''D.J. Fading Twilight''Lead Music/Effects Artist:(www.OshiBobo.com)''Oshi Bobo''Support Graphic Artist:Lead Graphic Artist:%''Neo's Kiss'' G.U.I. System By:''sven''''Vincent''''Mattias_Hedberg''''Pkeod''''britzl''''carlfredriknybergbro''''Erik_Angelin''''sicher''''andres.strangequest''''Mathias_Westerdahl''Support Game Programmers:Lead Game Tester:Lead Game Programmer:Lead Game Designer:Original Game Concept By:Video Game Directed By:''The Fallen Angel''4Defold ''Maxima 3.5'' 2-D Video Game Engine By:(www.Defold.com))''Defold'' Cross-Platform 2-D EngineVideo Game Made With:(www.Kubuntu.org)-Genuine Kubuntu 18.04 64Bit L.T.S. LinuxGame Made On:"(www.FallenAngelSoftware.com)6Copyright 2018, By Team ''Fallen Angel Software''''Red Light Racer''TMLoadStafTextLinetext_nodesTotalNumberOfTextsactiveshow_level_select#acquire_input_focus.	postmsg(Í™³ææÌ™ÿ<‹®…žŠŽÿÍ™³ææÌ¹ÿÈ¹½”Ü¨¸ÿµæÌ™™³¦ÿçÌ™³³æ¬ÿ÷Ñðúáõ‘ÿ¿”Üž
-¸½´ÿ€€ ÿ€çÌ™³³æŒÿ
-
-
-
-
-
-
-
-
-
-
- !!!!!!!!!!!#$$$$$$$$$$$%&&&&&&&&&&&()))))))))))*+++++++++++-.........../000000000002333333333334555555555557888888888889:::::::::::<===========>???????????@AAAAAAAAAAABCCCCCCCCCCCDEEEEEEEEEEEFGGGGGGGGGGGHIIIIIIIIIIIJKKKKKKKKKKKLMMMMMMMMMMMNOOOOOOOOOOOPQQQQQQQQQQQSTTTTTTTTTTTUVVVVVVVVVVVXYYYYYYYYYYYZ[[[[[[[[[[[]^^^^^^^^^^^_```````````abbbbbbbbbbbdeeeeeeeeeeefgggggggggggijjjjjjjjjjjklllllllllllmnnnnnnnnnnnpqqqqqqqqqqqrssssssssssstuuuuuuuuuuuwxxxxxxxxxxxyzzzzzzzzzzz{|||||||||||}~~~~~~~~~~~€€€€€€€€€€€‚‚‚‚‚‚‚‚‚‚‚„……………………………†‡‡‡‡‡‡‡‡‡‡‡ˆ‰‰‰‰‰‰‰‰‰‰‰Š‹‹‹‹‹‹‹‹‹‹‹ŒŽ‘‘‘‘‘‘‘‘‘‘‘’•–––––––––––—self  ïscreenY Ý Š 
-  *R¢
+¸½´ÿ€€ ÿ€çÌ™³³æŒÿ											           !"""""""""""$%%%%%%%%%%%&''''''''''')***********+,,,,,,,,,,,.///////////011111111111344444444444566666666666899999999999:;;;;;;;;;;;=>>>>>>>>>>>?@@@@@@@@@@@ABBBBBBBBBBBCDDDDDDDDDDDEFFFFFFFFFFFGHHHHHHHHHHHIJJJJJJJJJJJKLLLLLLLLLLLMNNNNNNNNNNNOPPPPPPPPPPPQRRRRRRRRRRRTUUUUUUUUUUUVWWWWWWWWWWWYZZZZZZZZZZZ[\\\\\\\\\\\^___________`aaaaaaaaaaabcccccccccccefffffffffffghhhhhhhhhhhjkkkkkkkkkkklmmmmmmmmmmmnoooooooooooqrrrrrrrrrrrstttttttttttuvvvvvvvvvvvxyyyyyyyyyyyz{{{{{{{{{{{|}}}}}}}}}}}~€‚ƒƒƒƒƒƒƒƒƒƒƒ…†††††††††††‡ˆˆˆˆˆˆˆˆˆˆˆ‰ŠŠŠŠŠŠŠŠŠŠŠ‹ŒŒŒŒŒŒŒŒŒŒŒ‘’’’’’’’’’’’“–———————————˜self  ïscreenY Ý Š 
+  *R©
 4  % > T€4 74 4 7' ' '	 > =T€4  % > T€4 7	%
  % >) : T€4  % > T€4 7	%
  % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_selectvector3
 vmathButtonClickedset_scaleguiResetButtonScale	hash
 self  +message_id  +message  +sender  + º  
-7c®'  4   ' I$€4 74 6>5 	 T€4 74 64 7'	"4
+7cµ'  4   ' I$€4 74 6>5 	 T€4 74 64 7'	"4
  7
 
 
@@ -362,5 +361,5 @@ self  +message_id  +message  +sender  + º  
 
 
 '  > =KÜ4 74 4   6>7'™ T€' 5	 G  ScreenFadeStatusyvector3
-vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + -    ÂG  self  action_id  action   y  
-  Ä1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine  	¬¢À®ÃÂÃ  " 
+vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + -    ÉG  self  action_id  action   y  
+  Ë1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine §³©ÇµÊÉÊ  " 
