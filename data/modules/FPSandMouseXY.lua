@@ -27,7 +27,9 @@ function M.UpdateFPSandMouseXY()
 		FPS_FrameCount = 0
 	end
 
-	label.set_text(   "#MouseXY", "FPS=" .. tostring(FPS_Average) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )	
+	if (SecretCode[0] == 1 and SecretCode[1] == 0 and SecretCode[2] == 1 and SecretCode[3] == 0) then
+		label.set_text(   "#MouseXY", "FPS=" .. tostring(FPS_Average) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )	
+	end
 end
 
 return M

@@ -31,11 +31,18 @@ function init(self)
 	
 	screenY = (screenY - 100)
 	LoadStafTextLine("Game Made On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
-	screenY = (screenY - 30)
-	LoadStafTextLine("Genuine Kubuntu 18.04 64Bit L.T.S. Linux", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
-	screenY = (screenY - 30)
-	LoadStafTextLine("(www.Kubuntu.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-		
+	if (sysinfo.system_name == "iOS") then
+		screenY = (screenY - 30)
+		LoadStafTextLine("Genuine Apple MacOS", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
+		screenY = (screenY - 30)
+		LoadStafTextLine("(www.Apple.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	else
+		screenY = (screenY - 30)
+		LoadStafTextLine("Genuine Kubuntu 18.04 64Bit L.T.S. Linux", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
+		screenY = (screenY - 30)
+		LoadStafTextLine("(www.Kubuntu.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	end
+				
 	screenY = (screenY - 100)
 	LoadStafTextLine("Video Game Made With:", 180, screenY, 0.8, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
