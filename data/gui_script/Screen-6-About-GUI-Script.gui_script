@@ -95,7 +95,9 @@ function init(self)
 	LoadStafTextLine("''Vincent''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("''sven''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-
+	screenY = (screenY - 30)
+	LoadStafTextLine("''uso_''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	
 	screenY = (screenY - 100)
 	LoadStafTextLine("''Neo's Kiss'' G.U.I. System By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
@@ -163,7 +165,9 @@ function init(self)
 										
 	
 	screenY = ( screenY - (640/2) )
-	LoadStafTextLine("A 110% By Team ''www.FallenAngelSoftware.com''!", 180, screenY, 0.6, 1.0, 1.0, 1.0, 1.0, 0.0)		
+	LoadStafTextLine("A 110% By Team ''Fallen Angel Software''!", 180, screenY, 0.75, 1.0, 1.0, 1.0, 1.0, 0.0)		
+	screenY = ( screenY - 30 )
+	LoadStafTextLine("(www.FallenAngelSoftware.com)", 180, screenY, 0.95, 1.0, 1.0, 1.0, 1.0, 1.0)		
 end
 
 function on_message(self, message_id, message, sender)

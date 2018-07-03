@@ -148,6 +148,126 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "SecretCodeOneText"
+  component: "/data/labels/SecretCodeOneText.label"
+  position {
+    x: 55.0
+    y: 240.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeOne"
+  component: "/data/labels/SecretCodeOne.label"
+  position {
+    x: 305.0
+    y: 240.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeTwoText"
+  component: "/data/labels/SecretCodeTwoText.label"
+  position {
+    x: 55.0
+    y: 190.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeTwo"
+  component: "/data/labels/SecretCodeTwo.label"
+  position {
+    x: 305.0
+    y: 190.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeThree"
+  component: "/data/labels/SecretCodeThree.label"
+  position {
+    x: 305.0
+    y: 140.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeThreeText"
+  component: "/data/labels/SecretCodeThreeText.label"
+  position {
+    x: 55.0
+    y: 140.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeFourText"
+  component: "/data/labels/SecretCodeFourText.label"
+  position {
+    x: 55.0
+    y: 90.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "SecretCodeFour"
+  component: "/data/labels/SecretCodeFour.label"
+  position {
+    x: 305.0
+    y: 90.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "BG"
   type: "sprite"
@@ -230,6 +350,26 @@ embedded_components {
 }
 embedded_components {
   id: "LineMidde2"
+  type: "sprite"
+  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  "default_animation: \"ScreenLine\"\n"
+  "material: \"/builtins/materials/sprite.material\"\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  ""
+  position {
+    x: 180.0
+    y: 275.0
+    z: 0.25
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "LineMidde"
   type: "sprite"
   data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
   "default_animation: \"ScreenLine\"\n"

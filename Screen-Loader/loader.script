@@ -119,6 +119,12 @@ function init(self)
         end  
     end
 
+    SecretCode = {}
+    SecretCode[0] = 0
+    SecretCode[1] = 0
+    SecretCode[2] = 0
+    SecretCode[3] = 0
+
     msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
     
     sound.set_group_gain("music", MusicVolume)

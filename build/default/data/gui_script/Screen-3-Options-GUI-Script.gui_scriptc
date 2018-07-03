@@ -1,6 +1,6 @@
 
-Í–
-¨Vfunction init(self)
+óê
+¼‡function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
@@ -26,6 +26,14 @@
 		gui.set_position( node, vmath.vector3(180, 510, 1) )
 	elseif (ArrowsSelectedByKeyboard == 2) then
 		gui.set_position( node, vmath.vector3(180, 430, 1) )
+	elseif (ArrowsSelectedByKeyboard == 3) then
+		gui.set_position( node, vmath.vector3(180, 240, 1) )
+	elseif (ArrowsSelectedByKeyboard == 4) then
+		gui.set_position( node, vmath.vector3(180, 190, 1) )
+	elseif (ArrowsSelectedByKeyboard == 5) then
+		gui.set_position( node, vmath.vector3(180, 140, 1) )
+	elseif (ArrowsSelectedByKeyboard == 6) then
+		gui.set_position( node, vmath.vector3(180, 90, 1) )
 	end
 	
 	if (MusicVolume == 1.0) then
@@ -59,6 +67,11 @@
 	elseif (GameMode == 0) then
 		label.set_text("#OptionsGameMode", "Child")
 	end
+
+	label.set_text("#SecretCodeOne", SecretCode[0])
+	label.set_text("#SecretCodeTwo", SecretCode[1])
+	label.set_text("#SecretCodeThree", SecretCode[2])
+	label.set_text("#SecretCodeFour", SecretCode[3])
 end
 
 function on_message(self, message_id, message, sender)
@@ -83,6 +96,14 @@ function on_input(self, action_id, action)
 			node = gui.get_node("SelectorLeft1")
 		elseif (ArrowsSelectedByKeyboard == 2) then
 			node = gui.get_node("SelectorLeft2")
+		elseif (ArrowsSelectedByKeyboard == 3) then
+			node = gui.get_node("SelectorLeft3")
+		elseif (ArrowsSelectedByKeyboard == 4) then
+			node = gui.get_node("SelectorLeft4")
+		elseif (ArrowsSelectedByKeyboard == 5) then
+			node = gui.get_node("SelectorLeft5")
+		elseif (ArrowsSelectedByKeyboard == 6) then
+			node = gui.get_node("SelectorLeft6")
 		end
 
 		if (ScreenFadeAlpha == 0) then
@@ -112,6 +133,30 @@ function on_input(self, action_id, action)
 				else
 					GameMode = 2
 				end
+			elseif (ArrowsSelectedByKeyboard == 3) then
+				if (SecretCode[0] > 0) then
+					SecretCode[0] = (SecretCode[0] - 1)
+				else
+					SecretCode[0] = 9
+				end
+			elseif (ArrowsSelectedByKeyboard == 4) then
+				if (SecretCode[1] > 0) then
+					SecretCode[1] = (SecretCode[1] - 1)
+				else
+					SecretCode[1] = 9
+				end
+			elseif (ArrowsSelectedByKeyboard == 5) then
+				if (SecretCode[2] > 0) then
+					SecretCode[2] = (SecretCode[2] - 1)
+				else
+					SecretCode[2] = 9
+				end
+			elseif (ArrowsSelectedByKeyboard == 6) then
+				if (SecretCode[3] > 0) then
+					SecretCode[3] = (SecretCode[3] - 1)
+				else
+					SecretCode[3] = 9
+				end
 			end
 								
 			NextScreen = 3
@@ -128,6 +173,14 @@ function on_input(self, action_id, action)
 			node = gui.get_node("SelectorRight1")
 		elseif (ArrowsSelectedByKeyboard == 2) then
 			node = gui.get_node("SelectorRight2")
+		elseif (ArrowsSelectedByKeyboard == 3) then
+			node = gui.get_node("SelectorRight3")
+		elseif (ArrowsSelectedByKeyboard == 4) then
+			node = gui.get_node("SelectorRight4")
+		elseif (ArrowsSelectedByKeyboard == 5) then
+			node = gui.get_node("SelectorRight5")
+		elseif (ArrowsSelectedByKeyboard == 6) then
+			node = gui.get_node("SelectorRight6")
 		end
 		
 		if (ScreenFadeAlpha == 0) then
@@ -157,8 +210,32 @@ function on_input(self, action_id, action)
 				else
 					GameMode = 0
 				end
+			elseif (ArrowsSelectedByKeyboard == 3) then
+				if (SecretCode[0] < 9) then
+					SecretCode[0] = (SecretCode[0] + 1)
+				else
+					SecretCode[0] = 0
+				end
+			elseif (ArrowsSelectedByKeyboard == 4) then
+				if (SecretCode[1] < 9) then
+					SecretCode[1] = (SecretCode[1] + 1)
+				else
+					SecretCode[1] = 0
+				end
+			elseif (ArrowsSelectedByKeyboard == 5) then
+				if (SecretCode[2] < 9) then
+					SecretCode[2] = (SecretCode[2] + 1)
+				else
+					SecretCode[2] = 0
+				end
+			elseif (ArrowsSelectedByKeyboard == 6) then
+				if (SecretCode[3] < 9) then
+					SecretCode[3] = (SecretCode[3] + 1)
+				else
+					SecretCode[3] = 0
+				end
 			end
-			
+						
 			NextScreen = 3
 			ScreenFadeStatus = 1
 
@@ -170,7 +247,7 @@ function on_input(self, action_id, action)
 		if (ArrowsSelectedByKeyboard > 0) then
 			ArrowsSelectedByKeyboard = (ArrowsSelectedByKeyboard - 1)
 		else
-			ArrowsSelectedByKeyboard = 2
+			ArrowsSelectedByKeyboard = 6
 		end
 
 		node = gui.get_node("SelectorLine")
@@ -180,15 +257,23 @@ function on_input(self, action_id, action)
 			gui.set_position( node, vmath.vector3(180, 510, 1) )
 		elseif (ArrowsSelectedByKeyboard == 2) then
 			gui.set_position( node, vmath.vector3(180, 430, 1) )
+		elseif (ArrowsSelectedByKeyboard == 3) then
+			gui.set_position( node, vmath.vector3(180, 240, 1) )
+		elseif (ArrowsSelectedByKeyboard == 4) then
+			gui.set_position( node, vmath.vector3(180, 190, 1) )
+		elseif (ArrowsSelectedByKeyboard == 5) then
+			gui.set_position( node, vmath.vector3(180, 140, 1) )
+		elseif (ArrowsSelectedByKeyboard == 6) then
+			gui.set_position( node, vmath.vector3(180, 90, 1) )
 		end
-
+		
 		msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})			
 					
 		DelayAllUserInput = 15
 	end
 
 	if ( DelayAllUserInput == 0 and action_id == hash("DOWN") ) then
-		if (ArrowsSelectedByKeyboard < 2) then
+		if (ArrowsSelectedByKeyboard < 6) then
 			ArrowsSelectedByKeyboard = (ArrowsSelectedByKeyboard + 1)
 		else
 			ArrowsSelectedByKeyboard = 0
@@ -201,8 +286,16 @@ function on_input(self, action_id, action)
 			gui.set_position( node, vmath.vector3(180, 510, 1) )
 		elseif (ArrowsSelectedByKeyboard == 2) then
 			gui.set_position( node, vmath.vector3(180, 430, 1) )
+		elseif (ArrowsSelectedByKeyboard == 3) then
+			gui.set_position( node, vmath.vector3(180, 240, 1) )
+		elseif (ArrowsSelectedByKeyboard == 4) then
+			gui.set_position( node, vmath.vector3(180, 190, 1) )
+		elseif (ArrowsSelectedByKeyboard == 5) then
+			gui.set_position( node, vmath.vector3(180, 140, 1) )
+		elseif (ArrowsSelectedByKeyboard == 6) then
+			gui.set_position( node, vmath.vector3(180, 90, 1) )
 		end
-
+		
 		msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 		
 		DelayAllUserInput = 15
@@ -232,13 +325,21 @@ function on_input(self, action_id, action)
 	if action_id == hash("ClickGUI") then
 		local nodeSelectorLine
 		
-		for index = 0, 2 do
+		for index = 0, 6 do
 			if (index == 0) then
 				node = gui.get_node("SelectorLeft")
 			elseif (index == 1) then
 				node = gui.get_node("SelectorLeft1")
 			elseif (index == 2) then
 				node = gui.get_node("SelectorLeft2")
+			elseif (index == 3) then
+				node = gui.get_node("SelectorLeft3")
+			elseif (index == 4) then
+				node = gui.get_node("SelectorLeft4")
+			elseif (index == 5) then
+				node = gui.get_node("SelectorLeft5")
+			elseif (index == 6) then
+				node = gui.get_node("SelectorLeft6")
 			end
 			if gui.pick_node(node, action.x, action.y) then
 				if (ScreenFadeAlpha == 0) then
@@ -270,6 +371,30 @@ function on_input(self, action_id, action)
 						else
 							GameMode = 2
 						end
+					elseif (ArrowsSelectedByKeyboard == 3) then
+						if (SecretCode[0] > 0) then
+							SecretCode[0] = (SecretCode[0] - 1)
+						else
+							SecretCode[0] = 9
+						end
+					elseif (ArrowsSelectedByKeyboard == 4) then
+						if (SecretCode[1] > 0) then
+							SecretCode[1] = (SecretCode[1] - 1)
+						else
+							SecretCode[1] = 9
+						end
+					elseif (ArrowsSelectedByKeyboard == 5) then
+						if (SecretCode[2] > 0) then
+							SecretCode[2] = (SecretCode[2] - 1)
+						else
+							SecretCode[2] = 9
+						end
+					elseif (ArrowsSelectedByKeyboard == 6) then
+						if (SecretCode[3] > 0) then
+							SecretCode[3] = (SecretCode[3] - 1)
+						else
+							SecretCode[3] = 9
+						end
 					end
 
 					nodeSelectorLine = gui.get_node("SelectorLine")
@@ -279,8 +404,16 @@ function on_input(self, action_id, action)
 						gui.set_position( nodeSelectorLine, vmath.vector3(180, 510, 1) )
 					elseif (ArrowsSelectedByKeyboard == 2) then
 						gui.set_position( nodeSelectorLine, vmath.vector3(180, 430, 1) )
+					elseif (ArrowsSelectedByKeyboard == 3) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 240, 1) )
+					elseif (ArrowsSelectedByKeyboard == 4) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 190, 1) )
+					elseif (ArrowsSelectedByKeyboard == 5) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 140, 1) )
+					elseif (ArrowsSelectedByKeyboard == 6) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 90, 1) )
 					end
-										
+															
 					NextScreen = 3
 					ScreenFadeStatus = 1
 
@@ -289,13 +422,21 @@ function on_input(self, action_id, action)
 			end
 		end
 				
-		for index = 0, 2 do
+		for index = 0, 6 do
 			if (index == 0) then
 				node = gui.get_node("SelectorRight")
 			elseif (index == 1) then
 				node = gui.get_node("SelectorRight1")
 			elseif (index == 2) then
 				node = gui.get_node("SelectorRight2")
+			elseif (index == 3) then
+				node = gui.get_node("SelectorRight3")
+			elseif (index == 4) then
+				node = gui.get_node("SelectorRight4")
+			elseif (index == 5) then
+				node = gui.get_node("SelectorRight5")
+			elseif (index == 6) then
+				node = gui.get_node("SelectorRight6")
 			end
 			if gui.pick_node(node, action.x, action.y) then
 				if (ScreenFadeAlpha == 0) then
@@ -327,6 +468,30 @@ function on_input(self, action_id, action)
 						else
 							GameMode = 0
 						end
+					elseif (ArrowsSelectedByKeyboard == 3) then
+						if (SecretCode[0] < 9) then
+							SecretCode[0] = (SecretCode[0] + 1)
+						else
+							SecretCode[0] = 0
+						end
+					elseif (ArrowsSelectedByKeyboard == 4) then
+						if (SecretCode[1] < 9) then
+							SecretCode[1] = (SecretCode[1] + 1)
+						else
+							SecretCode[1] = 0
+						end
+					elseif (ArrowsSelectedByKeyboard == 5) then
+						if (SecretCode[2] < 9) then
+							SecretCode[2] = (SecretCode[2] + 1)
+						else
+							SecretCode[2] = 0
+						end
+					elseif (ArrowsSelectedByKeyboard == 6) then
+						if (SecretCode[3] < 9) then
+							SecretCode[3] = (SecretCode[3] + 1)
+						else
+							SecretCode[3] = 0
+						end
 					end
 
 					nodeSelectorLine = gui.get_node("SelectorLine")
@@ -336,8 +501,16 @@ function on_input(self, action_id, action)
 						gui.set_position( nodeSelectorLine, vmath.vector3(180, 510, 1) )
 					elseif (ArrowsSelectedByKeyboard == 2) then
 						gui.set_position( nodeSelectorLine, vmath.vector3(180, 430, 1) )
+					elseif (ArrowsSelectedByKeyboard == 3) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 240, 1) )
+					elseif (ArrowsSelectedByKeyboard == 4) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 190, 1) )
+					elseif (ArrowsSelectedByKeyboard == 5) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 140, 1) )
+					elseif (ArrowsSelectedByKeyboard == 6) then
+						gui.set_position( nodeSelectorLine, vmath.vector3(180, 90, 1) )
 					end
-
+					
 					NextScreen = 3
 					ScreenFadeStatus = 1
 
@@ -361,13 +534,15 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-end6data/gui_script/Screen-3-Options-GUI-Script.gui_scriptç?LJ 7=data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÔ  -Ÿ;4  7% % >4  7% % >) : 4 7	 T^€4 7
- TZ€4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 7% >4 	  T€4 7 4 7'´ '0' > =T€4 	 T€4 7 4 7'´ 'ş' > =T€4 	 T
-€4 7 4 7'´ '®' > =4 	 T€4 7%  %! >T#€4 	 T€4 7%  %" >T€4 	 T€4 7%  %# >T€4 	 T€4 7%  %$ >T€4 	  T€4 7%  %% >4& 	 T€4 7%' %! >T#€4& 	 T€4 7%' %" >T€4& 	 T€4 7%' %# >T€4& 	 T€4 7%' %$ >T€4& 	  T€4 7%' %% >4( 	 T€4 7%) %* >T€4( 	 T€4 7%) %+ >T€4( 	  T€4 7%) %, >G  
+end6data/gui_script/Screen-3-Options-GUI-Script.gui_scriptøbLJ 7=data/gui_script/Screen-3-Options-GUI-Script.gui_script²  2
+ŞïH4  7% % >4  7% % >) : 4 7	 T^€4 7
+ TZ€4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 74 7% >4 7>4 7% >4 	  T€4 7 4 7'´ '0' > =TS€4 	 T€4 7 4 7'´ 'ş' > =TE€4 	 T€4 7 4 7'´ '®' > =T7€4 	 T€4 7 4 7'´ 'ğ ' > =T)€4 	 T€4 7 4 7'´ '¾ ' > =T€4 	 T€4 7 4 7'´ 'Œ ' > =T€4 	 T
+€4 7 4 7'´ 'Z ' > =4 	 T€4 7%  %! >T#€4 	 T€4 7%  %" >T€4 	 T€4 7%  %# >T€4 		 T€4 7%  %$ >T€4 	  T€4 7%  %% >4& 	 T€4 7%' %! >T#€4& 	 T€4 7%' %" >T€4& 	 T€4 7%' %# >T€4& 		 T€4 7%' %$ >T€4& 	  T€4 7%' %% >4( 	 T€4 7%) %* >T€4( 	 T€4 7%) %+ >T€4( 	  T€4 7%) %, >4 7%- 4. 8 >4 7%/ 4. 8>4 7%0 4. 8>4 7%1 4. 8>G  #SecretCodeFour#SecretCodeThree#SecretCodeTwoSecretCode#SecretCodeOne
 Child	Teen
 Adult#OptionsGameModeGameMode#OptionsEffectsVolumeEffectsVolume0%25%50%75%	100%#OptionsMusicVolumeset_text
 labelMusicVolumevector3
-vmathset_positionArrowsSelectedByKeyboardButtonBackButtonSelectorRightButtonSelectorLeftSelectorRight2SelectorRight1SelectorRightSelectorLeft2SelectorLeft1SelectorLeftADJUST_FITSelectorLineget_nodeset_adjust_modeguiiOSAndroidsystem_namesysinfoactiveshow_level_select#acquire_input_focus.	postmsg €€ ÿ€€€ÿ€€Àş									
+vmathset_positionArrowsSelectedByKeyboardButtonBackButtonSelectorRightButtonSelectorLeftSelectorRight2SelectorRight1SelectorRightSelectorLeft2SelectorLeft1SelectorLeftADJUST_FITSelectorLineget_nodeset_adjust_modeguiiOSAndroidsystem_namesysinfoactiveshow_level_select#acquire_input_focus.	postmsg 
+€€ ÿ€€€ÿ€€Àş									
 
 
 
@@ -376,64 +551,153 @@ vmathset_positionArrowsSelectedByKeyboardButtonBackButtonSelectorRightButto
 
 
 
-   !!!!!!"""######$$$%%%%%((())))))***++++++,,,------...//////0001111144455555566677777788899999;self  node sœ ş  	 B>4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   ş-  ?ÊüH¢)  'ÿÿ5  4 % > Tw€4 	  T€4 7% > T€4 	 T€4 7% > T€4 	 T€4 7% > 4	 	  TZ€4 7
- 4 7( ( '	 > =4 7% % 3 4 :>4 	  T€4 '   T€4 5 T€' 5 4 7% 4 >4 7% % 3 4 :>T(€4 	 T€4 '   T€4 5 T€' 5 4 7% 4 >4 7% % 3 4 :>T€4 	 T
-€4 '   T€4 5 T€' 5 ' 5 ' 5 5  4 % > Tw€4 	  T€4 7%  > T€4 	 T€4 7%! > T€4 	 T€4 7%" > 4	 	  TZ€4 7
- 4 7( ( '	 > =4 7% % 3# 4 :>4 	  T€4 '  T€4 5 T€'  5 4 7% % 3$ 4 :>4 7% 4 >T(€4 	 T€4 '  T€4 5 T€'  5 4 7% 4 >4 7% % 3% 4 :>T€4 	 T
-€4 '  T€4 5 T€'  5 ' 5 ' 5 5  4& 	  TG€4 %' > TB€4 '   T€4 5 T€' 5 4 7%( > 4 	  T€4 7) 4 7'´ '0'	 > =T€4 	 T€4 7) 4 7'´ 'ş'	 > =T€4 	 T
-€4 7) 4 7'´ '®'	 > =4 7% % 3* 4 :>' 5& 4& 	  TG€4 %+ > TB€4 '  T€4 5 T€'  5 4 7%( > 4 	  T€4 7) 4 7'´ '0'	 > =T€4 	 T€4 7) 4 7'´ 'ş'	 > =T€4 	 T
-€4 7) 4 7'´ '®'	 > =4 7% % 3, 4 :>' 5& 'ÿÿ5- 4 %. > T$€4/ 	  T€4 7%0 > 4	 	  T€4 7
- 4 7( ( '	 > =4 7%1 % 32 4 :>' 5 ' 5 5- ( 53 4 %4 > TŠ)  '  ' ' I¬€	  T	€4	 7		%
- >		 T	€	 T	€4	 7		%
- >		 T	€	 T	€4	 7		%
- >		 4	 7	5	
- 7677>	 	 T
-Œ€4		 		  T	‰€4	 7	
-	
- 4 7( ( ' > =	4	 7		%
- % 38 4 :>	5 4	 		  T	€4	 '
+   !!!!!!!!!!$$$%%%%%%&&&''''''((())))))***++++++,,,-----00011111122233333344455555566677777788899999<<<======>>>??????@@@AAAAADDDDDDEEEEEEFFFFFFGGGGGGHself  ßnode sì ş  	 BK4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   ±M  H
+ÒŒUÂ)  'ÿÿ5  4 % > Tã€4 	  T€4 7% > T5€4 	 T€4 7% > T,€4 	 T€4 7% > T#€4 	 T€4 7%	 > T€4 	 T€4 7%
+ > T€4 	 T€4 7% > T€4 	 T€4 7% > 4 	  T¢€4 7 4 7( ( '	 > =4 7% % 3 4 :>4 	  T€4 '   T€4 5 T€' 5 4 7% 4 >4 7% % 3 4 :>Tp€4 	 T€4 '   T€4 5 T€' 5 4 7% 4 >4 7% % 3 4 :>TU€4 	 T€4  '   T€4  5  TJ€' 5  TG€4 	 T€4! 8 '   T€4! 4! 8 ; T9€4! '	 ; T5€4 	 T€4! 8'   T€4! 4! 8;T'€4! '	 ;T#€4 	 T€4! 8'   T€4! 4! 8;T€4! '	 ;T€4 	 T€4! 8'   T€4! 4! 8;T€4! '	 ;' 5" ' 5# 5  4 %$ > Tã€4 	  T€4 7%% > T5€4 	 T€4 7%& > T,€4 	 T€4 7%' > T#€4 	 T€4 7%( > T€4 	 T€4 7%) > T€4 	 T€4 7%* > T€4 	 T€4 7%+ > 4 	  T¢€4 7 4 7( ( '	 > =4 7% % 3, 4 :>4 	  T€4 '  T€4 5 T€'  5 4 7% % 3- 4 :>4 7% 4 >Tp€4 	 T€4 '  T€4 5 T€'  5 4 7% 4 >4 7% % 3. 4 :>TU€4 	 T€4  '  T€4  5  TJ€'  5  TG€4 	 T€4! 8 '	  T€4! 4! 8 ; T9€4! '  ; T5€4 	 T€4! 8'	  T€4! 4! 8;T'€4! '  ;T#€4 	 T€4! 8'	  T€4! 4! 8;T€4! '  ;T€4 	 T€4! 8'	  T€4! 4! 8;T€4! '  ;' 5" ' 5# 5  4/ 	  T€4 %0 > Tz€4 '   T€4 5 T€' 5 4 7%1 > 4 	  T€4 72 4 7'´ '0'	 > =TS€4 	 T€4 72 4 7'´ 'ş'	 > =TE€4 	 T€4 72 4 7'´ '®'	 > =T7€4 	 T€4 72 4 7'´ 'ğ '	 > =T)€4 	 T€4 72 4 7'´ '¾ '	 > =T€4 	 T€4 72 4 7'´ 'Œ '	 > =T€4 	 T
+€4 72 4 7'´ 'Z '	 > =4 7% % 33 4 :>' 5/ 4/ 	  T€4 %4 > Tz€4 '  T€4 5 T€'  5 4 7%1 > 4 	  T€4 72 4 7'´ '0'	 > =TS€4 	 T€4 72 4 7'´ 'ş'	 > =TE€4 	 T€4 72 4 7'´ '®'	 > =T7€4 	 T€4 72 4 7'´ 'ğ '	 > =T)€4 	 T€4 72 4 7'´ '¾ '	 > =T€4 	 T€4 72 4 7'´ 'Œ '	 > =T€4 	 T
+€4 72 4 7'´ 'Z '	 > =4 7% % 35 4 :>' 5/ 'ÿÿ56 4 %7 > T$€48 	  T€4 7%9 > 4 	  T€4 7 4 7( ( '	 > =4 7%: % 3; 4 :>' 5" ' 5# 56 (	 5< 4 %= > TÊ‚)  '  ' ' IL	  T	€4	 7		%
+ >		 T	/€	 T	€4	 7		%
+ >		 T	'€	 T	€4	 7		%
+ >		 T	€	 T	€4	 7		%
+	 >		 T	€	 T	€4	 7		%
+
+ >		 T	€	 T	€4	 7		%
+ >		 T	€	 T	€4	 7		%
+ >		 4	 7	>	
+ 7?7@>	 	 T
+4	 		  T		4	 7		
+ 4 7( ( ' > =	4	 7		%
+ % 3A 4 :>	5 4	 		  T	€4	 '
   
-	 T	€4	 		5	 T	€'	 5	 4	 7		%
- % 39 4 :>	4	 7		%
- 4 >	T	(€4	 		 T	€4	 '
+	 T	€4	 		5	 T	€'	 5	 4	 7		%
+ % 3B 4 :>	4	 7		%
+ 4 >	T	p€4	 		 T	€4	 '
   
-	 T	€4	 		5	 T	€'	 5	 4	 7		%
- 4 >	4	 7		%
- % 3: 4 :>	T	€4	 		 T	
-€4	 '
+	 T	€4	 		5	 T	€'	 5	 4	 7		%
+ 4 >	4	 7		%
+ % 3C 4 :>	T	U€4	 		 T	€4	  '
   
-	 T	€4	 		5	 T	€'	 5	 4	 7		%
-( >		 4	 		  T	€4	 7	)	
- 4 7'´ '0' > =	T	€4	 		 T	€4	 7	)	
- 4 7'´ 'ş' > =	T	€4	 		 T	
-€4	 7	)	
- 4 7'´ '®' > =	'	 5	 '	 5	 5  KT'  ' ' I¬€	  T	€4	 7		%
-  >		 T	€	 T	€4	 7		%
-! >		 T	€	 T	€4	 7		%
-" >		 4	 7	5	
- 7677>	 	 T
-Œ€4		 		  T	‰€4	 7	
-	
- 4 7( ( ' > =	4	 7		%
- % 3; 4 :>	5 4	 		  T	€4	 '
+	 T	€4	  		5	  T	J€'	 5	  T	G€4	 		 T	€4	! 8	 	'
+  
+	 T	€4	! 4
+! 8
+ 
+
+
+;
+ 	T	9€4	! '
+	 ;
+ 	T	5€4	 		 T	€4	! 8		'
+  
+	 T	€4	! 4
+! 8
+
+
+
+;
+	T	'€4	! '
+	 ;
+	T	#€4	 		 T	€4	! 8		'
+  
+	 T	€4	! 4
+! 8
+
+
+
+;
+	T	€4	! '
+	 ;
+	T	€4	 		 T	€4	! 8		'
+  
+	 T	€4	! 4
+! 8
+
+
+
+;
+	T	€4	! '
+	 ;
+	4	 7		%
+1 >		 4	 		  T	€4	 7	2	
+ 4 7'´ '0' > =	T	S€4	 		 T	€4	 7	2	
+ 4 7'´ 'ş' > =	T	E€4	 		 T	€4	 7	2	
+ 4 7'´ '®' > =	T	7€4	 		 T	€4	 7	2	
+ 4 7'´ 'ğ ' > =	T	)€4	 		 T	€4	 7	2	
+ 4 7'´ '¾ ' > =	T	€4	 		 T	€4	 7	2	
+ 4 7'´ 'Œ ' > =	T	€4	 		 T	
+€4	 7	2	
+ 4 7'´ 'Z ' > =	'	 5	" '	 5	# 5  K´~'  ' ' IL	  T	€4	 7		%
+% >		 T	/€	 T	€4	 7		%
+& >		 T	'€	 T	€4	 7		%
+' >		 T	€	 T	€4	 7		%
+( >		 T	€	 T	€4	 7		%
+) >		 T	€	 T	€4	 7		%
+* >		 T	€	 T	€4	 7		%
++ >		 4	 7	>	
+ 7?7@>	 	 T
+4	 		  T		4	 7		
+ 4 7( ( ' > =	4	 7		%
+ % 3D 4 :>	5 4	 		  T	€4	 '
  	
- T	€4	 		5	 T	€'	  5	 4	 7		%
- % 3< 4 :>	4	 7		%
- 4 >	T	(€4	 		 T	€4	 '
+ T	€4	 		5	 T	€'	  5	 4	 7		%
+ % 3E 4 :>	4	 7		%
+ 4 >	T	p€4	 		 T	€4	 '
  	
- T	€4	 		5	 T	€'	  5	 4	 7		%
- 4 >	4	 7		%
- % 3= 4 :>	T	€4	 		 T	
-€4	 '
+ T	€4	 		5	 T	€'	  5	 4	 7		%
+ 4 >	4	 7		%
+ % 3F 4 :>	T	U€4	 		 T	€4	  '
  	
- T	€4	 		5	 T	€'	  5	 4	 7		%
-( >		 4	 		  T	€4	 7	)	
- 4 7'´ '0' > =	T	€4	 		 T	€4	 7	)	
- 4 7'´ 'ş' > =	T	€4	 		 T	
-€4	 7	)	
- 4 7'´ '®' > =	'	 5	 '	 5	 5  KT4 7%0 > 4 75 7677>  T€4	 	  T€4 7
- 4 7( (	 '
- > =4 7%1 % 3> 4	 :	>' 5 ' 5 5- ( 53 G   
+ T	€4	  		5	  T	J€'	  5	  T	G€4	 		 T	€4	! 8	 	'
+	 	
+ T	€4	! 4
+! 8
+ 
+
+
+;
+ 	T	9€4	! '
+  ;
+ 	T	5€4	 		 T	€4	! 8		'
+	 	
+ T	€4	! 4
+! 8
+
+
+
+;
+	T	'€4	! '
+  ;
+	T	#€4	 		 T	€4	! 8		'
+	 	
+ T	€4	! 4
+! 8
+
+
+
+;
+	T	€4	! '
+  ;
+	T	€4	 		 T	€4	! 8		'
+	 	
+ T	€4	! 4
+! 8
+
+
+
+;
+	T	€4	! '
+  ;
+	4	 7		%
+1 >		 4	 		  T	€4	 7	2	
+ 4 7'´ '0' > =	T	S€4	 		 T	€4	 7	2	
+ 4 7'´ 'ş' > =	T	E€4	 		 T	€4	 7	2	
+ 4 7'´ '®' > =	T	7€4	 		 T	€4	 7	2	
+ 4 7'´ 'ğ ' > =	T	)€4	 		 T	€4	 7	2	
+ 4 7'´ '¾ ' > =	T	€4	 		 T	€4	 7	2	
+ 4 7'´ 'Œ ' > =	T	€4	 		 T	
+€4	 7	2	
+ 4 7'´ 'Z ' > =	'	 5	" '	 5	# 5  K´~4 7%9 > 4 7> 7?7@>  T€4 	  T€4 7 4 7( (	 '
+ > =4 7%: % 3G 4	 :	>' 5" ' 5# 56 (	 5< G   
 delay  
 delay  
 delay  
@@ -446,14 +710,19 @@ delay 	DOWN 
 delay set_positionSelectorLineUPDelayAllUserInput 
 delay  
 delay  
-delay SelectorRight2SelectorRight1SelectorRight
-RIGHTScreenFadeStatusNextScreenGameMode 
+delay SelectorRight6SelectorRight5SelectorRight4SelectorRight3SelectorRight2SelectorRight1SelectorRight
+RIGHTScreenFadeStatusNextScreenSecretCodeGameMode 
 delay effects 
 delay Audio#Title-BGM
 musicset_group_gain
 soundMusicVolume	gainEffectsVolume 
 delay play_soundAudio#MenuMove	postmsgvector3
-vmathset_scaleScreenFadeAlphaSelectorLeft2SelectorLeft1SelectorLeftget_nodeguiArrowsSelectedByKeyboard	LEFT	hashArrowClicked çÌ™³³æ¬ÿ€€Àş€€€ÿ                    	 	 	 	 	 	 
+vmathset_scaleScreenFadeAlphaSelectorLeft6SelectorLeft5SelectorLeft4SelectorLeft3SelectorLeft2SelectorLeft1SelectorLeftget_nodeguiArrowsSelectedByKeyboard	LEFT	hashArrowClicked 
+çÌ™³³æ¬ÿ€€Àş€€€ÿ                    	 	 	 	 	 	 
  
  
-                                                                   ! ! ! ! ! " " " " " " " " " # # # $ $ $ $ % % % % ' ' + + , , . 2 2 2 2 2 3 3 3 4 4 4 4 4 4 5 5 5 6 6 6 6 6 6 7 7 7 8 8 8 8 8 ; ; ; < < < < < < < < < < > > > > > > > > @ @ @ A A A A B B B B D D F F F F F F F F G G G G G G H H H I I I I J J J J L L N N N N N O O O O O O O O O P P P Q Q Q Q R R R R T T X X Y Y [ _ _ _ _ _ _ _ _ ` ` ` ` a a a a c c f f f f f g g g h h h h h h h h h h h i i i j j j j j j j j j j j k k k l l l l l l l l l l o o o o o o o o q q t t t t t t t t u u u u v v v v x x { { { { { | | | } } } } } } } } } } } ~ ~ ~            € € €           „ „ „ „ „ „ „ „ † † ‰ ‰ ‹ ‹ ‹ ‹ ‹ Œ Œ Œ         ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ “ “ “ “ “ “ “ “ • • — — ™ š š      Ÿ ¡ ¡ ¡ ¡ ¢ ¢ £ £ £ £ £ £ ¤ ¤ ¥ ¥ ¥ ¥ ¥ ¥ ¦ ¦ § § § § § © © © © © © © © ª ª ª « « « « « « « « « « ­ ­ ­ ­ ­ ­ ­ ­ ¯ ± ± ± ² ² ² ² ³ ³ ³ ³ µ µ · · · · · · · · ¸ ¸ ¸ ¸ ¸ ¸ ¹ ¹ ¹ º º º º » » » » ½ ½ ¿ ¿ ¿ ¿ ¿ À À À À À À À À À Á Á Á Â Â Â Â Ã Ã Ã Ã Å Å É É É É É Ê Ê Ê Ë Ë Ë Ë Ë Ë Ë Ë Ë Ë Ë Ì Ì Ì Í Í Í Í Í Í Í Í Í Í Í Î Î Î Ï Ï Ï Ï Ï Ï Ï Ï Ï Ï Ò Ò Ó Ó Õ ¡ Ú Ú Ú Ú Û Û Ü Ü Ü Ü Ü Ü İ İ Ş Ş Ş Ş Ş Ş ß ß à à à à à â â â â â â â â ã ã ã ä ä ä ä ä ä ä ä ä ä æ æ æ æ æ æ æ æ è ê ê ê ë ë ë ë ì ì ì ì î î ğ ğ ğ ğ ğ ğ ğ ğ ñ ñ ñ ñ ñ ñ ò ò ò ó ó ó ó ô ô ô ô ö ö ø ø ø ø ø ù ù ù ù ù ù ù ù ù ú ú ú û û û û ü ü ü ü ş ş Ú "self  Ëaction_id  Ëaction  Ënode ÉnodeSelectorLine ¿‰­ ­ ­index «¯­ ­ ­index « R    ê1   5  1  5  1  5  G  on_input on_message 	init <  F > jH j  " 
+                                                                            ! ! ! ! ! " " " " " " " " " # # # $ $ $ $ % % % % ' ' ) ) ) ) ) * * * * * * * * * + + + , , , , - - - - / / 0 1 1 1 2 2 2 2 2 3 3 3 3 3 3 5 5 5 6 7 7 7 8 8 8 8 8 9 9 9 9 9 9 ; ; ; < = = = > > > > > ? ? ? ? ? ? A A A B C C C D D D D D E E E E E E G G G K K L L N R R R R R S S S T T T T T T U U U V V V V V V W W W X X X X X X Y Y Y Z Z Z Z Z Z [ [ [ \ \ \ \ \ \ ] ] ] ^ ^ ^ ^ ^ ^ _ _ _ ` ` ` ` ` c c c d d d d d d d d d d f f f f f f f f h h h i i i i j j j j l l n n n n n n n n o o o o o o p p p q q q q r r r r t t v v v v v w w w w w w w w w x x x y y y y z z z z | | } ~ ~ ~      € € € € € € ‚ ‚ ‚ ƒ „ „ „ … … … … … † † † † † † ˆ ˆ ˆ ‰ Š Š Š ‹ ‹ ‹ ‹ ‹ Œ Œ Œ Œ Œ Œ        ‘ ‘ ‘ ‘ ‘ ’ ’ ’ ’ ’ ’ ” ” ” ˜ ˜ ™ ™ › Ÿ Ÿ Ÿ Ÿ Ÿ Ÿ Ÿ Ÿ         ¡ ¡ ¡ ¡ £ £ ¦ ¦ ¦ ¦ ¦ § § § ¨ ¨ ¨ ¨ ¨ ¨ ¨ ¨ ¨ ¨ ¨ © © © ª ª ª ª ª ª ª ª ª ª ª « « « ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ­ ­ ­ ® ® ® ® ® ® ® ® ® ® ® ¯ ¯ ¯ ° ° ° ° ° ° ° ° ° ° ° ± ± ± ² ² ² ² ² ² ² ² ² ² ² ³ ³ ³ ´ ´ ´ ´ ´ ´ ´ ´ ´ ´ · · · · · · · · ¹ ¹ ¼ ¼ ¼ ¼ ¼ ¼ ¼ ¼ ½ ½ ½ ½ ¾ ¾ ¾ ¾ À À Ã Ã Ã Ã Ã Ä Ä Ä Å Å Å Å Å Å Å Å Å Å Å Æ Æ Æ Ç Ç Ç Ç Ç Ç Ç Ç Ç Ç Ç È È È É É É É É É É É É É É Ê Ê Ê Ë Ë Ë Ë Ë Ë Ë Ë Ë Ë Ë Ì Ì Ì Í Í Í Í Í Í Í Í Í Í Í Î Î Î Ï Ï Ï Ï Ï Ï Ï Ï Ï Ï Ï Ğ Ğ Ğ Ñ Ñ Ñ Ñ Ñ Ñ Ñ Ñ Ñ Ñ Ô Ô Ô Ô Ô Ô Ô Ô Ö Ö Ù Ù Û Û Û Û Û Ü Ü Ü İ İ İ İ İ à à à á á á á á á á á á á ã ã ã ã ã ã ã ã å å ç ç é ê ê î î î î î ï ñ ñ ñ ñ ò ò ó ó ó ó ó ó ô ô õ õ õ õ õ õ ö ö ÷ ÷ ÷ ÷ ÷ ÷ ø ø ù ù ù ù ù ù ú ú û û û û û û ü ü ı ı ı ı ı ı ş ş ÿ ÿ ÿ ÿ ÿ 			
+
+
+
+     !!!!!!###$%%%&&&&&'''''')))*+++,,,,,------///01112222233333355599999:::;;;;;;;;;;;<<<===========>>>???????????@@@AAAAAAAAAAABBBCCCCCCCCCCCDDDEEEEEEEEEEEFFFGGGGGGGGGGJJKKMñ RRRRSSTTTTTTUUVVVVVVWWXXXXXXYYZZZZZZ[[\\\\\\]]^^^^^^__`````bbbbbbbbcccddddddddddffffffffhjjjkkkkllllnnppppppppqqqqqqrrrssssttttvvxxxxxyyyyyyyyyzzz{{{{||||~~€€€‚‚‚‚‚‚„„„…†††‡‡‡‡‡ˆˆˆˆˆˆŠŠŠ‹ŒŒŒ‘’’’“““““””””””–––ššššš›››œœœœœœœœœœœŸŸŸ           ¡¡¡¢¢¢¢¢¢¢¢¢¢¢£££¤¤¤¤¤¤¤¤¤¤¤¥¥¥¦¦¦¦¦¦¦¦¦¦¦§§§¨¨¨¨¨¨¨¨¨¨««¬¬®R³³³³³´´´´´´´´µµµ¶¶¶¶¶¶¶¶¶¶¸¸¸¸¸¸¸¸ºº»»½¾¾Âself  Óaction_id  Óaction  Ónode ÑnodeSelectorLine ‡ÉÍ Í Íindex ËÏÍ Í Íindex Ë R    —1   5  1  5  1  5  G  on_input on_message 	init I  S K U   " 
