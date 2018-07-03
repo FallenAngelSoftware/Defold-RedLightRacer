@@ -68,7 +68,7 @@ function update(self)
 
 	-- default is stretch projection. copy from builtins and change for different projection
 	--
-	if (sysinfo.system_name == "Android" or sysinfo.system_name == "iOS") then
+	if (Platform == Platform_Android or Platform == Platform_iOS) then
 		render.set_projection(stretch_projection(-1, 2))
 	else
 		render.set_projection(fixed_fit_projection(-1, 2))
@@ -88,7 +88,7 @@ function update(self)
 	render.draw(self.text_pred)
 	render.disable_state(render.STATE_STENCIL_TEST)
 
-	if (sysinfo.system_name == "Android" or sysinfo.system_name == "iOS") then
+	if (Platform == Platform_Android or Platform == Platform_iOS) then
 		render.set_projection(stretch_projection(-1, 2))
 	else
 		render.set_projection(fixed_fit_projection(-1, 2))

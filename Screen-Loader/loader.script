@@ -24,7 +24,25 @@ function init(self)
     NextProxyLoaded = false
     
     ScreenDisplayTimer = 0
+
+    Platform_HTMLfive = 1
+    Platform_Android = 2
+    Platform_iOS = 3
+    Platform = 0
+
+    local info = sys.get_sys_info()
+    if (info.system_name == "Android") then
+        Platform = Platform_Android
+    elseif (info.system_name == "iPhone OS") then
+        Platform = Platform_iOS
+    else -- if (info.system_name == "HTML5") then
+        Platform = Platform_HTMLfive
+    end
     
+--Platform = Platform_iOS
+
+    SecretCodesUnlocked = 0
+
     ButtonClicked = -1
     ScreenFadeAlphaHalf = 0.5
 

@@ -38,6 +38,12 @@ function update(self, dt)
 			ScreenFadeAlpha = 1
 		end
 		
+		if (CurrentScreen == 1) then
+			SecretCodesUnlocked  = (SecretCodesUnlocked + 1)
+		end
+
+print(SecretCodesUnlocked)
+				
 		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 
 		if ScreenFadeAlpha == 1 then

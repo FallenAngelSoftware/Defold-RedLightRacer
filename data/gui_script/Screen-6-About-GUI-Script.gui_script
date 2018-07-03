@@ -3,7 +3,7 @@ function LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, g
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
 
-	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+	if (Platform == Platform_HTMLfive) then
 		gui.set_adjust_mode( text_nodes[TotalNumberOfTexts], gui.ADJUST_FIT )
 	else
 		gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
@@ -31,7 +31,7 @@ function init(self)
 	
 	screenY = (screenY - 100)
 	LoadStafTextLine("Game Made On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
-	if (sysinfo.system_name == "iOS") then
+	if (Platform == Platform_iOS) then
 		screenY = (screenY - 30)
 		LoadStafTextLine("Genuine Apple MacOS", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
 		screenY = (screenY - 30)

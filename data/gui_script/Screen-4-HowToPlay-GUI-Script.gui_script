@@ -2,8 +2,8 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
-
-	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+		
+	if (Platform == Platform_HTMLfive) then
 		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
@@ -21,6 +21,13 @@ function on_message(self, message_id, message, sender)
 end
 
 function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not neede
+
+	if (Platform == Platform_Android or Platform == Platform_iOS) then
+		gui.set_position(  gui.get_node("ButtonSelectorLeft"), vmath.vector3( -999, -999, 1 )  )
+		gui.set_position(  gui.get_node("ButtonSelectorRight"), vmath.vector3( -999, -999, 1 )  )
+	end			
 end
 
 function on_input(self, action_id, action)

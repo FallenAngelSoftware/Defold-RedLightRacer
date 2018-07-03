@@ -3,7 +3,7 @@ function init(self)
 	msg.post("#", "show_level_select")
 	self.active = false
 
-	if (sysinfo.system_name ~= "Android" and sysinfo.system_name ~= "iOS") then
+	if (Platform == Platform_HTMLfive) then
 		gui.set_adjust_mode( gui.get_node("ButtonSTART"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("ButtonOptions"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("ButtonHowToPlay"), gui.ADJUST_FIT )
@@ -15,12 +15,12 @@ function init(self)
 		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
 
 		gui.set_adjust_mode( gui.get_node("SpeakerON"), gui.ADJUST_FIT )
+	end
 
-		if (MusicVolume == 0 and EffectsVolume == 0) then
-			gui.set_texture( gui.get_node("SpeakerON"), "SpeakerOFF" )
-		else
-			gui.set_texture( gui.get_node("SpeakerON"), "SpeakerON" )
-		end			
+	if (MusicVolume == 0 and EffectsVolume == 0) then
+		gui.set_texture( gui.get_node("SpeakerON"), "SpeakerOFF" )
+	else
+		gui.set_texture( gui.get_node("SpeakerON"), "SpeakerON" )
 	end
 end
 
@@ -41,6 +41,11 @@ function update(self, dt)
 	if (DelayAllUserInput == 10) then
 		gui.set_scale( gui.get_node("SpeakerON"), vmath.vector3(1, 1, 1) )
 	end	
+	
+	if (Platform == Platform_Android or Platform == Platform_iOS) then
+		gui.set_position(  gui.get_node("ButtonSelectorLeft"), vmath.vector3( -999, -999, 1 )  )
+		gui.set_position(  gui.get_node("ButtonSelectorRight"), vmath.vector3( -999, -999, 1 )  )
+	end			
 end
 
 function on_input(self, action_id, action)
@@ -79,8 +84,8 @@ function on_input(self, action_id, action)
 				ScreenFadeStatus = 1
 				ScreenFadeAlpha = 0
 			else
-				info = sys.get_sys_info()
-				if (info.system_name == "HTML5") then
+--				info = sys.get_sys_info()
+				if (Platform == Platform_HTMLfive) then
 					sys.open_url("http://www.fallenangelsoftware.com")
 				else
 					msg.post("@system:", "exit", {code = 0})
@@ -229,8 +234,8 @@ function on_input(self, action_id, action)
 				ButtonClicked = node
 				ScreenFadeAlphaHalf = 0.5
 				
-				info = sys.get_sys_info()
-				if (info.system_name == "HTML5") then
+--				info = sys.get_sys_info()
+				if (Platform == Platform_HTML5five) then
 					sys.open_url("http://www.fallenangelsoftware.com")
 				else
 					msg.post("@system:", "exit", {code = 0})
