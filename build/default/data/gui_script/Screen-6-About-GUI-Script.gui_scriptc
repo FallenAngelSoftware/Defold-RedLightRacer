@@ -1,6 +1,6 @@
 
-ƒƒ
- Jfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+Ðˆ
+ÇMfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
@@ -132,6 +132,15 @@ function init(self)
 	LoadStafTextLine("(www.FreeMusicArchive.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 
 	screenY = (screenY - 100)
+	LoadStafTextLine("Title Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Walking on Clouds''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+		screenY = (screenY - 30)
+	LoadStafTextLine("''AudioBinger''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+		
+	screenY = (screenY - 100)
 	LoadStafTextLine("Sound Effects Compiled/Edited By:", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
@@ -219,7 +228,7 @@ end
 function on_input(self, action_id, action)
 
 end
-4data/gui_script/Screen-6-About-GUI-Script.gui_script§8LJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
+4data/gui_script/Screen-6-About-GUI-Script.gui_scriptÍ:LJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
  4 74 7  '  >  >9
 	4	 7		4
   4 6
@@ -238,7 +247,7 @@ end
   4 6
 
 4 7>	4	 	 	5	 G  ADJUST_STRETCHADJUST_FITset_adjust_modePlatform_HTMLfivePlatformset_colorset_scalevector3
-vmathnew_text_nodeguiTotalNumberOfTextstext_nodestext  ?screenX  ?screenY  ?scaleX  ?scaleY  ?scaleZ  ?red  ?green  ?blue  ? Ý,  GÇÛª4  7% % >4  7% % >) : '  5 2  5 'âÿ4	 %
+vmathnew_text_nodeguiTotalNumberOfTextstext_nodestext  ?screenX  ?screenY  ?scaleX  ?scaleY  ?scaleZ  ?red  ?green  ?blue  ? ƒ/  K÷‹³4  7% % >4  7% % >) : '  5 2  5 'âÿ4	 %
  '" ( ( ' '	 '
  '  >
 4	 % '´  ' ' ' '	 '
@@ -331,55 +340,63 @@ vmathnew_text_nodeguiTotalNumberOfTextstext_nodes
  ' >
 4	 %2 '´  ' ' ' '	 '
  ' >
-4	 %3 '´  ( ' ' '	 '
+4	 %3 '´  ' ' ' '	 '
+ '  >
+4	 %4 '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
+4	 %6 '´  ' ' ' '	 '
+ ' >
+4	 %7 '´  ( ' ' '	 '
  '  >
 4	 % '´  ' ' ' '	 '
  ' >
-4	 %4 '´  ' ' ' '	 '
+4	 %8 '´  ' ' ' '	 '
  '  >
-4	 %5 '´  ' ' ' '	 '
- ' >
-4	 %6 '´  ( ' ' '	 '
- ' >
-4	 %7 '´  ' ' ' '	 '
- '  >
-4	 %8 '´  ' ' ' '	 '
- ' >
 4	 %9 '´  ' ' ' '	 '
  ' >
-4	 %: '´  ' ' ' '	 '
- '  >
-4	 %; '´  (	 ' ' '	 '
+4	 %: '´  ( ' ' '	 '
  ' >
+4	 %; '´  ' ' ' '	 '
+ '  >
 4	 %< '´  ' ' ' '	 '
  ' >
 4	 %= '´  ' ' ' '	 '
  ' >
-4	 %> '´  ' ' ' '	 '
- ' >
-4	 %? '´  ' ' ' '	 '
- ' >
-4	 %@ '´  ' ' ' '	 '
+4	 %> '´  ' ' ' '	 '
  '  >
-4	 %A '´  (
- ' ' '	 '
+4	 %? '´  (	 ' ' '	 '
+ ' >
+4	 %@ '´  ' ' ' '	 '
+ ' >
+4	 %A '´  ' ' ' '	 '
  ' >
 4	 %B '´  ' ' ' '	 '
  ' >
 4	 %C '´  ' ' ' '	 '
  ' >
-4	 %D '´  ' ' ' '	 '
+4	 %D '´  ' ' ' '	 '
  '  >
-4	 %E '´  ' ' ' '	 '
+4	 %E '´  (
+ ' ' '	 '
  ' >
-4	 %F '´  (
+4	 %F '´  ' ' ' '	 '
+ ' >
+4	 %G '´  ' ' ' '	 '
+ ' >
+4	 %H '´  ' ' ' '	 '
+ '  >
+4	 %I '´  ' ' ' '	 '
+ ' >
+4	 %J '´  (
  ' ' '	 '
  '  >
 4	 % '´  ( ' ' '	 '
  ' >
-G  .A 110% By Team ''Fallen Angel Software''!#- Apple iPad Air Gen1 Tablet -iOS Version Tested On:- EKEN Tablet -- ASUS Nexus 7 Tablet -*- Samsung Galaxy S7 Edge SmartPhone -Android Version Tested On:- Opera -- Google Chrome -- Mozilla Firefox -- Microsoft Edge -!Genuine Windows 10 Pro 64BitHTML5 Version Tested On:(www.GoldWave.com)''GoldWave''Audio Edited In:#(www.NeoSoftware.com/NPW.html)''NeoPaint''Graphics Edited In:&Sound Effects Compiled/Edited By:(www.FreeMusicArchive.org)Free Music ArchiveMusic By:(www.OshiBobo.com)''Oshi Bobo''Support Graphic Artist:Lead Graphic Artist:%''Neo's Kiss'' G.U.I. System By:''uso_''''sven''''Vincent''''Mattias_Hedberg''''Pkeod''''britzl''''carlfredriknybergbro''''Erik_Angelin''''sicher''''andres.strangequest''''Mathias_Westerdahl''Support Game Programmers:Lead Game Tester:Lead Game Programmer:Lead Game Designer:Original Game Concept By:Video Game Directed By:''The Fallen Angel''(''Maxima 3.5'' Engine Framework By:(www.Defold.com))''Defold'' Cross-Platform 2-D EngineVideo Game Made With:(www.Kubuntu.org)-Genuine Kubuntu 18.04 64Bit L.T.S. Linux(www.Apple.com)Genuine Apple MacOSPlatform_iOSPlatformGame Made On:"(www.FallenAngelSoftware.com)6Copyright 2018, By Team ''Fallen Angel Software''''Red Light Racer''TMLoadStafTextLinetext_nodesTotalNumberOfTextsactiveshow_level_select#acquire_input_focus.	postmsg(Í™³ææÌ™ÿ<‹®…žŠŽÿÍ™³ææÌ¹ÿÈ¹½”Ü¨¸ÿµæÌ™™³¦ÿçÌ™³³æ¬ÿ¿”Üž
-¸½´ÿ€€ ÿ€											           !"""""""""""#$$$$$$$$$$$&'''''''''''()))))))))))+,,,,,,,,,,,-...........011111111111233333333333566666666666788888888888:;;;;;;;;;;;<===========?@@@@@@@@@@@ABBBBBBBBBBBDEEEEEEEEEEEFGGGGGGGGGGGHIIIIIIIIIIIJKKKKKKKKKKKLMMMMMMMMMMMNOOOOOOOOOOOPQQQQQQQQQQQRSSSSSSSSSSSTUUUUUUUUUUUVWWWWWWWWWWWXYYYYYYYYYYYZ[[[[[[[[[[[]^^^^^^^^^^^_```````````bcccccccccccdeeeeeeeeeeeghhhhhhhhhhhijjjjjjjjjjjklllllllllllnooooooooooopqqqqqqqqqqqrsssssssssssuvvvvvvvvvvvwxxxxxxxxxxxz{{{{{{{{{{{|}}}}}}}}}}}~‚‚‚‚‚‚‚‚‚‚‚ƒ„„„„„„„„„„„…†††††††††††ˆ‰‰‰‰‰‰‰‰‰‰‰Š‹‹‹‹‹‹‹‹‹‹‹ŒŽ‘‘‘‘‘‘‘‘‘‘‘’“““““““““““•–––––––––––—˜˜˜˜˜˜˜˜˜˜˜™ššššššššššš›œœœœœœœœœœœŸ           ¡¢¢¢¢¢¢¢¢¢¢¢£¦§§§§§§§§§§§¨©©©©©©©©©©©ªself  ÈscreenY ¶ ÿ  	 B»4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   º  
-7cÅ'  4   ' I$€4 74 6>5 	 T€4 74 64 7'	"4
+G  .A 110% By Team ''Fallen Angel Software''!#- Apple iPad Air Gen1 Tablet -iOS Version Tested On:- EKEN Tablet -- ASUS Nexus 7 Tablet -*- Samsung Galaxy S7 Edge SmartPhone -Android Version Tested On:- Opera -- Google Chrome -- Mozilla Firefox -- Microsoft Edge -!Genuine Windows 10 Pro 64BitHTML5 Version Tested On:(www.GoldWave.com)''GoldWave''Audio Edited In:#(www.NeoSoftware.com/NPW.html)''NeoPaint''Graphics Edited In:&Sound Effects Compiled/Edited By:''AudioBinger''By:''Walking on Clouds''Title Music(www.FreeMusicArchive.org)Free Music ArchiveMusic By:(www.OshiBobo.com)''Oshi Bobo''Support Graphic Artist:Lead Graphic Artist:%''Neo's Kiss'' G.U.I. System By:''uso_''''sven''''Vincent''''Mattias_Hedberg''''Pkeod''''britzl''''carlfredriknybergbro''''Erik_Angelin''''sicher''''andres.strangequest''''Mathias_Westerdahl''Support Game Programmers:Lead Game Tester:Lead Game Programmer:Lead Game Designer:Original Game Concept By:Video Game Directed By:''The Fallen Angel''(''Maxima 3.5'' Engine Framework By:(www.Defold.com))''Defold'' Cross-Platform 2-D EngineVideo Game Made With:(www.Kubuntu.org)-Genuine Kubuntu 18.04 64Bit L.T.S. Linux(www.Apple.com)Genuine Apple MacOSPlatform_iOSPlatformGame Made On:"(www.FallenAngelSoftware.com)6Copyright 2018, By Team ''Fallen Angel Software''''Red Light Racer''TMLoadStafTextLinetext_nodesTotalNumberOfTextsactiveshow_level_select#acquire_input_focus.	postmsg(Í™³ææÌ™ÿ<‹®…žŠŽÿÍ™³ææÌ¹ÿÈ¹½”Ü¨¸ÿµæÌ™™³¦ÿçÌ™³³æ¬ÿ¿”Üž
+¸½´ÿ€€ ÿ€											           !"""""""""""#$$$$$$$$$$$&'''''''''''()))))))))))+,,,,,,,,,,,-...........011111111111233333333333566666666666788888888888:;;;;;;;;;;;<===========?@@@@@@@@@@@ABBBBBBBBBBBDEEEEEEEEEEEFGGGGGGGGGGGHIIIIIIIIIIIJKKKKKKKKKKKLMMMMMMMMMMMNOOOOOOOOOOOPQQQQQQQQQQQRSSSSSSSSSSSTUUUUUUUUUUUVWWWWWWWWWWWXYYYYYYYYYYYZ[[[[[[[[[[[]^^^^^^^^^^^_```````````bcccccccccccdeeeeeeeeeeeghhhhhhhhhhhijjjjjjjjjjjklllllllllllnooooooooooopqqqqqqqqqqqrsssssssssssuvvvvvvvvvvvwxxxxxxxxxxxyzzzzzzzzzzz{|||||||||||~€ƒ„„„„„„„„„„„…†††††††††††‡ˆˆˆˆˆˆˆˆˆˆˆŠ‹‹‹‹‹‹‹‹‹‹‹ŒŽ‘’’’’’’’’’’’“”””””””””””•–––––––––––—˜˜˜˜˜˜˜˜˜˜˜™ššššššššššš›œœœœœœœœœœœžŸŸŸŸŸŸŸŸŸŸŸ ¡¡¡¡¡¡¡¡¡¡¡¢£££££££££££¤¥¥¥¥¥¥¥¥¥¥¥¦¨©©©©©©©©©©©ª«««««««««««¬¯°°°°°°°°°°°±²²²²²²²²²²²³self  øscreenY æ ÿ  	 BÄ4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   º  
+7cÎ'  4   ' I$€4 74 6>5 	 T€4 74 64 7'	"4
  7
 
 
@@ -390,5 +407,5 @@ vmathnew_text_nodeguiTotalNumberOfTextstext_nodes
 
 
 '  > =KÜ4 74 4   6>7'™ T€' 5	 G  ScreenFadeStatusyvector3
-vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + -    ÙG  self  action_id  action   y  
-  Ü1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine ¹Ã»×ÅÛÙÛ  " 
+vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + -    âG  self  action_id  action   y  
+  å1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine ÂÌÄàÎäâä  " 

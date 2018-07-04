@@ -2,7 +2,7 @@ function init(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
 
-	CurrentScreen = 5
+	CurrentScreen = 7
 	NextScreen = 2
 	
 	ScreenFadeStatus = 0
@@ -10,12 +10,10 @@ function init(self)
 		
 	label.set_text("#ScreenHeader", "MUSIC TEST")
 
-	if (GameMode == 0) then
-		label.set_text("#HighScoresGameMode", "CHILD MODE")
-	elseif (GameMode == 1) then
-		label.set_text("#HighScoresGameMode", "TEEN MODE")
-	elseif (GameMode == 2) then
-		label.set_text("#HighScoresGameMode", "ADULT MODE")
+	if (MusicTestBGM == 0) then
+		label.set_text("#HighScoresGameMode", "B.G.M.: Title")
+		label.set_text("#MusicTitle", "''Walking on Clouds''")
+		label.set_text("#MusicArtist", "''Audiobinger''")
 	end
 		
 	ButtonSelectedByKeyboard = 0
