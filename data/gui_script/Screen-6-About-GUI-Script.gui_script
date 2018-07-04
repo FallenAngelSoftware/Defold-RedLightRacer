@@ -51,7 +51,7 @@ function init(self)
 	LoadStafTextLine("(www.Defold.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 		
 	screenY = (screenY - 100)
-	LoadStafTextLine("Defold ''Maxima 3.5'' 2-D Video Game Engine By:", 180, screenY, 0.64, 1.0, 1.0, 1.0, 1.0, 0.0)
+	LoadStafTextLine("''Maxima 3.5'' Engine Framework By:", 180, screenY, 0.8, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 
@@ -123,10 +123,17 @@ function init(self)
 	LoadStafTextLine("(www.OshiBobo.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 
 	screenY = (screenY - 100)
-	LoadStafTextLine("Lead Music/Effects Artist:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	LoadStafTextLine("Music By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
-	LoadStafTextLine("''D.J. Fading Twilight''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	LoadStafTextLine("Free Music Archive", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.FreeMusicArchive.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 
+	screenY = (screenY - 100)
+	LoadStafTextLine("Sound Effects Compiled/Edited By:", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Fallen Angel''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+		
 	screenY = (screenY - 100)
 	LoadStafTextLine("Graphics Edited In:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
