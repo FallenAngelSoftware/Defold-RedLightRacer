@@ -6,7 +6,7 @@ render = /data/render/GameRender.renderc
 shared_state = 1
 
 [project]
-title = RedLightRacer
+title = Red Light Racer
 
 [display]
 width = 360
@@ -14,4 +14,7 @@ height = 640
 
 [input]
 game_binding = /input/GameInput.input_bindingc
+
+[android]
+app_icon_192x192 = /data/sprites/RLR-Android_192x192.png
 
