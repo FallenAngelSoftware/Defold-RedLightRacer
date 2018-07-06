@@ -29,21 +29,6 @@ components {
   }
 }
 components {
-  id: "HighScoresGameMode"
-  component: "/data/labels/HighScoresGameMode.label"
-  position {
-    x: 180.0
-    y: 320.0
-    z: 0.75
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-}
-components {
   id: "Screen-7-MusicTest"
   component: "/data/gui/Screen-7-MusicTest.gui"
   position {
@@ -94,6 +79,21 @@ components {
   position {
     x: 180.0
     y: 240.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+components {
+  id: "MusicIndex"
+  component: "/data/labels/MusicIndex.label"
+  position {
+    x: 180.0
+    y: 320.0
     z: 0.0
   }
   rotation {

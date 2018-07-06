@@ -1,6 +1,6 @@
 
-ÓŽ
-¥›function init(self)
+Ø
+•œfunction init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
@@ -154,7 +154,7 @@ function on_input(self, action_id, action)
 		if (ScreenFadeAlpha == 0) then
 			gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-			msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+			msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 			
 			if (ArrowsSelectedByKeyboard == 0) then
 				if (MusicVolume > 0) then
@@ -163,7 +163,7 @@ function on_input(self, action_id, action)
 					MusicVolume = 1
 				end
 				sound.set_group_gain("music", MusicVolume)
-				msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 			elseif (ArrowsSelectedByKeyboard == 1) then
 				if (EffectsVolume > 0) then
 					EffectsVolume = (EffectsVolume - 0.25)
@@ -171,7 +171,7 @@ function on_input(self, action_id, action)
 					EffectsVolume = 1
 				end
 				sound.set_group_gain("effects", EffectsVolume)
-				msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+				msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 			elseif (ArrowsSelectedByKeyboard == 2) then
 				if (GameMode > 0) then
 					GameMode = (GameMode - 1)
@@ -231,7 +231,7 @@ function on_input(self, action_id, action)
 		if (ScreenFadeAlpha == 0) then
 			gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-			msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+			msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 			
 			if (ArrowsSelectedByKeyboard == 0) then
 				if (MusicVolume < 1) then
@@ -239,7 +239,7 @@ function on_input(self, action_id, action)
 				else
 					MusicVolume = 0
 				end
-				msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 				sound.set_group_gain("music", MusicVolume)
 			elseif (ArrowsSelectedByKeyboard == 1) then
 				if (EffectsVolume < 1) then
@@ -248,7 +248,7 @@ function on_input(self, action_id, action)
 					EffectsVolume = 0
 				end
 				sound.set_group_gain("effects", EffectsVolume)
-				msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+				msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 			elseif (ArrowsSelectedByKeyboard == 2) then
 				if (GameMode < 2) then
 					GameMode = (GameMode + 1)
@@ -318,7 +318,7 @@ function on_input(self, action_id, action)
 			gui.set_position( node, vmath.vector3(180, 90, 1) )
 		end
 		
-		msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})			
+		msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})			
 					
 		DelayAllUserInput = 15
 	end
@@ -353,7 +353,7 @@ function on_input(self, action_id, action)
 			gui.set_position( node, vmath.vector3(180, 90, 1) )
 		end
 		
-		msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+		msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 		
 		DelayAllUserInput = 15
 	end
@@ -368,7 +368,7 @@ function on_input(self, action_id, action)
 		if (ScreenFadeAlpha == 0) then
 			gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-			msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 							
 			NextScreen = 2
 
@@ -402,7 +402,7 @@ function on_input(self, action_id, action)
 				if (ScreenFadeAlpha == 0) then
 					gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-					msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+					msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 
 					ArrowsSelectedByKeyboard = index
 					
@@ -412,7 +412,7 @@ function on_input(self, action_id, action)
 						else
 							MusicVolume = 1
 						end
-						msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+						msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 						sound.set_group_gain("music", MusicVolume)
 					elseif (ArrowsSelectedByKeyboard == 1) then
 						if (EffectsVolume > 0) then
@@ -421,7 +421,7 @@ function on_input(self, action_id, action)
 							EffectsVolume = 1
 						end
 						sound.set_group_gain("effects", EffectsVolume)
-						msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+						msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 					elseif (ArrowsSelectedByKeyboard == 2) then
 						if (GameMode > 0) then
 							GameMode = (GameMode - 1)
@@ -499,7 +499,7 @@ function on_input(self, action_id, action)
 				if (ScreenFadeAlpha == 0) then
 					gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-					msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+					msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 
 					ArrowsSelectedByKeyboard = index
 
@@ -509,7 +509,7 @@ function on_input(self, action_id, action)
 						else
 							MusicVolume = 0
 						end
-						msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+						msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 						sound.set_group_gain("music", MusicVolume)
 					elseif (ArrowsSelectedByKeyboard == 1) then
 						if (EffectsVolume < 1) then
@@ -518,7 +518,7 @@ function on_input(self, action_id, action)
 							EffectsVolume = 0
 						end
 						sound.set_group_gain("effects", EffectsVolume)
-						msg.post("Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
+						msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
 					elseif (ArrowsSelectedByKeyboard == 2) then
 						if (GameMode < 2) then
 							GameMode = (GameMode + 1)
@@ -581,7 +581,7 @@ function on_input(self, action_id, action)
 			if (ScreenFadeAlpha == 0) then
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
-				msg.post("Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 											
 				NextScreen = 2
 				ScreenFadeStatus = 1
@@ -591,7 +591,7 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-end6data/gui_script/Screen-3-Options-GUI-Script.gui_scriptïrLJ 7=data/gui_script/Screen-3-Options-GUI-Script.gui_script„  C
+end6data/gui_script/Screen-3-Options-GUI-Script.gui_script„sLJ 7=data/gui_script/Screen-3-Options-GUI-Script.gui_script„  C
 Îàk4  7% % >4  7% % >) : 4 4  T¢€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -627,7 +627,7 @@ vmathset_positionArrowsSelectedByKeyboardButtonBackButtonSelectorRightButto
 
    !!!!!!!!!!!"""###########$$$%%%%%%%%%%%&&&'''''''''''((()))))))))),,,------...//////00011111122233333344455555888999999:::;;;;;;<<<======>>>??????@@@AAAAADDDEEEEEEFFFGGGGGGHHHIIIIILLLLLMMMMMNNNNNOOOOOQQQQQQRRRRRRSSSSSSTTTTTTVVVVVVVVWWWWWXXXXXYYYYYZZZZZ\\\\\]]]]]^^^^^_____aaaaaaaaaaaaabbbbbbbbbbbbbcccccccccccccdddddddddddddfffffffffffffggggggggggggghhhhhhhhhhhhhiiiiiiiiiiiiikself  Ïnode ·˜ þ  	 Bn4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   ¼  
  #0x4  4  T€4  4  T€4 74 7% >4 7'ü'ü' > =4 74 7%	 >4 7'ü'ü' > =G  ButtonSelectorRightvector3
-vmathButtonSelectorLeftget_nodeset_positionguiPlatform_iOSPlatform_AndroidPlatformself  $dt  $ „O  K
+vmathButtonSelectorLeftget_nodeset_positionguiPlatform_iOSPlatform_AndroidPlatformself  $dt  $ ™O  K
 îÄ‚Î)  'ÿÿ5  4 % > Tã€4 	  T€4 7% > T5€4 	 T€4 7% > T,€4 	 T€4 7% > T#€4 	 T€4 7%	 > T€4 	 T€4 7%
  > T€4 	 T€4 7% > T€4 	 T€4 7% > 4 	  T¢€4 7 4 7( ( '	 > =4 7% % 3 4 :>4 	  T€4 '   T€4 5 T€' 5 4 7% 4 >4 7% % 3 4 :>Tp€4 	 T€4 '   T€4 5 T€' 5 4 7% 4 >4 7% % 3 4 :>TU€4 	 T€4  '   T€4  5  TJ€' 5  TG€4 	 T€4! 8 '   T€4! 4! 8 ; T9€4! '	 ; T5€4 	 T€4! 8'   T€4! 4! 8;T'€4! '	 ;T#€4 	 T€4! 8'   T€4! 4! 8;T€4! '	 ;T€4 	 T€4! 8'   T€4! 4! 8;T€4! '	 ;' 5" ' 5# 5  4 %$ > Tã€4 	  T€4 7%% > T5€4 	 T€4 7%& > T,€4 	 T€4 7%' > T#€4 	 T€4 7%( > T€4 	 T€4 7%) > T€4 	 T€4 7%* > T€4 	 T€4 7%+ > 4 	  T¢€4 7 4 7( ( '	 > =4 7% % 3, 4 :>4 	  T€4 '  T€4 5 T€'  5 4 7% % 3- 4 :>4 7% 4 >Tp€4 	 T€4 '  T€4 5 T€'  5 4 7% 4 >4 7% % 3. 4 :>TU€4 	 T€4  '  T€4  5  TJ€'  5  TG€4 	 T€4! 8 '	  T€4! 4! 8 ; T9€4! '  ; T5€4 	 T€4! 8'	  T€4! 4! 8;T'€4! '  ;T#€4 	 T€4! 8'	  T€4! 4! 8;T€4! '  ;T€4 	 T€4! 8'	  T€4! 4! 8;T€4! '  ;' 5" ' 5# 5  4/ 	  T€4 %0 > Tˆ€4 '   T€4 5 T€' 5 41 'ô T
 €42 43  T€4 '  T€' 5 4 7%4 > 4 	  T€4 75 4 7'´ '0'	 > =TS€4 	 T€4 75 4 7'´ 'þ'	 > =TE€4 	 T€4 75 4 7'´ '®'	 > =T7€4 	 T€4 75 4 7'´ 'ð '	 > =T)€4 	 T€4 75 4 7'´ '¾ '	 > =T€4 	 T€4 75 4 7'´ 'Œ '	 > =T€4 	 T
@@ -782,7 +782,7 @@ delay  
 delay  
 delay  
 delay yxpick_nodeClickGUIScreenFadeAlphaHalf 
-delay Audio#MenuClickButtonBackButtonSelectedByKeyboardEnterGUIButtonClicked 
+delay level:/Audio#MenuClickButtonBackButtonSelectedByKeyboardEnterGUIButtonClicked 
 delay 	DOWN 
 delay set_positionSelectorLinePlatform_iOSPlatformSecretCodesUnlockedUPDelayAllUserInput 
 delay  
@@ -790,10 +790,10 @@ delay  
 delay SelectorRight6SelectorRight5SelectorRight4SelectorRight3SelectorRight2SelectorRight1SelectorRight
 RIGHTScreenFadeStatusNextScreenSecretCodeGameMode 
 delay effects 
-delay Audio#Title-BGM
+delay level:/Audio#Title-BGM
 musicset_group_gain
 soundMusicVolume	gainEffectsVolume 
-delay play_soundAudio#MenuMove	postmsgvector3
+delay play_soundlevel:/Audio#MenuMove	postmsgvector3
 vmathset_scaleScreenFadeAlphaSelectorLeft6SelectorLeft5SelectorLeft4SelectorLeft3SelectorLeft2SelectorLeft1SelectorLeftget_nodeguiArrowsSelectedByKeyboard	LEFT	hashArrowClicked 
 çÌ™³³æ¬ÿ€€Àþ€€€ÿ                    	 	 	 	 	 	 
  

@@ -11,7 +11,7 @@ function init(self)
 	label.set_text("#ScreenHeader", "MUSIC TEST")
 
 	if (MusicTestBGM == 0) then
-		label.set_text("#HighScoresGameMode", "B.G.M.: Title")
+		label.set_text("#MusicIndex", "B.G.M.: Title")
 		label.set_text("#MusicTitle", "''Walking on Clouds''")
 		label.set_text("#MusicArtist", "''Audiobinger''")
 	end

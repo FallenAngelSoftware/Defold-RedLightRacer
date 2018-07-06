@@ -16,7 +16,7 @@ function init(self)
 	ArrowsSelectedByKeyboard = 0
 	
 	if (PlayRedLightRacerVoice == true) then
-		msg.post("Audio#RedLightRacer", "play_sound", {delay = 0, gain = EffectsVolume})
+		msg.post("level:/Audio#RedLightRacer", "play_sound", {delay = 0, gain = EffectsVolume})
 		PlayRedLightRacerVoice = false
 	end
 	
