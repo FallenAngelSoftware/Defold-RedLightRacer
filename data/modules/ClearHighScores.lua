@@ -13,7 +13,7 @@ function M.ClearHighScores()
 		HighScoresName[i][1] = "Garry Kitchen"
 		HighScoresName[i][2] = "Andre' LaMothe"
 		HighScoresName[i][3] = "Defold Engine"
-		HighScoresName[i][4] = "D.J. Fading Twilight"
+		HighScoresName[i][4] = "Free Music Archive"
 		HighScoresName[i][5] = "Kubuntu Linux"
 		HighScoresName[i][6] = "NeoPaint"
 		HighScoresName[i][7] = "GoldWave"

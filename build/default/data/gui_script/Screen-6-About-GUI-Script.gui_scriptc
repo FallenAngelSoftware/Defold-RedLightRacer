@@ -1,6 +1,6 @@
 
-Ðˆ
-ÇMfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+†Ë
+Únfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
@@ -138,8 +138,99 @@ function init(self)
 	screenY = (screenY - 30)
 	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 		screenY = (screenY - 30)
-	LoadStafTextLine("''AudioBinger''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-		
+	LoadStafTextLine("AudioBinger", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Cutscene Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Rolling''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("BoxCat Games", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Levels 1-2 Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Horizon Ending''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Soft and Furious", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Levels 3-4 Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Albatross v2''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Computer Music All-stars", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Levels 5-6 Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Time To Run''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Dexter Britain", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Levels 7-8 Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''The Tea Party''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Dexter Britain", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Levels 9-10 Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Shake me Baby''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Soft and Furious", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("New High Score Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''OST 02 Splash''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("sawsquarenoise", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Win!(Child) Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''May the chords be with you''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Computer Music All-stars", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Win!(Teen) Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''No Pain, No Gain''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("The Kyoto Connection", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("Win!(Adult) Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Mountain Top''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Audiobanger", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+						
+	
 	screenY = (screenY - 100)
 	LoadStafTextLine("Sound Effects Compiled/Edited By:", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
@@ -228,7 +319,7 @@ end
 function on_input(self, action_id, action)
 
 end
-4data/gui_script/Screen-6-About-GUI-Script.gui_scriptÍ:LJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
+4data/gui_script/Screen-6-About-GUI-Script.gui_scriptð[LJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
  4 74 7  '  >  >9
 	4	 7		4
   4 6
@@ -247,7 +338,8 @@ end
   4 6
 
 4 7>	4	 	 	5	 G  ADJUST_STRETCHADJUST_FITset_adjust_modePlatform_HTMLfivePlatformset_colorset_scalevector3
-vmathnew_text_nodeguiTotalNumberOfTextstext_nodestext  ?screenX  ?screenY  ?scaleX  ?scaleY  ?scaleZ  ?red  ?green  ?blue  ? ƒ/  K÷‹³4  7% % >4  7% % >) : '  5 2  5 'âÿ4	 %
+vmathnew_text_nodeguiTotalNumberOfTextstext_nodestext  ?screenX  ?screenY  ?scaleX  ?scaleY  ?scaleZ  ?red  ?green  ?blue  ? šP  f×
+ÂŽ4  7% % >4  7% % >) : '  5 2  5 'âÿ4	 %
  '" ( ( ' '	 '
  '  >
 4	 % '´  ' ' ' '	 '
@@ -348,55 +440,138 @@ vmathnew_text_nodeguiTotalNumberOfTextstext_nodes
  ' >
 4	 %6 '´  ' ' ' '	 '
  ' >
-4	 %7 '´  ( ' ' '	 '
+4	 %7 '´  ' ' ' '	 '
  '  >
-4	 % '´  ' ' ' '	 '
+4	 %8 '´  ' ' ' '	 '
  ' >
-4	 %8 '´  ' ' ' '	 '
- '  >
+4	 %5 '´  ' ' ' '	 '
+ ' >
 4	 %9 '´  ' ' ' '	 '
  ' >
-4	 %: '´  ( ' ' '	 '
- ' >
-4	 %; '´  ' ' ' '	 '
+4	 %: '´  ' ' ' '	 '
  '  >
+4	 %; '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
 4	 %< '´  ' ' ' '	 '
  ' >
-4	 %= '´  ' ' ' '	 '
- ' >
-4	 %> '´  ' ' ' '	 '
+4	 %= '´  ' ' ' '	 '
  '  >
-4	 %? '´  (	 ' ' '	 '
+4	 %> '´  ' ' ' '	 '
  ' >
-4	 %@ '´  ' ' ' '	 '
+4	 %5 '´  ' ' ' '	 '
  ' >
+4	 %? '´  ' ' ' '	 '
+ ' >
+4	 %@ '´  ' ' ' '	 '
+ '  >
 4	 %A '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
  ' >
 4	 %B '´  ' ' ' '	 '
  ' >
-4	 %C '´  ' ' ' '	 '
- ' >
-4	 %D '´  ' ' ' '	 '
+4	 %C '´  ' ' ' '	 '
  '  >
-4	 %E '´  (
- ' ' '	 '
+4	 %D '´  ' ' ' '	 '
  ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
+4	 %B '´  ' ' ' '	 '
+ ' >
+4	 %E '´  ' ' ' '	 '
+ '  >
 4	 %F '´  ' ' ' '	 '
  ' >
-4	 %G '´  ' ' ' '	 '
+4	 %5 '´  ' ' ' '	 '
  ' >
-4	 %H '´  ' ' ' '	 '
+4	 %< '´  ' ' ' '	 '
+ ' >
+4	 %G '´  ' ' ' '	 '
  '  >
+4	 %H '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
 4	 %I '´  ' ' ' '	 '
  ' >
-4	 %J '´  (
+4	 %J '´  ' ' ' '	 '
+ '  >
+4	 %K '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
+4	 %? '´  ' ' ' '	 '
+ ' >
+4	 %L '´  ' ' ' '	 '
+ '  >
+4	 %M '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
+4	 %N '´  ' ' ' '	 '
+ ' >
+4	 %O '´  ' ' ' '	 '
+ '  >
+4	 %P '´  ' ' ' '	 '
+ ' >
+4	 %5 '´  ' ' ' '	 '
+ ' >
+4	 %Q '´  ' ' ' '	 '
+ ' >
+4	 %R '´  ( ' ' '	 '
+ '  >
+4	 % '´  ' ' ' '	 '
+ ' >
+4	 %S '´  ' ' ' '	 '
+ '  >
+4	 %T '´  ' ' ' '	 '
+ ' >
+4	 %U '´  ( ' ' '	 '
+ ' >
+4	 %V '´  ' ' ' '	 '
+ '  >
+4	 %W '´  ' ' ' '	 '
+ ' >
+4	 %X '´  ' ' ' '	 '
+ ' >
+4	 %Y '´  ' ' ' '	 '
+ '  >
+4	 %Z '´  (	 ' ' '	 '
+ ' >
+4	 %[ '´  ' ' ' '	 '
+ ' >
+4	 %\ '´  ' ' ' '	 '
+ ' >
+4	 %] '´  ' ' ' '	 '
+ ' >
+4	 %^ '´  ' ' ' '	 '
+ ' >
+4	 %_ '´  ' ' ' '	 '
+ '  >
+4	 %` '´  (
+ ' ' '	 '
+ ' >
+4	 %a '´  ' ' ' '	 '
+ ' >
+4	 %b '´  ' ' ' '	 '
+ ' >
+4	 %c '´  ' ' ' '	 '
+ '  >
+4	 %d '´  ' ' ' '	 '
+ ' >
+4	 %e '´  (
  ' ' '	 '
  '  >
 4	 % '´  ( ' ' '	 '
  ' >
-G  .A 110% By Team ''Fallen Angel Software''!#- Apple iPad Air Gen1 Tablet -iOS Version Tested On:- EKEN Tablet -- ASUS Nexus 7 Tablet -*- Samsung Galaxy S7 Edge SmartPhone -Android Version Tested On:- Opera -- Google Chrome -- Mozilla Firefox -- Microsoft Edge -!Genuine Windows 10 Pro 64BitHTML5 Version Tested On:(www.GoldWave.com)''GoldWave''Audio Edited In:#(www.NeoSoftware.com/NPW.html)''NeoPaint''Graphics Edited In:&Sound Effects Compiled/Edited By:''AudioBinger''By:''Walking on Clouds''Title Music(www.FreeMusicArchive.org)Free Music ArchiveMusic By:(www.OshiBobo.com)''Oshi Bobo''Support Graphic Artist:Lead Graphic Artist:%''Neo's Kiss'' G.U.I. System By:''uso_''''sven''''Vincent''''Mattias_Hedberg''''Pkeod''''britzl''''carlfredriknybergbro''''Erik_Angelin''''sicher''''andres.strangequest''''Mathias_Westerdahl''Support Game Programmers:Lead Game Tester:Lead Game Programmer:Lead Game Designer:Original Game Concept By:Video Game Directed By:''The Fallen Angel''(''Maxima 3.5'' Engine Framework By:(www.Defold.com))''Defold'' Cross-Platform 2-D EngineVideo Game Made With:(www.Kubuntu.org)-Genuine Kubuntu 18.04 64Bit L.T.S. Linux(www.Apple.com)Genuine Apple MacOSPlatform_iOSPlatformGame Made On:"(www.FallenAngelSoftware.com)6Copyright 2018, By Team ''Fallen Angel Software''''Red Light Racer''TMLoadStafTextLinetext_nodesTotalNumberOfTextsactiveshow_level_select#acquire_input_focus.	postmsg(Í™³ææÌ™ÿ<‹®…žŠŽÿÍ™³ææÌ¹ÿÈ¹½”Ü¨¸ÿµæÌ™™³¦ÿçÌ™³³æ¬ÿ¿”Üž
-¸½´ÿ€€ ÿ€											           !"""""""""""#$$$$$$$$$$$&'''''''''''()))))))))))+,,,,,,,,,,,-...........011111111111233333333333566666666666788888888888:;;;;;;;;;;;<===========?@@@@@@@@@@@ABBBBBBBBBBBDEEEEEEEEEEEFGGGGGGGGGGGHIIIIIIIIIIIJKKKKKKKKKKKLMMMMMMMMMMMNOOOOOOOOOOOPQQQQQQQQQQQRSSSSSSSSSSSTUUUUUUUUUUUVWWWWWWWWWWWXYYYYYYYYYYYZ[[[[[[[[[[[]^^^^^^^^^^^_```````````bcccccccccccdeeeeeeeeeeeghhhhhhhhhhhijjjjjjjjjjjklllllllllllnooooooooooopqqqqqqqqqqqrsssssssssssuvvvvvvvvvvvwxxxxxxxxxxxyzzzzzzzzzzz{|||||||||||~€ƒ„„„„„„„„„„„…†††††††††††‡ˆˆˆˆˆˆˆˆˆˆˆŠ‹‹‹‹‹‹‹‹‹‹‹ŒŽ‘’’’’’’’’’’’“”””””””””””•–––––––––––—˜˜˜˜˜˜˜˜˜˜˜™ššššššššššš›œœœœœœœœœœœžŸŸŸŸŸŸŸŸŸŸŸ ¡¡¡¡¡¡¡¡¡¡¡¢£££££££££££¤¥¥¥¥¥¥¥¥¥¥¥¦¨©©©©©©©©©©©ª«««««««««««¬¯°°°°°°°°°°°±²²²²²²²²²²²³self  øscreenY æ ÿ  	 BÄ4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   º  
-7cÎ'  4   ' I$€4 74 6>5 	 T€4 74 64 7'	"4
+G  .A 110% By Team ''Fallen Angel Software''!#- Apple iPad Air Gen1 Tablet -iOS Version Tested On:- EKEN Tablet -- ASUS Nexus 7 Tablet -*- Samsung Galaxy S7 Edge SmartPhone -Android Version Tested On:- Opera -- Google Chrome -- Mozilla Firefox -- Microsoft Edge -!Genuine Windows 10 Pro 64BitHTML5 Version Tested On:(www.GoldWave.com)''GoldWave''Audio Edited In:#(www.NeoSoftware.com/NPW.html)''NeoPaint''Graphics Edited In:&Sound Effects Compiled/Edited By:Audiobanger''Mountain Top''Win!(Adult) MusicThe Kyoto Connection''No Pain, No Gain''Win!(Teen) Music#''May the chords be with you''Win!(Child) Musicsawsquarenoise''OST 02 Splash''New High Score Music''Shake me Baby''Levels 9-10 Music''The Tea Party''Levels 7-8 MusicDexter Britain''The Time To Run''Levels 5-6 MusicComputer Music All-stars''Albatross v2''Levels 3-4 MusicSoft and Furious''Horizon Ending''Levels 1-2 MusicBoxCat Games''Rolling''Cutscene MusicAudioBingerBy:''Walking on Clouds''Title Music(www.FreeMusicArchive.org)Free Music ArchiveMusic By:(www.OshiBobo.com)''Oshi Bobo''Support Graphic Artist:Lead Graphic Artist:%''Neo's Kiss'' G.U.I. System By:''uso_''''sven''''Vincent''''Mattias_Hedberg''''Pkeod''''britzl''''carlfredriknybergbro''''Erik_Angelin''''sicher''''andres.strangequest''''Mathias_Westerdahl''Support Game Programmers:Lead Game Tester:Lead Game Programmer:Lead Game Designer:Original Game Concept By:Video Game Directed By:''The Fallen Angel''(''Maxima 3.5'' Engine Framework By:(www.Defold.com))''Defold'' Cross-Platform 2-D EngineVideo Game Made With:(www.Kubuntu.org)-Genuine Kubuntu 18.04 64Bit L.T.S. Linux(www.Apple.com)Genuine Apple MacOSPlatform_iOSPlatformGame Made On:"(www.FallenAngelSoftware.com)6Copyright 2018, By Team ''Fallen Angel Software''''Red Light Racer''TMLoadStafTextLinetext_nodesTotalNumberOfTextsactiveshow_level_select#acquire_input_focus.	postmsg(Í™³ææÌ™ÿ<‹®…žŠŽÿÍ™³ææÌ¹ÿÈ¹½”Ü¨¸ÿµæÌ™™³¦ÿçÌ™³³æ¬ÿ¿”Üž
+¸½´ÿ€€ ÿ€                 	 	 	 	 	 	 	 	 	 	 	                                                                                                                            ! " " " " " " " " " " " # $ $ $ $ $ $ $ $ $ $ $ & ' ' ' ' ' ' ' ' ' ' ' ( ) ) ) ) ) ) ) ) ) ) ) + , , , , , , , , , , , - . . . . . . . . . . . 0 1 1 1 1 1 1 1 1 1 1 1 2 3 3 3 3 3 3 3 3 3 3 3 5 6 6 6 6 6 6 6 6 6 6 6 7 8 8 8 8 8 8 8 8 8 8 8 : ; ; ; ; ; ; ; ; ; ; ; < = = = = = = = = = = = ? @ @ @ @ @ @ @ @ @ @ @ A B B B B B B B B B B B D E E E E E E E E E E E F G G G G G G G G G G G H I I I I I I I I I I I J K K K K K K K K K K K L M M M M M M M M M M M N O O O O O O O O O O O P Q Q Q Q Q Q Q Q Q Q Q R S S S S S S S S S S S T U U U U U U U U U U U V W W W W W W W W W W W X Y Y Y Y Y Y Y Y Y Y Y Z [ [ [ [ [ [ [ [ [ [ [ ] ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ _ ` ` ` ` ` ` ` ` ` ` ` b c c c c c c c c c c c d e e e e e e e e e e e g h h h h h h h h h h h i j j j j j j j j j j j k l l l l l l l l l l l n o o o o o o o o o o o p q q q q q q q q q q q r s s s s s s s s s s s u v v v v v v v v v v v w x x x x x x x x x x x y z z z z z z z z z z z { | | | | | | | | | | | ~            €            ‚ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ „ … … … … … … … … … … … ‡ ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ ˆ ‰ Š Š Š Š Š Š Š Š Š Š Š ‹ Œ Œ Œ Œ Œ Œ Œ Œ Œ Œ Œ  Ž Ž Ž Ž Ž Ž Ž Ž Ž Ž Ž  ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ ‘ ’ “ “ “ “ “ “ “ “ “ “ “ ” • • • • • • • • • • • – — — — — — — — — — — — ™ š š š š š š š š š š š › œ œ œ œ œ œ œ œ œ œ œ  ž ž ž ž ž ž ž ž ž ž ž Ÿ                       ¢ £ £ £ £ £ £ £ £ £ £ £ ¤ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ¦ § § § § § § § § § § § ¨ © © © © © © © © © © © « ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ­ ® ® ® ® ® ® ® ® ® ® ® ¯ ° ° ° ° ° ° ° ° ° ° ° ± ² ² ² ² ² ² ² ² ² ² ² ´ µ µ µ µ µ µ µ µ µ µ µ ¶ · · · · · · · · · · · ¸ ¹ ¹ ¹ ¹ ¹ ¹ ¹ ¹ ¹ ¹ ¹ º » » » » » » » » » » » ½ ¾ ¾ ¾ ¾ ¾ ¾ ¾ ¾ ¾ ¾ ¾ ¿ À À À À À À À À À À À Á Â Â Â Â Â Â Â Â Â Â Â Ã Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Ä Æ Ç Ç Ç Ç Ç Ç Ç Ç Ç Ç Ç È É É É É É É É É É É É Ê Ë Ë Ë Ë Ë Ë Ë Ë Ë Ë Ë Ì Í Í Í Í Í Í Í Í Í Í Í Ï Ð Ð Ð Ð Ð Ð Ð Ð Ð Ð Ð Ñ Ò Ò Ò Ò Ò Ò Ò Ò Ò Ò Ò Ó Ô Ô Ô Ô Ô Ô Ô Ô Ô Ô Ô Õ Ö Ö Ö Ö Ö Ö Ö Ö Ö Ö Ö Ù Ú Ú Ú Ú Ú Ú Ú Ú Ú Ú Ú Û Ü Ü Ü Ü Ü Ü Ü Ü Ü Ü Ü Þ ß ß ß ß ß ß ß ß ß ß ß à á á á á á á á á á á á â ã ã ã ã ã ã ã ã ã ã ã å æ æ æ æ æ æ æ æ æ æ æ ç è è è è è è è è è è è é ê ê ê ê ê ê ê ê ê ê ê ì í í í í í í í í í í í î ï ï ï ï ï ï ï ï ï ï ï ð ñ ñ ñ ñ ñ ñ ñ ñ ñ ñ ñ ò ó ó ó ó ó ó ó ó ó ó ó ô õ õ õ õ õ õ õ õ õ õ õ ö ÷ ÷ ÷ ÷ ÷ ÷ ÷ ÷ ÷ ÷ ÷ ù ú ú ú ú ú ú ú ú ú ú ú û ü ü ü ü ü ü ü ü ü ü ü ý þ þ þ þ þ þ þ þ þ þ þ ÿ            
+self  Ø
+screenY Æ
+ ÿ  	 BŸ4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   º  
+7c©'  4   ' I$€4 74 6>5 	 T€4 74 64 7'	"4
  7
 
 
@@ -407,5 +582,5 @@ vmathnew_text_nodeguiTotalNumberOfTextstext_nodes
 
 
 '  > =KÜ4 74 4   6>7'™ T€' 5	 G  ScreenFadeStatusyvector3
-vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + -    âG  self  action_id  action   y  
-  å1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine ÂÌÄàÎäâä  " 
+vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + -    ½G  self  action_id  action   „  
+  À1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine    ';)?=?  " 

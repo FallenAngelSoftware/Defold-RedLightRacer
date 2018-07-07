@@ -22,7 +22,7 @@ function update(self, dt)
 			if (ScreenFadeAlpha < 0) then
 				ScreenFadeAlpha = 0
 			end
-
+			
 			if (ScreenFadeAlpha == 0) then
 				NextProxyLoaded = false
 			end
@@ -41,10 +41,10 @@ function update(self, dt)
 		if (CurrentScreen == 1) then
 			SecretCodesUnlocked  = (SecretCodesUnlocked + 1)
 		end
-
+		
 print(SecretCodesUnlocked)
 				
-		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
+			go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 
 		if ScreenFadeAlpha == 1 then
 			msg.post("level:/loader#loader", "ScreenFaded")

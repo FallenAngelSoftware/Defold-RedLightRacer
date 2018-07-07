@@ -13,7 +13,11 @@ function init(self)
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
 	end
 
-	MusicTestBGM = 0
+	if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
+		TotalMusics = 7
+	else
+		TotalMusics = 10
+	end
 end
 
 function on_message(self, message_id, message, sender)
@@ -37,6 +41,9 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
+	local m = require "data/modules.StopMusic"
+	local mTwo = require "data/modules.PlayMusic"
+		
 	local node
 
 	ArrowClicked = -1
@@ -50,16 +57,17 @@ function on_input(self, action_id, action)
 			gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
 			msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
-							
-			if (MusicTestBGM > 0) then
-				MusicTestBGM = (MusicTestBGM - 10)
-			else
-				MusicTestBGM = 0
-			end
 
-			msg.post("level:/Audio#Title-BGM", "stop_sound")
-			msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
-												
+			m.StopMusic(MusicTestBGM)
+
+			if (MusicTestBGM > 0) then
+				MusicTestBGM = (MusicTestBGM - 1)
+			else
+				MusicTestBGM = TotalMusics
+			end
+			
+			mTwo.PlayMusic(MusicTestBGM)
+						
 			NextScreen = 7
 			ScreenFadeStatus = 1
 			
@@ -77,16 +85,17 @@ function on_input(self, action_id, action)
 			gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
 			msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
-							
-			if (MusicTestBGM < 1) then
-				MusicTestBGM = (MusicTestBGM + 0)
+
+			m.StopMusic(MusicTestBGM)
+											
+			if (MusicTestBGM < TotalMusics) then
+				MusicTestBGM = (MusicTestBGM + 1)
 			else
 				MusicTestBGM = 0
 			end
 
-			msg.post("level:/Audio#Title-BGM", "stop_sound")
-			msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
-			
+			mTwo.PlayMusic(MusicTestBGM)
+						
 			NextScreen = 7
 			ScreenFadeStatus = 1
 
@@ -123,19 +132,20 @@ function on_input(self, action_id, action)
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
 				msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
-								
+
+				m.StopMusic(MusicTestBGM)
+														
 				NextScreen = 7
 				ScreenFadeStatus = 1
 				
 				if (MusicTestBGM > 0) then
-					MusicTestBGM = (MusicTestBGM - 0)
+					MusicTestBGM = (MusicTestBGM - 1)
 				else
-					MusicTestBGM = 0
+					MusicTestBGM = TotalMusics
 				end
 
-				msg.post("level:/Audio#Title-BGM", "stop_sound")
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
-								
+				mTwo.PlayMusic(MusicTestBGM)
+														
 				ButtonClicked = node
 				ScreenFadeAlphaHalf = 0.5
 			end
@@ -146,19 +156,20 @@ function on_input(self, action_id, action)
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
 				msg.post("level:/Audio#MenuMove", "play_sound", {delay = 0, gain = EffectsVolume})
-								
+
+				m.StopMusic(MusicTestBGM)
+														
 				NextScreen = 7
 				ScreenFadeStatus = 1
 
-				if (MusicTestBGM < 1) then
-					MusicTestBGM = (MusicTestBGM + 0)
+				if (MusicTestBGM < TotalMusics) then
+					MusicTestBGM = (MusicTestBGM + 1)
 				else
 					MusicTestBGM = 0
 				end
 
-				msg.post("level:/Audio#Title-BGM", "stop_sound")
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
-				
+				mTwo.PlayMusic(MusicTestBGM)
+										
 				ButtonClicked = node
 				ScreenFadeAlphaHalf = 0.5
 			end
@@ -169,7 +180,11 @@ function on_input(self, action_id, action)
 				gui.set_scale( node, vmath.vector3(0.85, 0.85, 1) )
 
 				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
-											
+
+				m.StopMusic(MusicTestBGM)
+
+				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
+												
 				NextScreen = 2
 				ScreenFadeStatus = 1
 

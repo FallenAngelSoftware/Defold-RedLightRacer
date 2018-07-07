@@ -24,7 +24,10 @@ function init(self)
 		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
 	end
-
+	
+	local mThree = require "data/modules.Options"
+	mThree.DisplayOptions()
+	
 	local node = gui.get_node("SelectorLine")
 	if (ArrowsSelectedByKeyboard == 0) then
 		gui.set_position( node, vmath.vector3(180, 560, 1) )
@@ -120,7 +123,9 @@ end
 function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not neede
-		
+	local mFour = require "data/modules.OptionsResetScale"
+	mFour.ResetScale()
+	
 	if (Platform == Platform_Android or Platform == Platform_iOS) then
 		gui.set_position(  gui.get_node("ButtonSelectorLeft"), vmath.vector3( -999, -999, 1 )  )
 		gui.set_position(  gui.get_node("ButtonSelectorRight"), vmath.vector3( -999, -999, 1 )  )
@@ -128,11 +133,14 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
+	local m = require "data/modules.StopMusic"
+	local mTwo = require "data/modules.PlayMusic"
+	local mThree = require "data/modules.Options"
 	local node
 	
 	ArrowClicked = -1
 
-	if action_id == hash("LEFT") then
+	if DelayAllUserInput == 0 and action_id == hash("LEFT") then
 		if (ArrowsSelectedByKeyboard == 0) then
 			node = gui.get_node("SelectorLeft")
 		elseif (ArrowsSelectedByKeyboard == 1) then
@@ -161,7 +169,9 @@ function on_input(self, action_id, action)
 					MusicVolume = 1
 				end
 				sound.set_group_gain("music", MusicVolume)
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+				m.StopMusic(0)
+				mTwo.PlayMusic(0)
+--				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 			elseif (ArrowsSelectedByKeyboard == 1) then
 				if (EffectsVolume > 0) then
 					EffectsVolume = (EffectsVolume - 0.25)
@@ -201,15 +211,19 @@ function on_input(self, action_id, action)
 					SecretCode[3] = 9
 				end
 			end
-								
-			NextScreen = 3
-			ScreenFadeStatus = 1
+
+			mThree.DisplayOptions()
+											
+--			NextScreen = 3
+--			ScreenFadeStatus = 1
+
+			DelayAllUserInput = 15
 
 			ArrowClicked = node
 		end
 	end
 
-	if action_id == hash("RIGHT") then
+	if DelayAllUserInput == 0 and action_id == hash("RIGHT") then
 		if (ArrowsSelectedByKeyboard == 0) then
 			node = gui.get_node("SelectorRight")
 		elseif (ArrowsSelectedByKeyboard == 1) then
@@ -237,7 +251,10 @@ function on_input(self, action_id, action)
 				else
 					MusicVolume = 0
 				end
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+
+				m.StopMusic(0)
+				mTwo.PlayMusic(0)
+--				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 				sound.set_group_gain("music", MusicVolume)
 			elseif (ArrowsSelectedByKeyboard == 1) then
 				if (EffectsVolume < 1) then
@@ -278,9 +295,13 @@ function on_input(self, action_id, action)
 					SecretCode[3] = 0
 				end
 			end
-						
-			NextScreen = 3
-			ScreenFadeStatus = 1
+
+			mThree.DisplayOptions()
+									
+--			NextScreen = 3
+--			ScreenFadeStatus = 1
+
+			DelayAllUserInput = 15
 
 			ArrowClicked = node
 		end
@@ -368,6 +389,8 @@ function on_input(self, action_id, action)
 
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 							
+
+--			mThree.DisplayOptions()
 			NextScreen = 2
 
 			ScreenFadeStatus = 1
@@ -377,7 +400,7 @@ function on_input(self, action_id, action)
 		end
 	end
 				
-	if action_id == hash("ClickGUI") then
+	if DelayAllUserInput == 0 and action_id == hash("ClickGUI") then
 		local nodeSelectorLine
 		
 		for index = 0, 6 do
@@ -410,7 +433,9 @@ function on_input(self, action_id, action)
 						else
 							MusicVolume = 1
 						end
-						msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+						m.StopMusic(0)
+						mTwo.PlayMusic(0)
+--						msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 						sound.set_group_gain("music", MusicVolume)
 					elseif (ArrowsSelectedByKeyboard == 1) then
 						if (EffectsVolume > 0) then
@@ -468,9 +493,13 @@ function on_input(self, action_id, action)
 					elseif (ArrowsSelectedByKeyboard == 6) then
 						gui.set_position( nodeSelectorLine, vmath.vector3(180, 90, 1) )
 					end
-															
-					NextScreen = 3
-					ScreenFadeStatus = 1
+
+					mThree.DisplayOptions()
+																				
+--					NextScreen = 3
+--					ScreenFadeStatus = 1
+
+					DelayAllUserInput = 15
 
 					ArrowClicked = node
 				end
@@ -507,7 +536,9 @@ function on_input(self, action_id, action)
 						else
 							MusicVolume = 0
 						end
-						msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+						m.StopMusic(0)
+						mTwo.PlayMusic(0)
+--						msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 						sound.set_group_gain("music", MusicVolume)
 					elseif (ArrowsSelectedByKeyboard == 1) then
 						if (EffectsVolume < 1) then
@@ -565,9 +596,13 @@ function on_input(self, action_id, action)
 					elseif (ArrowsSelectedByKeyboard == 6) then
 						gui.set_position( nodeSelectorLine, vmath.vector3(180, 90, 1) )
 					end
-					
-					NextScreen = 3
-					ScreenFadeStatus = 1
+
+					mThree.DisplayOptions()
+										
+--					NextScreen = 3
+--					ScreenFadeStatus = 1
+
+					DelayAllUserInput = 15
 
 					ArrowClicked = node
 				end

@@ -13,7 +13,47 @@ function init(self)
 	if (MusicTestBGM == 0) then
 		label.set_text("#MusicIndex", "B.G.M.: Title")
 		label.set_text("#MusicTitle", "''Walking on Clouds''")
-		label.set_text("#MusicArtist", "''Audiobinger''")
+		label.set_text("#MusicArtist", "Audiobinger")
+	elseif (MusicTestBGM == 1) then
+		label.set_text("#MusicIndex", "B.G.M.: Cutscenes")
+		label.set_text("#MusicTitle", "''Rolling''")
+		label.set_text("#MusicArtist", "BoxCat Games")
+	elseif (MusicTestBGM == 2) then
+		label.set_text("#MusicIndex", "B.G.M.: Levels 1-2")
+		label.set_text("#MusicTitle", "''Horizon Ending''")
+		label.set_text("#MusicArtist", "Soft and Furious")
+	elseif (MusicTestBGM == 3) then
+		label.set_text("#MusicIndex", "B.G.M.: Levels 3-4")
+		label.set_text("#MusicTitle", "''Albatross v2''")
+		label.set_text("#MusicArtist", "Computer Music All-stars")
+	elseif (MusicTestBGM == 4) then
+		label.set_text("#MusicIndex", "B.G.M.: Levels 5-6")
+		label.set_text("#MusicTitle", "''The Time To Run''")
+		label.set_text("#MusicArtist", "Dexter Britain")
+	elseif (MusicTestBGM == 5) then
+		label.set_text("#MusicIndex", "B.G.M.: Levels 7-8")
+		label.set_text("#MusicTitle", "''The Tea Party''")
+		label.set_text("#MusicArtist", "Dexter Britain")
+	elseif (MusicTestBGM == 6) then
+		label.set_text("#MusicIndex", "B.G.M.: Levels 9-10")
+		label.set_text("#MusicTitle", "''Shake me Baby''")
+		label.set_text("#MusicArtist", "Soft and Furious")
+	elseif (MusicTestBGM == 7) then
+		label.set_text("#MusicIndex", "B.G.M.: New High Score")
+		label.set_text("#MusicTitle", "''OST 02 Splash''")
+		label.set_text("#MusicArtist", "sawsquarenoise")
+	elseif (MusicTestBGM == 8) then
+		label.set_text("#MusicIndex", "B.G.M.: Win!(Child)")
+		label.set_text("#MusicTitle", "''May the chords be with you''")
+		label.set_text("#MusicArtist", "Computer Music All-stars")
+	elseif (MusicTestBGM == 9) then
+		label.set_text("#MusicIndex", "B.G.M.: Win!(Teen)")
+		label.set_text("#MusicTitle", "''No Pain, No Gain''")
+		label.set_text("#MusicArtist", "The Kyoto Connection")
+	elseif (MusicTestBGM == 10) then
+		label.set_text("#MusicIndex", "B.G.M.: Win!(Adult)")
+		label.set_text("#MusicTitle", "''Mountain Top''")
+		label.set_text("#MusicArtist", "Audiobinger")
 	end
 		
 	ButtonSelectedByKeyboard = 0
@@ -24,7 +64,7 @@ end
 function final(self)
 	-- Add finalization code here
 	-- Remove this function if not needed
-
+	
 	msg.post(".", "release_input_focus")
 end
 

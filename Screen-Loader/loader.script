@@ -83,7 +83,7 @@ function init(self)
         HighScoresName[i][1] = "Garry Kitchen"
         HighScoresName[i][2] = "Andre' LaMothe"
         HighScoresName[i][3] = "Defold Engine"
-        HighScoresName[i][4] = "D.J. Fading Twilight"
+        HighScoresName[i][4] = "Free Music Archive"
         HighScoresName[i][5] = "Kubuntu Linux"
         HighScoresName[i][6] = "NeoPaint"
         HighScoresName[i][7] = "GoldWave"
@@ -121,7 +121,7 @@ function init(self)
         HighScoresScore[i][9] = 1000
     end
 
-    local my_file_path = sys.get_save_file("RedLightRacer", "RLR_PreAlpha1.cfg")
+    local my_file_path = sys.get_save_file("RedLightRacer", "RLR_PreAlpha2.cfg")
     local GameOptionsAndHighScoresTable = sys.load(my_file_path)
     if not next(GameOptionsAndHighScoresTable) then
         print("Game data file not found.")

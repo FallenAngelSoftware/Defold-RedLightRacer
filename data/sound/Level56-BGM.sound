@@ -1,0 +1,4 @@
+sound: "/data/audio/Level56-BGM.ogg"
+looping: 1
+group: "master"
+gain: 1.0
