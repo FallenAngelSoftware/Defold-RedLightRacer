@@ -44,9 +44,10 @@ function update(self, dt)
 		
 print(SecretCodesUnlocked)
 				
-			go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
+		go.set( "#ScreenFade", "tint", vmath.vector4( 1, 1, 1, ScreenFadeAlpha) )
 
 		if ScreenFadeAlpha == 1 then
+			DelayAllUserInput = 0
 			msg.post("level:/loader#loader", "ScreenFaded")
 		end
 	end
