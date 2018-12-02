@@ -1,4 +1,0 @@
-tile_set: "/data/atlases/Defold-Logo.atlas"
-default_animation: "Defold-Logo"
-material: "/builtins/materials/sprite.material"
-blend_mode: BLEND_MODE_ALPHA

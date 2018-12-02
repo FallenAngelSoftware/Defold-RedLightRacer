@@ -13,11 +13,11 @@ function init(self)
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
 	end
 
-	if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
-		TotalMusics = 7
-	else
-		TotalMusics = 10
-	end
+--	if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
+		TotalMusics = 11
+--	else
+--		TotalMusics = 11
+--	end
 end
 
 function on_message(self, message_id, message, sender)
@@ -65,7 +65,13 @@ function on_input(self, action_id, action)
 			else
 				MusicTestBGM = TotalMusics
 			end
-			
+
+			if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
+				if (MusicTestBGM == 10) then
+					MusicTestBGM = 7
+				end
+			end
+						
 			mTwo.PlayMusic(MusicTestBGM)
 						
 			NextScreen = 7
@@ -94,6 +100,12 @@ function on_input(self, action_id, action)
 				MusicTestBGM = 0
 			end
 
+			if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
+				if (MusicTestBGM == 8) then
+					MusicTestBGM = 11
+				end
+			end
+			
 			mTwo.PlayMusic(MusicTestBGM)
 						
 			NextScreen = 7
@@ -144,6 +156,12 @@ function on_input(self, action_id, action)
 					MusicTestBGM = TotalMusics
 				end
 
+				if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
+					if (MusicTestBGM == 10) then
+						MusicTestBGM = 7
+					end
+				end
+				
 				mTwo.PlayMusic(MusicTestBGM)
 														
 				ButtonClicked = node
@@ -168,6 +186,12 @@ function on_input(self, action_id, action)
 					MusicTestBGM = 0
 				end
 
+				if (SecretCode[0] == 5 and SecretCode[1] == 4 and SecretCode[2] == 3 and SecretCode[3] == 2) then
+					if (MusicTestBGM == 8) then
+						MusicTestBGM = 11
+					end
+				end
+				
 				mTwo.PlayMusic(MusicTestBGM)
 										
 				ButtonClicked = node

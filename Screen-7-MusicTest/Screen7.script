@@ -54,6 +54,10 @@ function init(self)
 		label.set_text("#MusicIndex", "B.G.M.: Win!(Adult)")
 		label.set_text("#MusicTitle", "''Mountain Top''")
 		label.set_text("#MusicArtist", "Audiobinger")
+	elseif (MusicTestBGM == 11) then
+		label.set_text("#MusicIndex", "B.G.M.:")
+		label.set_text("#MusicTitle", "''Gaggle of Goodies''")
+		label.set_text("#MusicArtist", "Ms. Palser")
 	end
 		
 	ButtonSelectedByKeyboard = 0

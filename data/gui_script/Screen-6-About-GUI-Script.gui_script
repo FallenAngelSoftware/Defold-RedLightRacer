@@ -127,7 +127,7 @@ function init(self)
 	screenY = (screenY - 30)
 	LoadStafTextLine("Free Music Archive", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
-	LoadStafTextLine("(www.FreeMusicArchive.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	LoadStafTextLine("(www.archive.org/details/freemusicarchive)", 180, screenY, 0.7, 1.0, 1.0, 1.0, 1.0, 1.0)
 
 	screenY = (screenY - 100)
 	LoadStafTextLine("Title Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
@@ -227,7 +227,16 @@ function init(self)
 	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("Audiobanger", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-						
+
+	screenY = (screenY - 100)
+	LoadStafTextLine("BGM Music", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("''Gaggle of Goodies''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("Ms. Palser", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+							
 	
 	screenY = (screenY - 100)
 	LoadStafTextLine("Sound Effects Compiled/Edited By:", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 0.0)
@@ -271,11 +280,11 @@ function init(self)
 	LoadStafTextLine("- EKEN Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 
-	screenY = (screenY - 100)
-	LoadStafTextLine("iOS Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
-	screenY = (screenY - 30)
-	LoadStafTextLine("- Apple iPad Air Gen1 Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-	screenY = (screenY - 30)
+--	screenY = (screenY - 100)
+--	LoadStafTextLine("iOS Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
+--	screenY = (screenY - 30)
+--	LoadStafTextLine("- Apple iPad Air Gen1 Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+--	screenY = (screenY - 30)
 										
 	
 	screenY = ( screenY - (640/2) )

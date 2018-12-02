@@ -1,4 +1,0 @@
-tile_set: "/data/atlases/ScreenFade.atlas"
-default_animation: "ScreenFade"
-material: "/Screen-Loader/test.material"
-blend_mode: BLEND_MODE_ALPHA

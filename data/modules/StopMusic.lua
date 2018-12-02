@@ -17,7 +17,7 @@ function M.StopMusic(music)
 	elseif (music == 8) then msg.post("level:/Audio#WinChild-BGM", "stop_sound")
 	elseif (music == 9) then msg.post("level:/Audio#WinTeen-BGM", "stop_sound")
 	elseif (music == 10) then msg.post("level:/Audio#WinAdult-BGM", "stop_sound")
-
+	elseif (music == 11) then msg.post("level:/Audio#MsPalser-BGM", "stop_sound")
 	end
 end
 
