@@ -1,5 +1,5 @@
 
-ÏÏ
+ÍÏ
 ’rfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
@@ -328,7 +328,7 @@ end
 function on_input(self, action_id, action)
 
 end
-5/data/gui_script/Screen-6-About-GUI-Script.gui_script€]LJ 6=/data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
+4data/gui_script/Screen-6-About-GUI-Script.gui_scriptÿ\LJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
  4 74 7  '  >  >9
 	4	 7		4
   4 6

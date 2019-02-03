@@ -4,8 +4,8 @@ function init(self)
 	self.active = false
 		
 	if (Platform == Platform_HTMLfive) then
-		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
-		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
+--		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
+--		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
 	end
 end

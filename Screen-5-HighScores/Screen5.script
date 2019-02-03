@@ -8,7 +8,7 @@ function init(self)
 	ScreenFadeStatus = 0
 	ScreenFadeAlpha = 1
 		
-	label.set_text("#ScreenHeader", "MUSIC TEST")
+	label.set_text("#ScreenHeader", "HIGH SCORES")
 
 	if (GameMode == 0) then
 		label.set_text("#HighScoresGameMode", "CHILD MODE")

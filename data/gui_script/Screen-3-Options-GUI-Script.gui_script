@@ -20,8 +20,8 @@ function init(self)
 		gui.set_adjust_mode( gui.get_node("SelectorRight5"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("SelectorRight6"), gui.ADJUST_FIT )
 						
-		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
-		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
+--		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
+--		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
 	end
 	

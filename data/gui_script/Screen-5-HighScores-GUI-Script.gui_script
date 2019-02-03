@@ -23,8 +23,8 @@ function init(self)
 		gui.set_adjust_mode( gui.get_node("SelectorLeft"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("SelectorRight"), gui.ADJUST_FIT )
 		
-		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
-		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
+--		gui.set_adjust_mode( gui.get_node("ButtonSelectorLeft"), gui.ADJUST_FIT )
+--		gui.set_adjust_mode( gui.get_node("ButtonSelectorRight"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("ButtonBack"), gui.ADJUST_FIT )
 	end
 					
@@ -212,7 +212,13 @@ function on_input(self, action_id, action)
 
 				local m = require "data/modules.ClearHighScores"
 				m.ClearHighScores()
-				
+
+				NextScreen = 5
+				ScreenFadeStatus = 1
+
+				ArrowsSelectedByKeyboard = 0
+				ArrowClicked = node
+								
 --				NextScreen = 2
 --				ScreenFadeStatus = 1
 
