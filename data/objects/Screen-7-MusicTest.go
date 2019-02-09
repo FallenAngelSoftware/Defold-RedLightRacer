@@ -30,7 +30,7 @@ components {
 }
 components {
   id: "Screen-7-MusicTest"
-  component: "/data/gui/Screen-7-MusicTest.gui"
+  component: "/data/gui/Screen-7-MusicTest-GUI.gui"
   position {
     x: 0.0
     y: 0.0

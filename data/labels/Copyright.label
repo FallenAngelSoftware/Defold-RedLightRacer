@@ -33,6 +33,6 @@ tracking: 0.0
 pivot: PIVOT_CENTER
 blend_mode: BLEND_MODE_ALPHA
 line_break: false
-text: "Copyright 2018, By \"www.FallenAngelSoftware.com\""
+text: "Copyright 2019, By \"www.FallenAngelSoftware.com\""
 font: "/data/fonts/GameFont.font"
 material: "/builtins/fonts/label.material"

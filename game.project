@@ -18,3 +18,6 @@ game_binding = /input/GameInput.input_bindingc
 [android]
 app_icon_192x192 = /data/sprites/RLR-Android_192x192.png
 
+[collection_proxy]
+max_count = 13
+

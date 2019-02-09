@@ -25,7 +25,7 @@ function init(self)
 --	screenY = (screenY - 30)
 	LoadStafTextLine("''Red Light Racer''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
-	LoadStafTextLine("Copyright 2018, By Team ''Fallen Angel Software''", 180, screenY, 0.61, 1.0, 1.0, 1.0, 1.0, 1.0)
+	LoadStafTextLine("Copyright 2019, By Team ''Fallen Angel Software''", 180, screenY, 0.61, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("(www.FallenAngelSoftware.com)", 180, screenY, 0.95, 1.0, 1.0, 1.0, 1.0, 1.0)
 	
