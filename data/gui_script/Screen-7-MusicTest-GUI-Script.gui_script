@@ -207,7 +207,7 @@ function on_input(self, action_id, action)
 
 				m.StopMusic(MusicTestBGM)
 
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
+				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 												
 				NextScreen = 2
 				ScreenFadeStatus = 1

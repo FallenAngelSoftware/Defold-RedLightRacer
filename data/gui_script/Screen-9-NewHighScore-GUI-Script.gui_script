@@ -31,9 +31,7 @@ function init(self)
 		elseif (n == 64) then
 			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), "<"  )
 		end
-				
 		
-
 		screenX = screenX + 27
 		if ( screenX >= (13*27) ) then
 			screenY = screenY - 65
@@ -43,6 +41,11 @@ function init(self)
 		
 	if (Platform == Platform_HTMLfive) then
 		gui.set_adjust_mode( gui.get_node("ButtonExit"), gui.ADJUST_FIT )
+
+		for n = 0, 64 do
+			gui.set_adjust_mode(  gui.get_node( string.format("Char%d", n) ), gui.ADJUST_FIT  )
+		end
+			
 	end
 end
 
@@ -113,7 +116,7 @@ function on_input(self, action_id, action)
 
 				m.StopMusic(CurrentMusicPlaying)--MusicTestBGM)
 
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
+				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 
 				NextScreen = 5
 				ScreenFadeStatus = 1
