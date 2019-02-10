@@ -5,6 +5,13 @@ function init(self)
 	msg.post("#", "show_level_select")
 	self.active = false
 
+	label.set_text("#ScreenHeader", "NEW HIGH SCORE")
+
+	charButton = gui.get_node("Char0")
+	gui.set_position( charButton, vmath.vector3( 180, 360, 1) )
+	
+
+	
 	if (Platform == Platform_HTMLfive) then
 		gui.set_adjust_mode( gui.get_node("ButtonExit"), gui.ADJUST_FIT )
 	end

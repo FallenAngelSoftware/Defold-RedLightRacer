@@ -8,8 +8,11 @@ function init(self)
 	ScreenFadeStatus = 0
 	ScreenFadeAlpha = 1
 	
-	label.set_text("#ScreenHeader", "NEW HIGH SCORE")
-	
+
+
+
+
+		
 	ButtonSelectedByKeyboard = 0
 
 	msg.post(".", "acquire_input_focus")
