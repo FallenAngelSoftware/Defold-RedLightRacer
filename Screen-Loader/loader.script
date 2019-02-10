@@ -71,7 +71,9 @@ function init(self)
     EffectsVolume = 1.0
 
     MusicTestBGM = 0
-    
+
+    CurrentMusicPlaying = 0
+        
     PlayRedLightRacerVoice = true
     
     GameMode = 2

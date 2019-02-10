@@ -81,7 +81,7 @@ function on_input(self, action_id, action)
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 							
 			if (ButtonSelectedByKeyboard == 0) then
-				NextScreen = 2
+				NextScreen = 9--2
 			else
 				NextScreen = (ButtonSelectedByKeyboard + 2)
 			end

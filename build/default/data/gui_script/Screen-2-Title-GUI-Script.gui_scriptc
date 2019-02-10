@@ -1,6 +1,6 @@
 
-Æƒ
-˜Jfunction init(self)
+Éƒ
+›Jfunction init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
@@ -83,7 +83,7 @@ function on_input(self, action_id, action)
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 							
 			if (ButtonSelectedByKeyboard == 0) then
-				NextScreen = 2
+				NextScreen = 9--2
 			else
 				NextScreen = (ButtonSelectedByKeyboard + 2)
 			end
@@ -360,7 +360,7 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
  > T€4 	 T€4 7% > 4 	  T¶€4 7 4	 7		(
  ( ' >	 =4 7% %	 3
  4 :
->4 	  T€' 5 T€4 5 4 '  T€' 5 '  5 T€4 4  T€4 7% >T€4 7% %	 3
+>4 	  T€'	 5 T€4 5 4 '  T€' 5 '  5 T€4 4  T€4 7% >T€4 7% %	 3
   >5! ( 5" ' 5  T}€4  	  T<€4 %# > T7€4 '   T€4 5 T€' 5 ' 5  4 7%$ %	 3
 % 4 :
 >4 7%& > 4 7' 4	 7		'
