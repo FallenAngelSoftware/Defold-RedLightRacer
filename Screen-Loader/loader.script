@@ -147,6 +147,11 @@ function init(self)
     SecretCode[2] = 0
     SecretCode[3] = 0
 
+    Score = 0
+    Level = 0
+
+    NewHighScoreName = ""
+    
     msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = 1})
     
     sound.set_group_gain("music", MusicVolume)

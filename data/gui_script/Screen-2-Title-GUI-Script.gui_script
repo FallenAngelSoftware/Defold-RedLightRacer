@@ -143,7 +143,7 @@ function on_input(self, action_id, action)
 
 				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 				
-				NextScreen = 2
+				NextScreen = 9
 				ScreenFadeStatus = 1
 				ScreenFadeAlpha = 0
 

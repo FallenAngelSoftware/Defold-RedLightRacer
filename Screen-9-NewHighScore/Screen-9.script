@@ -11,6 +11,9 @@ end
 function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
+
+	local m = require "data/modules.FPSandMouseXY"
+	m.UpdateFPSandMouseXY()
 end
 
 function on_message(self, message_id, message, sender)
