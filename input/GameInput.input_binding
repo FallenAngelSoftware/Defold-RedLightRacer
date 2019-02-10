@@ -28,7 +28,7 @@ key_trigger {
 }
 key_trigger {
   input: KEY_SPACE
-  action: "EnterGUI"
+  action: "EnterGUIspace"
 }
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
