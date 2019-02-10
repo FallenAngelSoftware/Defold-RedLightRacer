@@ -7,11 +7,40 @@ function init(self)
 
 	label.set_text("#ScreenHeader", "NEW HIGH SCORE")
 
-	charButton = gui.get_node("Char0")
-	gui.set_position( charButton, vmath.vector3( 180, 360, 1) )
-	
+--	char = "A"
+--	char = char + 1
 
-	
+--	gui.set_position( gui.get_node("Char0"), vmath.vector3( 180, 360, 1) )
+--	gui.set_text( gui.get_node("Char_Text0"), char )	
+
+	screenX = 18
+	screenY = 450-40
+	for n = 0, 64 do
+		gui.set_position(  gui.get_node( string.format("Char%d", n) ), vmath.vector3(screenX, screenY, 1)  )
+
+		if (n < 26) then
+			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), string.format("%c", 65+n)  )
+		elseif (n < 52) then
+			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), string.format("%c", 97+n-26)  )
+		elseif (n < 52+10) then
+			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), string.format("%c", 48+n-52)  )
+		elseif (n == 62) then
+			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), "+"  )
+		elseif (n == 63) then
+			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), "_"  )
+		elseif (n == 64) then
+			gui.set_text(  gui.get_node( string.format("Char_Text%d", n) ), "<"  )
+		end
+				
+		
+
+		screenX = screenX + 27
+		if ( screenX >= (13*27) ) then
+			screenY = screenY - 65
+			screenX = 18
+		end
+	end
+		
 	if (Platform == Platform_HTMLfive) then
 		gui.set_adjust_mode( gui.get_node("ButtonExit"), gui.ADJUST_FIT )
 	end
