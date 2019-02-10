@@ -7,14 +7,11 @@ function init(self)
 
 	label.set_text("#ScreenHeader", "NEW HIGH SCORE")
 
+	NewHighScoreName = ""
+	NewHighScoreNameIndex = 0
+	
 	label.set_text("#NewHighScoreName", "")
 	
---	char = "A"
---	char = char + 1
-
---	gui.set_position( gui.get_node("Char0"), vmath.vector3( 180, 360, 1) )
---	gui.set_text( gui.get_node("Char_Text0"), char )	
-
 	screenX = 18
 	screenY = 450-40
 	for n = 0, 64 do
@@ -87,8 +84,6 @@ function on_input(self, action_id, action)
 
 	local node
 
---	ArrowClicked = -1
-
 	if action_id == hash("EnterGUI") then
 		if (ButtonSelectedByKeyboard == 0) then
 			node = gui.get_node("ButtonExit")
@@ -144,6 +139,32 @@ function on_input(self, action_id, action)
 
 					msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 
+					if (NewHighScoreNameIndex < 13) then
+						if (index < 26) then
+							NewHighScoreName = NewHighScoreName .. string.format("%c", 65+index)
+							NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+						elseif (index < 52) then
+							NewHighScoreName = NewHighScoreName .. string.format("%c", 97+index-26)
+							NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+						elseif (index < 52+10) then
+							NewHighScoreName = NewHighScoreName .. string.format("%c", 48+index-52)
+							NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+						elseif (index == 62) then
+							NewHighScoreName = NewHighScoreName .. "+"
+							NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+						elseif (index == 63) then
+							NewHighScoreName = NewHighScoreName .. " "
+							NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+						end
+					end
+
+					if (index == 64 and NewHighScoreNameIndex > 0) then
+						NewHighScoreName = NewHighScoreName:sub(1, -2)
+						NewHighScoreNameIndex = NewHighScoreNameIndex - 1
+					end						
+					
+					label.set_text("#NewHighScoreName", NewHighScoreName)
+					
 					DelayAllUserInput = 10
 				end
 			end

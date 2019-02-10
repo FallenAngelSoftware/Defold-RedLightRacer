@@ -153,6 +153,7 @@ function init(self)
     Level = 0
 
     NewHighScoreName = ""
+    NewHighScoreNameIndex = 0
     
     msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
     
