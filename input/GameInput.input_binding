@@ -30,6 +30,210 @@ key_trigger {
   input: KEY_SPACE
   action: "EnterGUIspace"
 }
+key_trigger {
+  input: KEY_BACKSPACE
+  action: "Key64"
+}
+key_trigger {
+  input: KEY_SPACE
+  action: "Key63"
+}
+key_trigger {
+  input: KEY_PLUS
+  action: "Key62"
+}
+key_trigger {
+  input: KEY_LSHIFT
+  action: "KeyShift"
+}
+key_trigger {
+  input: KEY_RSHIFT
+  action: "KeyShift"
+}
+key_trigger {
+  input: KEY_0
+  action: "Key52"
+}
+key_trigger {
+  input: KEY_1
+  action: "Key53"
+}
+key_trigger {
+  input: KEY_2
+  action: "Key54"
+}
+key_trigger {
+  input: KEY_3
+  action: "Key55"
+}
+key_trigger {
+  input: KEY_4
+  action: "Key56"
+}
+key_trigger {
+  input: KEY_5
+  action: "Key57"
+}
+key_trigger {
+  input: KEY_6
+  action: "Key58"
+}
+key_trigger {
+  input: KEY_7
+  action: "Key59"
+}
+key_trigger {
+  input: KEY_8
+  action: "Key60"
+}
+key_trigger {
+  input: KEY_9
+  action: "Key61"
+}
+key_trigger {
+  input: KEY_KP_0
+  action: "Key52"
+}
+key_trigger {
+  input: KEY_KP_1
+  action: "Key53"
+}
+key_trigger {
+  input: KEY_KP_2
+  action: "Key54"
+}
+key_trigger {
+  input: KEY_KP_3
+  action: "Key55"
+}
+key_trigger {
+  input: KEY_KP_4
+  action: "Key56"
+}
+key_trigger {
+  input: KEY_KP_5
+  action: "Key57"
+}
+key_trigger {
+  input: KEY_KP_6
+  action: "Key58"
+}
+key_trigger {
+  input: KEY_KP_7
+  action: "Key59"
+}
+key_trigger {
+  input: KEY_KP_8
+  action: "Key60"
+}
+key_trigger {
+  input: KEY_KP_9
+  action: "Key61"
+}
+key_trigger {
+  input: KEY_Z
+  action: "Key51"
+}
+key_trigger {
+  input: KEY_Y
+  action: "Key50"
+}
+key_trigger {
+  input: KEY_X
+  action: "Key49"
+}
+key_trigger {
+  input: KEY_W
+  action: "Key48"
+}
+key_trigger {
+  input: KEY_V
+  action: "Key47"
+}
+key_trigger {
+  input: KEY_U
+  action: "Key46"
+}
+key_trigger {
+  input: KEY_T
+  action: "Key45"
+}
+key_trigger {
+  input: KEY_S
+  action: "Key44"
+}
+key_trigger {
+  input: KEY_R
+  action: "Key43"
+}
+key_trigger {
+  input: KEY_Q
+  action: "Key42"
+}
+key_trigger {
+  input: KEY_P
+  action: "Key41"
+}
+key_trigger {
+  input: KEY_O
+  action: "Key40"
+}
+key_trigger {
+  input: KEY_N
+  action: "Key39"
+}
+key_trigger {
+  input: KEY_M
+  action: "Key38"
+}
+key_trigger {
+  input: KEY_L
+  action: "Key37"
+}
+key_trigger {
+  input: KEY_K
+  action: "Key36"
+}
+key_trigger {
+  input: KEY_J
+  action: "Key35"
+}
+key_trigger {
+  input: KEY_I
+  action: "Key34"
+}
+key_trigger {
+  input: KEY_H
+  action: "Key33"
+}
+key_trigger {
+  input: KEY_G
+  action: "Key32"
+}
+key_trigger {
+  input: KEY_F
+  action: "Key31"
+}
+key_trigger {
+  input: KEY_E
+  action: "Key30"
+}
+key_trigger {
+  input: KEY_D
+  action: "Key29"
+}
+key_trigger {
+  input: KEY_C
+  action: "Key28"
+}
+key_trigger {
+  input: KEY_B
+  action: "Key27"
+}
+key_trigger {
+  input: KEY_A
+  action: "Key26"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "GotoNextScreen"
