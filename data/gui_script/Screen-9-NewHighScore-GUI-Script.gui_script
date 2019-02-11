@@ -171,10 +171,23 @@ function on_input(self, action_id, action)
 		end
 	end
 
-	if (ScreenFadeAlpha == 0) then
-		if action_id == hash("type") then
-			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+	if (ScreenFadeAlpha == 0 and DelayAllUserInput == 0) then
+		if action_id == hash("Key63") then
 			if (NewHighScoreNameIndex < 13) then
+				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+				node = gui.get_node( string.format("Char%d", 63) )
+				gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
+
+				--				print("Char: ''" .. action.text .. "''")
+
+				NewHighScoreName = NewHighScoreName .. " "
+				NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+				label.set_text("#NewHighScoreName", NewHighScoreName)
+				DelayAllUserInput = 10							
+			end
+		elseif action_id == hash("type") then
+			if (NewHighScoreNameIndex < 13) then
+				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 				for index = 0, 64 do
 					character = gui.get_text(  gui.get_node( string.format("Char_Text%d", index) )  )
 					if (character == action.text) then
@@ -185,16 +198,18 @@ function on_input(self, action_id, action)
 						gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
 					end
 				end
-			
+
+				print("Char: ''" .. action.text .. "''")
+								
 				NewHighScoreName = NewHighScoreName .. action.text
 				NewHighScoreNameIndex = NewHighScoreNameIndex + 1
 				label.set_text("#NewHighScoreName", NewHighScoreName)
 				DelayAllUserInput = 10							
 			end
 		elseif action_id == hash("backspace") and action.repeated then
-			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 			local l = string.len(NewHighScoreName)
 			if (NewHighScoreNameIndex > 0) then			
+				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 				node = gui.get_node( string.format("Char%d", 64) )
 				gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
 				NewHighScoreName = string.sub(NewHighScoreName, 0, l-1) 
