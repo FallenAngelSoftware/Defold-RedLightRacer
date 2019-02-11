@@ -170,7 +170,51 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-	
+
+
+
+	for index = 0, 64 do
+		if (  action_id == hash( string.format("Key%d", index) ) and action.pressed and self.active  ) then
+			node = gui.get_node( string.format("Char%d", index) )
+			if (ScreenFadeAlpha == 0) then
+				gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
+
+				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+				
+				if (NewHighScoreNameIndex < 13) then
+					if (index < 26) then
+						NewHighScoreName = NewHighScoreName .. string.format("%c", 65+index)
+						NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+					elseif (index < 52) then
+						NewHighScoreName = NewHighScoreName .. string.format("%c", 97+index-26)
+						NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+					elseif (index < 52+10) then
+						NewHighScoreName = NewHighScoreName .. string.format("%c", 48+index-52)
+						NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+					elseif (index == 62) then
+						NewHighScoreName = NewHighScoreName .. "+"
+						NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+					elseif (index == 63) then
+						NewHighScoreName = NewHighScoreName .. " "
+						NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+					end
+				end
+				
+				if (index == 64 and NewHighScoreNameIndex > 0) then
+					NewHighScoreName = NewHighScoreName:sub(1, -2)
+					NewHighScoreNameIndex = NewHighScoreNameIndex - 1
+				end						
+
+				label.set_text("#NewHighScoreName", NewHighScoreName)
+
+				DelayAllUserInput = 10
+			end
+		end
+	end
+
+
+
+		
 end
 
 function on_reload(self)
