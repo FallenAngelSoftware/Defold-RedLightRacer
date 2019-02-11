@@ -173,14 +173,24 @@ function on_input(self, action_id, action)
 
 
 
+	capitalOffset = 0
+	if ( action_id == hash("KeyShift") ) then
+		capitalOffset = 26
+	end
+	
 	for index = 0, 64 do
 		if (  action_id == hash( string.format("Key%d", index) ) and action.pressed and self.active  ) then
 			node = gui.get_node( string.format("Char%d", index) )
 			if (ScreenFadeAlpha == 0) then
+				if (index > 25 and index < 52) then
+					index = index - capitalOffset
+					node = gui.get_node( string.format("Char%d", index) )
+				end
+			
 				gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
 
 				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
-				
+								
 				if (NewHighScoreNameIndex < 13) then
 					if (index < 26) then
 						NewHighScoreName = NewHighScoreName .. string.format("%c", 65+index)

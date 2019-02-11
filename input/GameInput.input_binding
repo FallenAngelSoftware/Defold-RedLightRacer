@@ -39,7 +39,7 @@ key_trigger {
   action: "Key63"
 }
 key_trigger {
-  input: KEY_PLUS
+  input: KEY_KP_ADD
   action: "Key62"
 }
 key_trigger {
@@ -233,6 +233,10 @@ key_trigger {
 key_trigger {
   input: KEY_A
   action: "Key26"
+}
+key_trigger {
+  input: KEY_EQUALS
+  action: "Key62"
 }
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
