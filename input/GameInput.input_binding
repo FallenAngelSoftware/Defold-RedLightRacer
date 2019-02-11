@@ -238,6 +238,10 @@ key_trigger {
   input: KEY_EQUALS
   action: "Key62"
 }
+key_trigger {
+  input: KEY_BACKSPACE
+  action: "backspace"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "GotoNextScreen"
@@ -245,4 +249,8 @@ mouse_trigger {
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "ClickGUI"
+}
+text_trigger {
+  input: TEXT
+  action: "type"
 }

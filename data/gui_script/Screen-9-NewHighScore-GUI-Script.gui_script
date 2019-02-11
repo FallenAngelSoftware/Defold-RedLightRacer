@@ -173,11 +173,44 @@ function on_input(self, action_id, action)
 
 
 
+
+	if (ScreenFadeAlpha == 0) then
+		if action_id == hash("type") then
+			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+			if (NewHighScoreNameIndex < 13) then
+				NewHighScoreName = NewHighScoreName .. action.text
+				NewHighScoreNameIndex = NewHighScoreNameIndex + 1
+				label.set_text("#NewHighScoreName", NewHighScoreName)
+				DelayAllUserInput = 10							
+			end
+		elseif action_id == hash("backspace") and action.repeated then
+			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+			local l = string.len(NewHighScoreName)
+			if (NewHighScoreNameIndex > 0) then			
+				NewHighScoreName = string.sub(NewHighScoreName, 0, l-1) 
+				label.set_text("#NewHighScoreName", NewHighScoreName)
+				NewHighScoreNameIndex = NewHighScoreNameIndex - 1
+				DelayAllUserInput = 10
+			end
+		end
+	end	
+
+
+
+
+
+
+
+
+
+	
+
+--[[
 	capitalOffset = 0
 	if ( action_id == hash("KeyShift") ) then
 		capitalOffset = 26
 	end
-	
+
 	for index = 0, 64 do
 		if (  action_id == hash( string.format("Key%d", index) ) and action.pressed and self.active  ) then
 			node = gui.get_node( string.format("Char%d", index) )
@@ -221,7 +254,7 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-
+]]--
 
 
 		

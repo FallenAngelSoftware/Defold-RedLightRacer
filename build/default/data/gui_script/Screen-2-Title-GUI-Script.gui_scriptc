@@ -1,5 +1,5 @@
 
-†
+‘†
 ÝKfunction init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
@@ -320,7 +320,7 @@ function on_input(self, action_id, action)
 		gui.set_position(  rightArrow, vmath.vector3( 330, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 	end
 end
-4data/gui_script/Screen-2-Title-GUI-Script.gui_scriptö9LJ 5=data/gui_script/Screen-2-Title-GUI-Script.gui_scriptâ	  ¯¸4  7% % >4  7% % >) : 4 4  TZ€4	 7
+5/data/gui_script/Screen-2-Title-GUI-Script.gui_script÷9LJ 6=/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptâ	  ¯¸4  7% % >4  7% % >) : 4 4  TZ€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
