@@ -178,6 +178,14 @@ function on_input(self, action_id, action)
 		if action_id == hash("type") then
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 			if (NewHighScoreNameIndex < 13) then
+				for index = 0, 64 do
+					character = gui.get_text(  gui.get_node( string.format("Char_Text%d", index) )  )
+					if (character == action.text) then
+						node = gui.get_node( string.format("Char%d", index) )
+						gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
+					end
+				end
+			
 				NewHighScoreName = NewHighScoreName .. action.text
 				NewHighScoreNameIndex = NewHighScoreNameIndex + 1
 				label.set_text("#NewHighScoreName", NewHighScoreName)
@@ -187,6 +195,8 @@ function on_input(self, action_id, action)
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 			local l = string.len(NewHighScoreName)
 			if (NewHighScoreNameIndex > 0) then			
+				node = gui.get_node( string.format("Char%d", 64) )
+				gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
 				NewHighScoreName = string.sub(NewHighScoreName, 0, l-1) 
 				label.set_text("#NewHighScoreName", NewHighScoreName)
 				NewHighScoreNameIndex = NewHighScoreNameIndex - 1

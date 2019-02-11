@@ -1,4 +1,3 @@
-
 #ifdef GL_ES
 precision mediump float;
 #endif
@@ -8,7 +7,6 @@ precision mediump float;
 #define highp
 #endif
 
-#line 0
 varying mediump vec2 var_texcoord0;
 
 uniform lowp sampler2D DIFFUSE_TEXTURE;
