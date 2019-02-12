@@ -177,9 +177,6 @@ function on_input(self, action_id, action)
 				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 				node = gui.get_node( string.format("Char%d", 63) )
 				gui.set_scale( node, vmath.vector3(0.75, 0.75, 1) )
-
-				--				print("Char: ''" .. action.text .. "''")
-
 				NewHighScoreName = NewHighScoreName .. " "
 				NewHighScoreNameIndex = NewHighScoreNameIndex + 1
 				label.set_text("#NewHighScoreName", NewHighScoreName)
