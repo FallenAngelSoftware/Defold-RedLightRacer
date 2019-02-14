@@ -46,7 +46,7 @@ function on_input(self, action_id, action)
 	mX = action.screen_x
 	mY = action.screen_y	
 
-	if action_id == hash("GotoNextScreen") then
+	if action_id == hash("ClickGUI") then
 		ScreenFadeStatus = 1
 		ScreenFadeAlpha = 0
 		

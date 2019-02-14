@@ -82,6 +82,8 @@ function init(self)
 
     PlayerScreenX = 180
     PlayerScreenY = 105
+
+    PlayerDirection = 0
     
     HighScoresName = {}
     for i = 0, 2 do
