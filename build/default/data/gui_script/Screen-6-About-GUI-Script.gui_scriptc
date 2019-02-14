@@ -1,6 +1,6 @@
 
-«Ú
-Èwfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+‹Ú
+¸wfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
@@ -337,13 +337,14 @@ function on_input(self, action_id, action)
 	if action_id == hash("KeyEscape") and action.pressed and self.active then
 		msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 		m.StopMusic(CurrentMusicPlaying)--MusicTestBGM)
-		msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+		local mTwo = require "data/modules.PlayMusic"
+		mTwo.PlayMusic(0)
 		NextScreen = 2
 		ScreenFadeStatus = 1
 	end
 	
 end
-5/data/gui_script/Screen-6-About-GUI-Script.gui_script¦bLJ 6=/data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
+5/data/gui_script/Screen-6-About-GUI-Script.gui_script–bLJ 6=/data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
  4 74 7  '  >  >9
 	4	 7		4
   4 6
@@ -613,8 +614,7 @@ vmathnew_text_nodeguiTotalNumberOfTextstext_nodes
 
 
 '  > =KÜ4 74 4   6>7'™ T€' 5	 G  ScreenFadeStatusyvector3
-vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + Ø 	  &GÌ4  % >4 % > T€7  T€7   T€4 7% %	 3
- 4 :>74 >4 7% %	 3 4 :>' 5 ' 5 G  ScreenFadeStatusNextScreenMusicVolume 
-delay level:/Audio#Title-BGMCurrentMusicPlayingStopMusic	gainEffectsVolume 
-delay play_soundlevel:/Audio#MenuClick	postmsgactivepressedKeyEscape	hashdata/modules.StopMusicrequireself  'action_id  'action  'm # „  
-  Ø1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine   , 6.J8WLW  data/modules.StopMusic/data/modules/StopMusic.luac" 
+vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €€àÿ													self  8dt  8% % %index #lastTextPos + È 	  $LÌ4  % >4 % > T€7  T€7   T€4 7% %	 3
+ 4 :>74 >4  % >7'  >' 5 ' 5 G  ScreenFadeStatusNextScreenPlayMusicdata/modules.PlayMusicCurrentMusicPlayingStopMusic	gainEffectsVolume 
+delay play_soundlevel:/Audio#MenuClick	postmsgactivepressedKeyEscape	hashdata/modules.StopMusicrequire		self  %action_id  %action  %m !mTwo  „  
+  Ù1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine   , 6.J8XLX  data/modules.StopMusicdata/modules.PlayMusic/data/modules/StopMusic.luac/data/modules/PlayMusic.luac" 

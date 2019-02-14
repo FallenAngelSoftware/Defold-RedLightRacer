@@ -1,6 +1,6 @@
 
-ñŒ
-ÈPfunction init(self)
+…
+İPfunction init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
@@ -63,7 +63,7 @@ function on_input(self, action_id, action)
 	local rightArrow
 	
 	local m = require "data/modules.StopMusic"
-	
+		
 	if (  DelayAllUserInput == 0 and ( action_id == hash("EnterGUI") or action_id == hash("EnterGUIspace") )  ) then
 		if (ButtonSelectedByKeyboard == 0) then
 			node = gui.get_node("ButtonSTART")
@@ -279,9 +279,10 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("effects", EffectsVolume)
 
 --					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-					m.StopMusic(0)
-					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-										
+					m.StopMusic(CurrentMusicPlaying)
+					local mTwo = require "data/modules.PlayMusic"
+					mTwo.PlayMusic(0)
+															
 					DelayAllUserInput = 20
 
 					NextScreen = 2
@@ -309,9 +310,10 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("effects", EffectsVolume)
 
 --					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-					m.StopMusic(0)
-					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-					
+					m.StopMusic(CurrentMusicPlaying)
+					local mTwo = require "data/modules.PlayMusic"
+					mTwo.PlayMusic(0)
+										
 					MusicTestBGM = 0
 										
 					NextScreen = 7
@@ -338,7 +340,7 @@ function on_input(self, action_id, action)
 		gui.set_position(  rightArrow, vmath.vector3( 330, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 	end
 end
-5/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptì;LJ 6=/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptâ	  ¯¸4  7% % >4  7% % >) : 4 4  TZ€4	 7
+5/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptë;LJ 6=/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptâ	  ¯¸4  7% % >4  7% % >) : 4 4  TZ€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -375,8 +377,8 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
 
 
 
-self  4dt  4 ­+  I
-øÀ9™* 4  % >4 	  T{€4 %	 > T€4 %	 > Tq€4 	  T€4 7%		 > T,€4 	 T€4 7%	
+self  4dt  4 ¬+  I
+ôÇ9›* 4  % >4 	  T{€4 %	 > T€4 %	 > Tq€4 	  T€4 7%		 > T,€4 	 T€4 7%	
  > T#€4 	 T€4 7%	 > T€4 	 T€4 7%	 > T€4 	 T€4 7%	 > T€4 	 T€4 7%	 > 4 	  T¶€4 7	 4
  7
 
@@ -401,7 +403,7 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
  7
 
 'J4 	' >
- =4 %	. > Tó4 7%		 > 4 7/	 7
+ =4 %	. > Tï4 7%		 > 4 7/	 7
 071>  T	 €4 	  T€4 7	 4
  7
 
@@ -439,8 +441,8 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
 ( ( ' >
  =4 7%	 %
  37 4 :>' 5 ' 5 '  5 ' 5 5$ ( 5% 4 4	 	 T€4 7%	  >T€4 7%	! %
-" 38 >4 7%	9 > 4 	  TS€4 7/	 7
-071>  T	K€4 	  TH€4 7	 4
+" 38 >4 7%	9 > 4 	  TQ€4 7/	 7
+071>  T	I€4 	  TF€4 7	 4
  7
 
 ( ( ' >
@@ -450,18 +452,18 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
 9 >T	€'  5; '  5 4 7<	 %
 = >4> 7?%	@ 4
 ; >4> 7?%	A 4
- >7B'	  >4 7%	C %
- 3D 4; :>' 5 ' 5 ' 5 '  5 4 7%	E > 4 	  TQ€4 7/	 7
-071>  T	I€4 	  TF€4 7	 4
+ >7B4	C >4  %	D >7	E'
+  >	'	 5	 '	 5	 '	 5	 '	  5	 4 7%	F > 4 	  TO€4 7/	 7
+071>  T	G€4 	  TD€4 7	 4
  7
 
 ( ( ' >
  =4 7%	 %
- 3F 4 :>4; 	  T	€' 5; ' 5 4 7<	 %
+ 3G 4 :>4; 	  T	€' 5; ' 5 4 7<	 %
 9 >4> 7?%	@ 4
 ; >4> 7?%	A 4
- >7B'	  >4 7%	C %
- 3G 4; :>'  5H ' 5 ' 5 '  5 5$ ( 5% ' 5 ' 5 ' 5 '  5 4 7%	) > 4 7*	 4
+ >7B4	C >4  %	D >7	E'
+  >	'	  5	H '	 5	 '	 5	 '	  5	 5$ (	 5	% '	 5	 '	 5	 '	 5	 '	  5	 4 7%	) > 4 7*	 4
  7
 
 ' 4 	' >
@@ -470,9 +472,7 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
 
 'J4 	' >
  =G  MusicTestBGM 
-delay  
-delay 	Play 
-delay level:/Audio#Title-BGMStopMusiceffects
+delay 	PlayPlayMusicdata/modules.PlayMusicCurrentMusicPlayingStopMusiceffects
 musicset_group_gain
 soundSpeakerOFFset_textureMusicVolume 
 delay SpeakerON 	code  
@@ -493,4 +493,5 @@ vmathset_scaleScreenFadeStatusButtonExitButtonAboutButtonHighScoresButtonH
  
  
  
-                                                                           " " " " # # $ $ $ ' ' ' ' ) ) ) ) ) + + + + + + / 0 0 2 2 3 4 4 4 4 4 4 4 4 5 5 5 5 6 6 6 6 8 8 ; ; = = = = = = = = ? ? ? ? ? @ @ @ @ @ @ @ @ @ @ @ @ A A A A A B B B B B B B B B B B B B C C C C C C C C D D D D E E E E G G J J L L L L L L L L N N N N N O O O O O O O O O O O O P P P P P Q Q Q Q Q Q Q Q Q Q Q Q T T T T T U U U U U V V V V V V V V W W W X X X X X X X X X X Z Z Z Z Z Z Z Z \ \ ] ] ^ ^ ` ` b c c g g g g g h h h h h h h h i i i j j j j j j j j j j l l l l l l l l n n o o p p r r t u u y y y y y z z z z z z z z { { { | | | | | | | | | | ~ ~ ~ ~ ~ ~ ~ ~ € €   ‚ ‚ „ „ † ‡ ‡ ‹ ‹ ‹ ‹ ‹ Œ Œ Œ Œ Œ Œ Œ Œ                      ’ ’ “ “ ” ” – – ˜ ™ ™              Ÿ Ÿ Ÿ                     ¢ ¢ ¢ ¢ ¢ ¢ ¢ ¢ ¤ ¤ ¥ ¥ ¦ ¦ ¨ ¨ ª « « ¯ ¯ ¯ ¯ ¯ ° ° ° ° ° ° ° ° ± ± ± ² ² ² ² ² ² ² ² ² ² ´ ´ ´ ´ ´ ´ ´ ´ ¶ ¶ · · ¸ ¸ º º ¼ ½ ½ À À À À Â Â Â Â Â Ä Ä Ä Ä Ä Ä É É É É É Ê Ê Ê Ë Ë Ë Ë Ë Ë Ë Ë Ì Ì Ì Í Í Í Í Í Í Í Í Í Í Ï Ï Ï Ï Ï Ï Ï Ï Ñ Ñ Ñ Ñ Ñ Ñ Ò Ò Ó Ó Ô Ô Ô Ô Ô Ô Ö Ö × × Ø Ø Ø Ø Ø Û Û Û Û Û Ü Ü Ü Ü Ü ß ß ß à à à à à à à à â â ä ä å å æ æ ë ë ë ë ë ì ì ì í í í í í í í í î î î ï ï ï ï ï ï ï ï ï ï ñ ñ ñ ñ ñ ñ ñ ñ ó ó ó ô ô õ õ ö ö ö ö ö ù ù ù ù ù ú ú ú ú ú ı ı ı ş ş ş ş ş ş ş ş   		self  ùaction_id  ùaction  ùnode ÷info  ÷leftArrow  ÷rightArrow  ÷m ô f   	 Ó1   5  1  5  1  5  1  5  G  on_input update on_message 	init   ) ! 7 + R9 R  data/modules.StopMusic/data/modules/StopMusic.luac" 
+                                                                           " " " " # # $ $ $ ' ' ' ' ) ) ) ) ) + + + + + + / 0 0 2 2 3 4 4 4 4 4 4 4 4 5 5 5 5 6 6 6 6 8 8 ; ; = = = = = = = = ? ? ? ? ? @ @ @ @ @ @ @ @ @ @ @ @ A A A A A B B B B B B B B B B B B B C C C C C C C C D D D D E E E E G G J J L L L L L L L L N N N N N O O O O O O O O O O O O P P P P P Q Q Q Q Q Q Q Q Q Q Q Q T T T T T U U U U U V V V V V V V V W W W X X X X X X X X X X Z Z Z Z Z Z Z Z \ \ ] ] ^ ^ ` ` b c c g g g g g h h h h h h h h i i i j j j j j j j j j j l l l l l l l l n n o o p p r r t u u y y y y y z z z z z z z z { { { | | | | | | | | | | ~ ~ ~ ~ ~ ~ ~ ~ € €   ‚ ‚ „ „ † ‡ ‡ ‹ ‹ ‹ ‹ ‹ Œ Œ Œ Œ Œ Œ Œ Œ                      ’ ’ “ “ ” ” – – ˜ ™ ™              Ÿ Ÿ Ÿ                     ¢ ¢ ¢ ¢ ¢ ¢ ¢ ¢ ¤ ¤ ¥ ¥ ¦ ¦ ¨ ¨ ª « « ¯ ¯ ¯ ¯ ¯ ° ° ° ° ° ° ° ° ± ± ± ² ² ² ² ² ² ² ² ² ² ´ ´ ´ ´ ´ ´ ´ ´ ¶ ¶ · · ¸ ¸ º º ¼ ½ ½ À À À À Â Â Â Â Â Ä Ä Ä Ä Ä Ä É É É É É Ê Ê Ê Ë Ë Ë Ë Ë Ë Ë Ë Ì Ì Ì Í Í Í Í Í Í Í Í Í Í Ï Ï Ï Ï Ï Ï Ï Ï Ñ Ñ Ñ Ñ Ñ Ñ Ò Ò Ó Ó Ô Ô Ô Ô Ô Ô Ö Ö × × Ø Ø Ø Ø Ø Û Û Û Û Û Ü Ü Ü Ü Ü ß ß ß à à à á á á ã ã å å æ æ ç ç ì ì ì ì ì í í í î î î î î î î î ï ï ï ğ ğ ğ ğ ğ ğ ğ ğ ğ ğ ò ò ò ò ò ò ò ò ô ô ô õ õ ö ö ÷ ÷ ÷ ÷ ÷ ú ú ú ú ú û û û û û ş ş ş ÿ ÿ ÿ    
+self  õaction_id  õaction  õnode óinfo  óleftArrow  órightArrow  óm ğmTwo ëmTwo L f   	 Õ1   5  1  5  1  5  1  5  G  on_input update on_message 	init   ) ! 7 + T9 T  data/modules.StopMusicdata/modules.PlayMusic/data/modules/StopMusic.luac/data/modules/PlayMusic.luac" 

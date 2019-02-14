@@ -96,8 +96,9 @@ function on_input(self, action_id, action)
 
 			m.StopMusic(CurrentMusicPlaying)--MusicTestBGM)
 
-			msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-			
+			local mTwo = require "data/modules.PlayMusic"
+			mTwo.PlayMusic(0)
+						
 			NextScreen = 5
 
 			ScreenFadeStatus = 1
@@ -119,8 +120,9 @@ function on_input(self, action_id, action)
 
 				m.StopMusic(CurrentMusicPlaying)--MusicTestBGM)
 
-				msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-
+				local mTwo = require "data/modules.PlayMusic"
+				mTwo.PlayMusic(0)
+				
 				NextScreen = 5
 				ScreenFadeStatus = 1
 

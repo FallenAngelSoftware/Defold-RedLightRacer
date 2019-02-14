@@ -154,9 +154,10 @@ function init(self)
 
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0
-    
-    msg.post("Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-    
+
+    local mTwo = require "data/modules.PlayMusic"
+    mTwo.PlayMusic(0)
+  
     sound.set_group_gain("music", MusicVolume)
     sound.set_group_gain("effects", EffectsVolume)
          

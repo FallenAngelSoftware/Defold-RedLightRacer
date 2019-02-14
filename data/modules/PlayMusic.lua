@@ -19,8 +19,10 @@ function MTWO.PlayMusic(music)
 	elseif (music == 9) then msg.post("level:/Audio#WinTeen-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 	elseif (music == 10) then msg.post("level:/Audio#WinAdult-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 	elseif (music == 11) then msg.post("level:/Audio#MsPalser-BGM", "play_sound", {delay = 0, gain = MusicVolume})
-	CurrentMusicPlaying = music
 	end
+
+	CurrentMusicPlaying = music
+	
 end
 
 return MTWO
