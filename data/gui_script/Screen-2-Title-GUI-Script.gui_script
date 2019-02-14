@@ -60,6 +60,8 @@ function on_input(self, action_id, action)
 	local leftArrow
 	local rightArrow
 	
+	local m = require "data/modules.StopMusic"
+	
 	if (  DelayAllUserInput == 0 and ( action_id == hash("EnterGUI") or action_id == hash("EnterGUIspace") )  ) then
 		if (ButtonSelectedByKeyboard == 0) then
 			node = gui.get_node("ButtonSTART")
@@ -81,7 +83,7 @@ function on_input(self, action_id, action)
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 							
 			if (ButtonSelectedByKeyboard == 0) then
-				NextScreen = 9--2
+				NextScreen = 8--2
 			else
 				NextScreen = (ButtonSelectedByKeyboard + 2)
 			end
@@ -144,7 +146,7 @@ function on_input(self, action_id, action)
 
 				msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 				
-				NextScreen = 9
+				NextScreen = 8
 				ScreenFadeStatus = 1
 				ScreenFadeAlpha = 0
 
@@ -274,7 +276,15 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("music", MusicVolume)
 					sound.set_group_gain("effects", EffectsVolume)
 
+--					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+					m.StopMusic(0)
+					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+										
 					DelayAllUserInput = 20
+
+					NextScreen = 2
+					ScreenFadeStatus = 1
+					ScreenFadeAlpha = 0					
 				end
 			end
 		end
@@ -296,6 +306,10 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("music", MusicVolume)
 					sound.set_group_gain("effects", EffectsVolume)
 
+--					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+					m.StopMusic(0)
+					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+					
 					MusicTestBGM = 0
 										
 					NextScreen = 7
@@ -308,6 +322,10 @@ function on_input(self, action_id, action)
 					ScreenFadeAlphaHalf = 0.5
 					
 					DelayAllUserInput = 20
+
+					NextScreen = 2
+					ScreenFadeStatus = 1
+					ScreenFadeAlpha = 0					
 				end
 			end
 		end

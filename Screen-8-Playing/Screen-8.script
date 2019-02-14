@@ -2,6 +2,8 @@ function init(self)
 	-- Add initialization code here
 	-- Remove this function if not needed
 	msg.post(".", "acquire_input_focus")
+	CurrentScreen = 8
+	NextScreen = 2
 end
 
 function final(self)
@@ -13,7 +15,10 @@ end
 function update(self, dt)
 	-- Add update code here
 	-- Remove this function if not needed
-
+	if (DelayAllUserInput > 0) then
+		DelayAllUserInput = (DelayAllUserInput - 1)
+	end
+	
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY()
 end

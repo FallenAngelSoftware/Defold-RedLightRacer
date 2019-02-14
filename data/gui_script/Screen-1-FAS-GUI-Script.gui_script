@@ -33,7 +33,16 @@ end
 function on_input(self, action_id, action)
 	-- Add input-handling code here
 	-- Remove this function if not needed
+	local m = require "data/modules.StopMusic"
 
+	if action_id == hash("KeyEscape") and action.pressed and self.active then
+		msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
+		m.StopMusic(CurrentMusicPlaying)--MusicTestBGM)
+		msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+		NextScreen = 2
+		ScreenFadeStatus = 1
+	end
+	
 end
 
 function on_reload(self)

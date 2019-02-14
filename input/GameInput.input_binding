@@ -242,6 +242,10 @@ key_trigger {
   input: KEY_BACKSPACE
   action: "backspace"
 }
+key_trigger {
+  input: KEY_ESC
+  action: "KeyEscape"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "GotoNextScreen"
