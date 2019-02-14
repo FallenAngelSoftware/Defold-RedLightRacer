@@ -49,7 +49,7 @@ components {
   position {
     x: 180.0
     y: 625.0
-    z: 0.5
+    z: 1.0
   }
   rotation {
     x: 0.0

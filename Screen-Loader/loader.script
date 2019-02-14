@@ -79,6 +79,9 @@ function init(self)
     GameMode = 2
 
     GamePaused = false
+
+    PlayerScreenX = 180
+    PlayerScreenY = 105
     
     HighScoresName = {}
     for i = 0, 2 do
