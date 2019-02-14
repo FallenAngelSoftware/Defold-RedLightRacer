@@ -7,22 +7,22 @@ function init(self)
 
 	local m = require "data/modules.StopMusic"
 		
-	gui.set_position( gui.get_node("Pause"), vmath.vector3(360-15, 625, 1) )
+	gui.set_position( gui.get_node("Pause"), vmath.vector3(360-15, 625, 0.5) )
 
 	if ( MusicVolume > 0 or EffectsVolume > 0) then
-		gui.set_position( gui.get_node("SpeakerOFF"), vmath.vector3(15, 625, 1) )
-		gui.set_position( gui.get_node("SpeakerON"), vmath.vector3(15, 625+9999, 1) )
+		gui.set_position( gui.get_node("SpeakerOFF"), vmath.vector3(15, 625, 0.5) )
+		gui.set_position( gui.get_node("SpeakerON"), vmath.vector3(15, 625+9999, 0.5) )
 	else
-		gui.set_position( gui.get_node("SpeakerOFF"), vmath.vector3(15, 625+9999, 1) )
-		gui.set_position( gui.get_node("SpeakerON"), vmath.vector3(15, 625, 1) )
+		gui.set_position( gui.get_node("SpeakerOFF"), vmath.vector3(15, 625+9999, 0.5) )
+		gui.set_position( gui.get_node("SpeakerON"), vmath.vector3(15, 625, 0.5) )
 	end	
 
 	m.StopMusic(CurrentMusicPlaying)
 	local mTwo = require "data/modules.PlayMusic"
 	mTwo.PlayMusic(2)
 
-	gui.set_position( gui.get_node("Exit"), vmath.vector3(0, 9999, 1) )
-	gui.set_position( gui.get_node("Play"), vmath.vector3(0, 9999, 1) )
+	gui.set_position( gui.get_node("Exit"), vmath.vector3(0, 9999, 0.5) )
+	gui.set_position( gui.get_node("Play"), vmath.vector3(0, 9999, 0.5) )
 		
 		
 end
