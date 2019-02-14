@@ -6,6 +6,8 @@ function init(self)
 	NextScreen = 2
 	
 --	go.set_position( vmath.vector3(180, 320+9999, 0), "PauseBG" )
+
+	PlayerScreenX = 180
 	
 end
 
