@@ -4,6 +4,9 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	CurrentScreen = 8
 	NextScreen = 2
+
+	go.set_position( vmath.vector3(180, 320+9999, 0), "PauseBG" )
+	
 end
 
 function final(self)

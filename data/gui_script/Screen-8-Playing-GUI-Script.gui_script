@@ -23,13 +23,13 @@ function init(self)
 		gui.set_texture( gui.get_node("SpeakerON"), "SpeakerON" )
 	end
 
-		m.StopMusic(CurrentMusicPlaying)
+	m.StopMusic(CurrentMusicPlaying)
 	local mTwo = require "data/modules.PlayMusic"
 	mTwo.PlayMusic(2)
 
 	gui.set_position( gui.get_node("Exit"), vmath.vector3(0, 9999, 0.5) )
 	gui.set_position( gui.get_node("Play"), vmath.vector3(0, 9999, 0.5) )
-		
+
 		
 end
 
