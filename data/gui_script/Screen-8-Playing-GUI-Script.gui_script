@@ -20,7 +20,11 @@ function init(self)
 	m.StopMusic(CurrentMusicPlaying)
 	local mTwo = require "data/modules.PlayMusic"
 	mTwo.PlayMusic(2)
-	
+
+	gui.set_position( gui.get_node("Exit"), vmath.vector3(0, 9999, 1) )
+	gui.set_position( gui.get_node("Play"), vmath.vector3(0, 9999, 1) )
+		
+		
 end
 
 function final(self)
