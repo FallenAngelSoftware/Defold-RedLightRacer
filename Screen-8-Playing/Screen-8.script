@@ -32,14 +32,15 @@ function update(self, dt)
 		go.set_position( vmath.vector3(180, 320, 1), "PauseText" )
 	end
 
-
-	if (PlayerDirection == -1) then
-		if (PlayerScreenX > 80) then
-			PlayerScreenX = PlayerScreenX - 5
-		end
-	else
-		if (PlayerScreenX < 360-80) then
-			PlayerScreenX = PlayerScreenX + 5
+	if (GamePaused == false) then
+		if (PlayerDirection == -1) then
+			if (PlayerScreenX > 80) then
+				PlayerScreenX = PlayerScreenX - 5
+			end
+		else
+			if (PlayerScreenX < 360-80) then
+				PlayerScreenX = PlayerScreenX + 5
+			end
 		end
 	end
 
