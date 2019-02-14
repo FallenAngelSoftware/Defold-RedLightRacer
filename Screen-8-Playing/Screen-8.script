@@ -25,9 +25,11 @@ function update(self, dt)
 	if (GamePaused == false) then
 		go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 1.0) )
 		go.set_position( vmath.vector3(180, 320+9999, 1), "PauseBG" )
+		go.set_position( vmath.vector3(180, 320+9999, 1), "PauseText" )
 	else
-		go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 0.7) )
+		go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 0.8) )
 		go.set_position( vmath.vector3(180, 320, 1), "PauseBG" )
+		go.set_position( vmath.vector3(180, 320, 1), "PauseText" )
 	end
 	
 	go.set_position( vmath.vector3(PlayerScreenX, PlayerScreenY, 0.5), "Player" )
