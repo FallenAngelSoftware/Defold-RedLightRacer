@@ -77,6 +77,8 @@ function init(self)
     PlayRedLightRacerVoice = true
     
     GameMode = 2
+
+    GamePaused = false
     
     HighScoresName = {}
     for i = 0, 2 do
