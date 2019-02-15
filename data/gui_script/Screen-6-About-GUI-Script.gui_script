@@ -16,7 +16,8 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
-	
+
+	DelayAllUserInput = 50
 	
 	TotalNumberOfTexts = 0
 	text_nodes = {}

@@ -8,6 +8,14 @@ function init(self)
 --	go.set_position( vmath.vector3(180, 320+9999, 0), "PauseBG" )
 
 	PlayerScreenX = 180
+
+	if (GameMode == 0) then
+		msg.post("@system:", "set_update_frequency", { frequency = 30 } )
+	elseif (GameMode == 1) then
+		msg.post("@system:", "set_update_frequency", { frequency = 60 } )
+	elseif (GameMode == 2) then
+		msg.post("@system:", "set_update_frequency", { frequency = 45 } )
+	end				
 	
 end
 
@@ -15,6 +23,8 @@ function final(self)
 	-- Add finalization code here
 	-- Remove this function if not needed
 	msg.post(".", "release_input_focus")
+
+	msg.post("@system:", "set_update_frequency", { frequency = 60 } )
 end
 
 function update(self, dt)
