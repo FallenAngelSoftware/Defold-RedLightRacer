@@ -166,6 +166,8 @@ function init(self)
 
     EnemyScreenX = {}
     EnemyScreenY = {}
+    EnemyAvailable = {}
+    EnemyAppears = 0
     
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0

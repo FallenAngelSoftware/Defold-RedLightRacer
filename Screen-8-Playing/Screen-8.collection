@@ -220,7 +220,7 @@ instances {
   }
 }
 instances {
-  id: "Enemy"
+  id: "Enemy0"
   prototype: "/data/objects/Enemy.go"
   position {
     x: 0.0

@@ -23,18 +23,15 @@ function init(self)
 	go.set( "#MouseXY", "outline", vmath.vector4(1, 1, 1, 1) )	
 
 
-	EnemyScreenX[0] = 180-70
-	EnemyScreenY[0] = 500
-	
-	go.set_position( vmath.vector3(EnemyScreenX[0], EnemyScreenY[0], 0.4), "Enemy" )
-	go.set_position( vmath.vector3(180, 9999, 0.4), "Enemy1" )
-	go.set_position( vmath.vector3(180, 9999, 0.4), "Enemy2" )
-	go.set_position( vmath.vector3(180, 9999, 0.4), "Enemy3" )
-	go.set_position( vmath.vector3(180, 9999, 0.4), "Enemy4" )
+	for index = 0, 4 do
+		EnemyScreenX[index] = 180-70
+		EnemyScreenY[index] = 640+100
+		go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
+		go.set(  string.format("/Enemy%d#Enemy", index), "tint", vmath.vector4( math.random(3, 10)/10, math.random(3, 10)/10, math.random(3, 10)/10, 1 )  )		
+		EnemyAvailable[index] = true
+	end
 
-
-	
-	go.set(  "/Enemy#Enemy", "tint", vmath.vector4( math.random(3, 10)/10, math.random(3, 10)/10, math.random(3, 10)/10, 1 )  )
+	EnemyAppears = 0
 	
 	
 	local screenY = 0
@@ -80,14 +77,44 @@ function update(self, dt)
 	end
 
 	if (GamePaused == false) then
-
 		if (Speed < 30) then
 			Speed = Speed + 0.1
 		end
 		
-
 		for index = 0, 5 do
 			StreetDivider[index] = StreetDivider[index] - (1 * Speed)
+		end
+
+		EnemyAppears = EnemyAppears + Speed
+		if (EnemyAppears > 3000) then
+			for index = 0, 4 do
+				if (EnemyAvailable[index] == true) then
+					local side = math.random(0, 1)
+					if (side == 0) then
+						EnemyScreenX[index] = 180-70
+					elseif (side == 1) then
+						EnemyScreenX[index] = 180+70
+					end
+						
+					EnemyScreenY[index] = 640+100
+					go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
+					go.set(  string.format("/Enemy%d#Enemy", index), "tint", vmath.vector4( math.random(3, 10)/10, math.random(3, 10)/10, math.random(3, 10)/10, 1 )  )		
+					EnemyAvailable[index] = false
+					EnemyAppears = 0
+					break
+				end
+			end	
+		end
+
+		for index = 0, 4 do
+			if (EnemyAvailable[index] == false) then
+				EnemyScreenY[index] = EnemyScreenY[index] - 5
+				go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
+
+				if (EnemyScreenY[index] < -100) then
+					EnemyAvailable[index] = true
+				end
+			end
 		end
 
 		go.set_position( vmath.vector3(180, StreetDivider[0], 0.3), "Street_Divider_01" )
@@ -96,7 +123,6 @@ function update(self, dt)
 		go.set_position( vmath.vector3(180, StreetDivider[3], 0.3), "Street_Divider_013" )
 		go.set_position( vmath.vector3(180, StreetDivider[4], 0.3), "Street_Divider_014" )
 		go.set_position( vmath.vector3(180, StreetDivider[5], 0.3), "Street_Divider_015" )
-				
 
 		if ( StreetDivider[5] < (StreetDividerOriginalScreenY - StreetDividerOffset) ) then
 			local screenY = 0
@@ -115,10 +141,7 @@ function update(self, dt)
 
 			StreetDividerOffset = (640/5)
 			StreetDividerOriginalScreenY = StreetDivider[5]
-			
 		end
-				
-
 
 		if (PlayerDirection == -1) then
 			if (PlayerScreenX > 80) then
@@ -129,13 +152,12 @@ function update(self, dt)
 				PlayerScreenX = PlayerScreenX + 5
 			end
 		end
-	end
 
-	PlayerDirection = 1
-	
-	go.set_position( vmath.vector3(PlayerScreenX, PlayerScreenY, 0.5), "Player" )
-					
-	
+		PlayerDirection = 1
+		
+		go.set_position( vmath.vector3(PlayerScreenX, PlayerScreenY, 0.5), "Player" )
+	end			
+		
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY(dt)
 end
