@@ -163,6 +163,9 @@ function init(self)
     StreetDivider = {}
     StreetDividerOffset = 0
     StreetDividerOriginalScreenY = 0
+
+    EnemyScreenX = {}
+    EnemyScreenY = {}
     
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0
