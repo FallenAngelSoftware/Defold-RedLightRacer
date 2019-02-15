@@ -37,6 +37,9 @@ function init(self)
 	StreetDividerOffset = (640/5)
 	StreetDividerOriginalScreenY = StreetDivider[5]
 
+	Score = 0
+	Level = 0
+	Speed = 0
 					
 end
 
