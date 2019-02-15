@@ -5,30 +5,25 @@
 
 local M = {}
 
-function M.UpdateFPSandMouseXY()
-	FPS_FrameCount = (FPS_FrameCount + 1)
-	local currentTime = socket.gettime()
-	if ( currentTime > (FPS_LastSecond + 1) ) then
-		FPS_TenSeconds[FPS_CurrentSecond] = FPS_FrameCount
-		if (FPS_CurrentSecond < 10) then
-			FPS_CurrentSecond = (FPS_CurrentSecond + 1)
-		else
-			FPS_CurrentSecond = 0
-		end
-
-		for index = 0, 10 do
-			FPS_Average = (FPS_Average + FPS_TenSeconds[index])
-		end
-
-		FPS_Average = (FPS_Average / 11)
-		FPS_Average = math.floor(FPS_Average)
-
-		FPS_LastSecond = socket.gettime()
-		FPS_FrameCount = 0
-	end
-
+function M.UpdateFPSandMouseXY(dt)
+	local frames = {}
+	local frame_sum = 0
+	local frame_index = 1
+	local MAX_SAMPLES = 10
+	M.average_ms = 0
+	M.raw_average_time = 0
+	M.fps = 0
+	
+	if frames[frame_index] then frame_sum = frame_sum - frames[frame_index] end
+	frame_sum = frame_sum + dt
+	frames[frame_index] = dt
+	frame_index = math.fmod(frame_index + 1, MAX_SAMPLES)
+	M.raw_average_time = frame_sum / MAX_SAMPLES
+	M.average_ms = math.floor(M.raw_average_time * 10000) / 100
+	M.fps = math.floor(1.0 / M.raw_average_time * 100) / 1000 + 1
+		
 	if (SecretCode[0] == 1 and SecretCode[1] == 0 and SecretCode[2] == 1 and SecretCode[3] == 0) then
-		label.set_text(   "#MouseXY", "FPS=" .. tostring(FPS_Average) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )	
+		label.set_text(   "#MouseXY", "FPS=" .. tostring( math.floor(M.fps) ) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )	
 	end
 end
 

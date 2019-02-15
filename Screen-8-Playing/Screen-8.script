@@ -16,6 +16,9 @@ function init(self)
 	elseif (GameMode == 2) then
 		msg.post("@system:", "set_update_frequency", { frequency = 45 } )
 	end				
+
+	go.set( "#MouseXY", "color", vmath.vector4(0, 0, 0, 1) )	
+	go.set( "#MouseXY", "outline", vmath.vector4(1, 1, 1, 1) )	
 	
 end
 
@@ -62,7 +65,7 @@ function update(self, dt)
 					
 	
 	local m = require "data/modules.FPSandMouseXY"
-	m.UpdateFPSandMouseXY()
+	m.UpdateFPSandMouseXY(dt)
 end
 
 function on_message(self, message_id, message, sender)

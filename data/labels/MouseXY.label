@@ -5,8 +5,8 @@ size {
   w: 0.0
 }
 scale {
-  x: 0.5
-  y: 0.5
+  x: 0.8
+  y: 0.8
   z: 1.0
   w: 0.0
 }
@@ -34,5 +34,5 @@ pivot: PIVOT_W
 blend_mode: BLEND_MODE_ALPHA
 line_break: false
 text: ""
-font: "/data/fonts/GameFont.font"
+font: "/builtins/fonts/system_font.font"
 material: "/builtins/fonts/label.material"
