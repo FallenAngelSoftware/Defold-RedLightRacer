@@ -114,10 +114,10 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("music", MusicVolume)
 					sound.set_group_gain("effects", EffectsVolume)
 
-					--					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
+--					msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 					m.StopMusic(CurrentMusicPlaying)
 					local mTwo = require "data/modules.PlayMusic"
-					mTwo.PlayMusic(0)
+					mTwo.PlayMusic(2)
 
 					DelayAllUserInput = 20
 				end

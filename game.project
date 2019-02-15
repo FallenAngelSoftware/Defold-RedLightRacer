@@ -11,6 +11,8 @@ title = Red Light Racer
 [display]
 width = 360
 height = 640
+vsync = 0
+update_frequency = 60
 
 [input]
 game_binding = /input/GameInput.input_bindingc

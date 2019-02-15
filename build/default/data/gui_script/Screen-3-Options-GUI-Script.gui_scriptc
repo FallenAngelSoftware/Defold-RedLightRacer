@@ -1,5 +1,5 @@
 
-×
+Õ
 È¦function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
@@ -637,7 +637,7 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-end7/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÏvLJ 8=/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÒ 	 D
+end6data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÎvLJ 7=data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÒ 	 D
 Áİn4  7% % >4  7% % >) : 4 4  T€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -749,4 +749,4 @@ delay play_soundlevel:/Audio#MenuClick	postmsgactivepressedKeyEscape	hash
 
 
       !!""""""##$$$$$$%%&&&&&&''(((((********+++,,,,,,,,,,........02223333444466888999;;;;;;<<<====>>>>@@BBBBBCCCCCCCCCDDDEEEEFFFFHHIJJJKKKKKLLLLLLNNNOPPPQQQQQRRRRRRTTTUVVVWWWWWXXXXXXZZZ[\\\]]]]]^^^^^^```dddddeeefffffffffffggghhhhhhhhhhhiiijjjjjjjjjjjkkklllllllllllmmmnnnnnnnnnnnooopppppppppppqqqrrrrrrrrrruuzz|‚‚ƒƒƒƒƒƒ„„………………††‡‡‡‡‡‡ˆˆ‰‰‰‰‰‰ŠŠ‹‹‹‹‹‹ŒŒ‘‘‘‘‘‘‘‘’’’““““““““““••••••••—™™™šššš››››ŸŸŸ   ¢¢¢¢¢¢£££¤¤¤¤¥¥¥¥§§©©©©©ªªªªªªªªª«««¬¬¬¬­­­­¯¯°±±±²²²²²³³³³³³µµµ¶···¸¸¸¸¸¹¹¹¹¹¹»»»¼½½½¾¾¾¾¾¿¿¿¿¿¿ÁÁÁÂÃÃÃÄÄÄÄÄÅÅÅÅÅÅÇÇÇËËËËËÌÌÌÍÍÍÍÍÍÍÍÍÍÍÎÎÎÏÏÏÏÏÏÏÏÏÏÏĞĞĞÑÑÑÑÑÑÑÑÑÑÑÒÒÒÓÓÓÓÓÓÓÓÓÓÓÔÔÔÕÕÕÕÕÕÕÕÕÕÕÖÖÖ×××××××××××ØØØÙÙÙÙÙÙÙÙÙÙÜÜááãèèèèèééééééééêêêëëëëëëëëëëííííííííïïğğòóó÷self  action_id  action  m šmTwo mTwo 
-÷mThree ônode ónodeSelectorLine ­ÅË Ë Ëindex ÉÍË Ë Ëindex É f   	 ş1   5  1  5  1  5  1  5  G  on_input update on_message 	init o  y q … { ~‡ ~  data/modules.Optionsdata/modules.OptionsResetScaledata/modules.StopMusicdata/modules.PlayMusic/data/modules/Options.luac$/data/modules/OptionsResetScale.luac/data/modules/StopMusic.luac/data/modules/PlayMusic.luac" 
+÷mThree ônode ónodeSelectorLine ­ÅË Ë Ëindex ÉÍË Ë Ëindex É f   	 ş1   5  1  5  1  5  1  5  G  on_input update on_message 	init o  y q … { ~‡ ~  data/modules.Optionsdata/modules.OptionsResetScaledata/modules.StopMusicdata/modules.PlayMusicdata/modules.PlayMusicdata/modules.Options/data/modules/Options.luac$/data/modules/OptionsResetScale.luac/data/modules/StopMusic.luac/data/modules/PlayMusic.luac/data/modules/PlayMusic.luac/data/modules/Options.luac" 
