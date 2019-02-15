@@ -19,7 +19,25 @@ function init(self)
 
 	go.set( "#MouseXY", "color", vmath.vector4(0, 0, 0, 1) )	
 	go.set( "#MouseXY", "outline", vmath.vector4(1, 1, 1, 1) )	
-	
+
+	local screenY = 0
+	local screenYOffset = (640/5)
+	for index = 0, 5 do
+		StreetDivider[index] = screenY
+		screenY = screenY + screenYOffset
+	end
+
+	go.set_position( vmath.vector3(180, StreetDivider[0], 0.4), "Street_Divider_01" )
+	go.set_position( vmath.vector3(180, StreetDivider[1], 0.4), "Street_Divider_011" )
+	go.set_position( vmath.vector3(180, StreetDivider[2], 0.4), "Street_Divider_012" )
+	go.set_position( vmath.vector3(180, StreetDivider[3], 0.4), "Street_Divider_013" )
+	go.set_position( vmath.vector3(180, StreetDivider[4], 0.4), "Street_Divider_014" )
+	go.set_position( vmath.vector3(180, StreetDivider[5], 0.4), "Street_Divider_015" )
+
+	StreetDividerOffset = (640/5)
+	StreetDividerOriginalScreenY = StreetDivider[5]
+
+					
 end
 
 function final(self)
@@ -48,6 +66,46 @@ function update(self, dt)
 	end
 
 	if (GamePaused == false) then
+
+		if (Speed < 30) then
+			Speed = Speed + 0.1
+		end
+		
+
+		for index = 0, 5 do
+			StreetDivider[index] = StreetDivider[index] - (1 * Speed)
+		end
+
+		go.set_position( vmath.vector3(180, StreetDivider[0], 0.4), "Street_Divider_01" )
+		go.set_position( vmath.vector3(180, StreetDivider[1], 0.4), "Street_Divider_011" )
+		go.set_position( vmath.vector3(180, StreetDivider[2], 0.4), "Street_Divider_012" )
+		go.set_position( vmath.vector3(180, StreetDivider[3], 0.4), "Street_Divider_013" )
+		go.set_position( vmath.vector3(180, StreetDivider[4], 0.4), "Street_Divider_014" )
+		go.set_position( vmath.vector3(180, StreetDivider[5], 0.4), "Street_Divider_015" )
+				
+
+		if ( StreetDivider[5] < (StreetDividerOriginalScreenY - StreetDividerOffset) ) then
+			local screenY = 0
+			local screenYOffset = (640/5)
+			for index = 0, 5 do
+				StreetDivider[index] = screenY
+				screenY = screenY + screenYOffset
+			end
+
+			go.set_position( vmath.vector3(180, StreetDivider[0], 0.4), "Street_Divider_01" )
+			go.set_position( vmath.vector3(180, StreetDivider[1], 0.4), "Street_Divider_011" )
+			go.set_position( vmath.vector3(180, StreetDivider[2], 0.4), "Street_Divider_012" )
+			go.set_position( vmath.vector3(180, StreetDivider[3], 0.4), "Street_Divider_013" )
+			go.set_position( vmath.vector3(180, StreetDivider[4], 0.4), "Street_Divider_014" )
+			go.set_position( vmath.vector3(180, StreetDivider[5], 0.4), "Street_Divider_015" )
+
+			StreetDividerOffset = (640/5)
+			StreetDividerOriginalScreenY = StreetDivider[5]
+			
+		end
+				
+
+
 		if (PlayerDirection == -1) then
 			if (PlayerScreenX > 80) then
 				PlayerScreenX = PlayerScreenX - 5

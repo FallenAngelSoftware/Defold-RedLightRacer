@@ -158,7 +158,12 @@ function init(self)
 
     Score = 0
     Level = 0
+    Speed = 0
 
+    StreetDivider = {}
+    StreetDividerOffset = 0
+    StreetDividerOriginalScreenY = 0
+    
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0
 
