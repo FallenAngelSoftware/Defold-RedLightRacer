@@ -116,6 +116,9 @@ function update(self, dt)
 					StreetDivider[index] = StreetDivider[index] - (1 * Speed)
 				end
 
+				Score = math.floor(  Score + ( Speed * (Level+1) )  )
+				label.set_text("#Score", Score)
+								
 				EnemyAppears = EnemyAppears + Speed
 				if (EnemyAppears > 3000) then
 					for index = 0, 4 do
@@ -144,6 +147,8 @@ function update(self, dt)
 
 						if (EnemyScreenY[index] < -100) then
 							EnemyAvailable[index] = true
+							Score = math.floor(  Score + ( 500 * (Level+1) )  )
+							label.set_text("#Score", Score)
 						end
 					end
 				end
@@ -194,6 +199,9 @@ function update(self, dt)
 							Collision = true
 							ClearedRoad = false
 							msg.post("level:/Audio#CarHorn", "play_sound", {delay = 0, gain = EffectsVolume})
+
+							Score = math.floor(  Score - ( 500 * (Level+1) )  )
+							label.set_text("#Score", Score)
 						end
 					end
 				end
