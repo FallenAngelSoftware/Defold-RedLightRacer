@@ -83,6 +83,7 @@ function on_input(self, action_id, action)
 				NextScreen = 8--2
 				Score = 0
 				Level = 0
+				PM.PlayMusic(2)
 			else
 				NextScreen = (ButtonSelectedByKeyboard + 2)
 			end
@@ -152,7 +153,8 @@ function on_input(self, action_id, action)
 
 					Score = 0
 					Level = 0
-
+					PM.PlayMusic(2)
+					
 					ButtonClicked = node
 					ScreenFadeAlphaHalf = 0.5
 				end

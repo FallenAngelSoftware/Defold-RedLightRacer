@@ -13,14 +13,13 @@ function init(self)
 		gui.set_texture( gui.get_node("SpeakerON"), "SpeakerON" )
 	end
 
-	PM.PlayMusic(2)
 	gui.set_position( gui.get_node("Exit"), vmath.vector3(0, 9999, 0.5) )
 	GamePaused = false
 end
 
 function final(self)
-	local PM = require "data/modules.PlayMusic"
-	PM.PlayMusic(0)
+--	local PM = require "data/modules.PlayMusic"
+--	PM.PlayMusic(0)
 end
 
 function update(self, dt)
