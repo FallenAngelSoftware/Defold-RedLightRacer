@@ -124,6 +124,7 @@ function on_input(self, action_id, action)
 						msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 						msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 						PM.PlayMusic(0)
+						Score = 0
 						NextScreen = 2
 						ScreenFadeStatus = 1
 						DelayAllUserInput = 20
