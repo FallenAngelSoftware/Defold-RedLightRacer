@@ -76,6 +76,7 @@ function init(self)
 	Speed = 0
 
 	GameJustPlayed = true
+	GameWon = false
 
 	Minutes = 0
 	Seconds = 59

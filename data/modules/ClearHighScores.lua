@@ -19,7 +19,7 @@ function CHS.ClearHighScores()
 	HighScoresLevel = {}
 	for i = 0, 2 do
 		HighScoresLevel[i] = {}
-		HighScoresLevel[i][0] = 10
+		HighScoresLevel[i][0] = 11
 		HighScoresLevel[i][1] = 9
 		HighScoresLevel[i][2] = 8
 		HighScoresLevel[i][3] = 7

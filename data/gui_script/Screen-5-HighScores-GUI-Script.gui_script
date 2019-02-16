@@ -32,19 +32,29 @@ function init(self)
 	LoadHighScoresText("NAME:", 30, 480+25, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0)
 	LoadHighScoresText("LEVEL:", 220, 480+25, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0)
 	LoadHighScoresText("SCORE:", 270, 480+25, 0.5, 0.5, 1.0, 1.0, 1.0, 1.0)
-			
+
+	local Green = 1.0
+	local Blue = 0.5
 	local screenY = 480
 	for index = 0, 9 do
-		LoadHighScoresText( index+1 .. ".", 4, screenY-(index*41), 0.75, 0.75, 1.0, 1.0, 1.0, 1.0 )
-		LoadHighScoresText( HighScoresName[GameMode][index], 30, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, 1.0, 0.5 )
-
-		if (HighScoresLevel[GameMode][index] < 10) then
-			LoadHighScoresText( HighScoresLevel[GameMode][index], 220, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, 1.0, 0.5 )
+		if (Score == HighScoresScore[GameMode][index] and Level == HighScoresLevel[GameMode][index]) then
+			Green = 0.0
+			Blue = 0.0
 		else
-			LoadHighScoresText( "Won!", 220, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, 1.0, 0.5 )
+			Green = 1.0
+			Blue = 0.5
+		end	
+
+		LoadHighScoresText( index+1 .. ".", 4, screenY-(index*41), 0.75, 0.75, 1.0, 1.0, 1.0, 1.0 )
+		LoadHighScoresText( HighScoresName[GameMode][index], 30, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, Green, Blue )
+
+		if (HighScoresLevel[GameMode][index] < 11) then
+			LoadHighScoresText( HighScoresLevel[GameMode][index], 220, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, Green, Blue )
+		else
+			LoadHighScoresText( "Won!", 220, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, Green, Blue )
 		end
 		
-		LoadHighScoresText( HighScoresScore[GameMode][index], 270, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, 1.0, 0.5 )
+		LoadHighScoresText( HighScoresScore[GameMode][index], 270, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, Green, Blue )
 	end
 
 	if (SecretCode[0] ~= 1 or SecretCode[1] ~= 0 or SecretCode[2] ~= 1 or SecretCode[3] ~= 0) then

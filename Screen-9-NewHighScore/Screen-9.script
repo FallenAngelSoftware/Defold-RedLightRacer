@@ -1,10 +1,15 @@
 function init(self)
+	msg.post(".", "acquire_input_focus")
 	CurrentScreen = 9
 	NextScreen = 2
 	ScreenFadeStatus = 0
 	ScreenFadeAlpha = 1
 	ButtonSelectedByKeyboard = 0
-	msg.post(".", "acquire_input_focus")
+
+	if (GameWon == false) then
+		local PM = require "data/modules.PlayMusic"
+		PM.PlayMusic(7)
+	end
 end
 
 function final(self)
