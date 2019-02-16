@@ -29,6 +29,8 @@ function init(self)
 		print("Save Failed!")
 	end
 
+	DelayAllUserInput = 50
+	
 	msg.post(".", "acquire_input_focus")
 end
 
