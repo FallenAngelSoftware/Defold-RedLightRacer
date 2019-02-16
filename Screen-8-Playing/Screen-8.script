@@ -1,18 +1,10 @@
 function init(self)
-	-- Add initialization code here
-	-- Remove this function if not needed
 	msg.post(".", "acquire_input_focus")
 	CurrentScreen = 8
 	NextScreen = 2
-
 	self.timer = 0
-	
---	go.set_position( vmath.vector3(180, 320+9999, 0), "PauseBG" )
-
 	math.randomseed( os.time() )
-
 	go.set_position( vmath.vector3(180, 320+9999, 0), "GameOverText" )
-	
 	PlayerScreenX = 180
 
 	if (GameMode == 0) then
@@ -26,7 +18,6 @@ function init(self)
 	go.set( "#MouseXY", "color", vmath.vector4(0, 0, 0, 1) )	
 	go.set( "#MouseXY", "outline", vmath.vector4(1, 1, 1, 1) )	
 
-
 	for index = 0, 4 do
 		EnemyScreenX[index] = 180-70
 		EnemyScreenY[index] = 640+100
@@ -36,19 +27,17 @@ function init(self)
 	end
 
 	EnemyAppears = 0
-	
-	
+		
 	local screenY = 0
 	local screenYOffset = (640/5)
 	for index = 0, 5 do
 		StreetDivider[index] = screenY
 		screenY = screenY + screenYOffset
 	end
-
 	
 	StreetDividerOffset = (640/5)
 	StreetDividerOriginalScreenY = StreetDivider[5]
-
+	
 	Collision = false
 	ClearedRoad = false
 	GameOverTimer = 0
@@ -59,20 +48,14 @@ function init(self)
 
 	Minutes = 0
 	Seconds = 59
-					
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
 	msg.post(".", "release_input_focus")
-
 	msg.post("@system:", "set_update_frequency", { frequency = 60 } )
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
 	if (DelayAllUserInput > 0) then
 		DelayAllUserInput = (DelayAllUserInput - 1)
 	end
@@ -92,11 +75,8 @@ function update(self, dt)
 	if (GamePaused == false) then
 		if self.timer < 1 then
 			self.timer = self.timer + dt
-			print(self.timer)
 		end
-		if self.timer >= 1 then --and not self.timer_flag then
-			print("One second has passed!")
-			--		self.timer_flag = true
+		if self.timer >= 1 then
 			self.timer = 0
 			if (Seconds > 0) then
 				Seconds = Seconds - 1
@@ -105,6 +85,7 @@ function update(self, dt)
 				Seconds = 59
 			else
 				if (GameOverTimer == 0) then
+					msg.post("level:/Audio#GameOver", "play_sound", {delay = 0, gain = EffectsVolume})
 					go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 0.8) )
 					go.set_position( vmath.vector3(180, 320, 1), "PauseBG" )
 					go.set_position( vmath.vector3(180, 320, 1), "GameOverText" )
@@ -145,7 +126,7 @@ function update(self, dt)
 							elseif (side == 1) then
 								EnemyScreenX[index] = 180+70
 							end
-								
+
 							EnemyScreenY[index] = 640+100
 							go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
 							go.set(  string.format("/Enemy%d#Enemy", index), "tint", vmath.vector4( math.random(3, 10)/10, math.random(3, 10)/10, math.random(3, 10)/10, 1 )  )		
@@ -241,24 +222,24 @@ function update(self, dt)
 		end
 	end
 					
-	local m = require "data/modules.FPSandMouseXY"
-	m.UpdateFPSandMouseXY(dt)
+	local FPSAMXY = require "data/modules.FPSandMouseXY"
+	FPSAMXY.UpdateFPSandMouseXY(dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	if message_id == hash("show_level_select") then
+		msg.post("#", "enable")
+		self.active = true
+	elseif message_id == hash("hide_level_select") then
+		msg.post("#", "disable")
+		self.active = false
+	end
 end
 
 function on_input(self, action_id, action)
-	-- Add input-handling code here
-	-- Remove this function if not needed
-
 	mX = action.screen_x
 	mY = action.screen_y	
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
 end

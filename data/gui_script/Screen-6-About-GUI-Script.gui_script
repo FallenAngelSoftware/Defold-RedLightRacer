@@ -16,34 +16,23 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
-
 	DelayAllUserInput = 50
-	
 	TotalNumberOfTexts = 0
 	text_nodes = {}
 	local screenY = -30
 	LoadStafTextLine("TM", 290, screenY+20, 0.7, 0.7, 1.0, 1.0, 1.0, 0.0)
---	screenY = (screenY - 30)
 	LoadStafTextLine("''Red Light Racer''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("Copyright 2019, By Team ''Fallen Angel Software''", 180, screenY, 0.61, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("(www.FallenAngelSoftware.com)", 180, screenY, 0.95, 1.0, 1.0, 1.0, 1.0, 1.0)
-	
 	screenY = (screenY - 100)
 	LoadStafTextLine("Game Made On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
-	if (Platform == Platform_iOS) then
-		screenY = (screenY - 30)
-		LoadStafTextLine("Genuine Apple MacOS", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
-		screenY = (screenY - 30)
-		LoadStafTextLine("(www.Apple.com)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-	else
-		screenY = (screenY - 30)
-		LoadStafTextLine("Genuine Kubuntu 18.04 64Bit L.T.S. Linux", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
-		screenY = (screenY - 30)
-		LoadStafTextLine("(www.Kubuntu.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-	end
-				
+	screenY = (screenY - 30)
+	LoadStafTextLine("Genuine Kubuntu 18.04 64Bit L.T.S. Linux", 180, screenY, .73, 1.0, 1.0, 1.0, 1.0, 1.0)
+	screenY = (screenY - 30)
+	LoadStafTextLine("(www.Kubuntu.org)", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+			
 	screenY = (screenY - 100)
 	LoadStafTextLine("Video Game Made With:", 180, screenY, 0.8, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)
@@ -119,7 +108,6 @@ function init(self)
 	LoadStafTextLine("''vlaaad''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("''paxer''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-
 	
 	screenY = (screenY - 100)
 	LoadStafTextLine("''Neo's Kiss'' G.U.I. System By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
@@ -151,7 +139,7 @@ function init(self)
 	LoadStafTextLine("''Walking on Clouds''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-		screenY = (screenY - 30)
+	screenY = (screenY - 30)
 	LoadStafTextLine("AudioBinger", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 
 	screenY = (screenY - 100)
@@ -251,8 +239,7 @@ function init(self)
 	screenY = (screenY - 30)
 	LoadStafTextLine("By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
-	LoadStafTextLine("Ms. Palser", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-							
+	LoadStafTextLine("Ms. Palser", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)		
 	
 	screenY = (screenY - 100)
 	LoadStafTextLine("Sound Effects Compiled/Edited By:", 180, screenY, 0.85, 1.0, 1.0, 1.0, 1.0, 0.0)
@@ -295,13 +282,6 @@ function init(self)
 	screenY = (screenY - 30)
 	LoadStafTextLine("- EKEN Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
-
---	screenY = (screenY - 100)
---	LoadStafTextLine("iOS Version Tested On:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
---	screenY = (screenY - 30)
---	LoadStafTextLine("- Apple iPad Air Gen1 Tablet -", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
---	screenY = (screenY - 30)
-										
 	
 	screenY = ( screenY - (640/2) )
 	LoadStafTextLine("A 110% By Team ''Fallen Angel Software''!", 180, screenY, 0.75, 1.0, 1.0, 1.0, 1.0, 0.0)		
@@ -320,9 +300,6 @@ function on_message(self, message_id, message, sender)
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
-
 	for index = 0, (TotalNumberOfTexts-1) do
 		currentPos = gui.get_position(text_nodes[index])
 		if (index == 0) then
@@ -336,19 +313,17 @@ function update(self, dt)
 	if ( lastTextPos.y > (640+25) ) then
 		ScreenFadeStatus = 1
 	end
-	
 end
 
 function on_input(self, action_id, action)
-	local m = require "data/modules.StopMusic"
-
+	local SM = require "data/modules.StopMusic"
+	local PM = require "data/modules.PlayMusic"
+	
 	if action_id == hash("KeyEscape") and action.pressed and self.active then
 		msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
-		m.StopMusic(CurrentMusicPlaying)--MusicTestBGM)
-		local mTwo = require "data/modules.PlayMusic"
-		mTwo.PlayMusic(0)
+		SM.StopMusic()
+		PM.PlayMusic(0)
 		NextScreen = 2
 		ScreenFadeStatus = 1
 	end
-	
 end

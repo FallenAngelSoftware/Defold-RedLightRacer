@@ -1,12 +1,6 @@
--- Put functions in this file to use them in several other scripts.
--- To get access to the functions, you need to put:
--- require "my_directory.my_file"
--- in any script using the functions.
+local PM = {}
 
-local MTWO = {}
-
-function MTWO.PlayMusic(music)
-
+function PM.PlayMusic(music)
 	if (music == 0) then msg.post("level:/Audio#Title-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 	elseif (music == 1) then msg.post("level:/Audio#Cutscenes-BGM", "play_sound", {delay = 0, gain = MusicVolume})
 	elseif (music == 2) then msg.post("level:/Audio#Level12-BGM", "play_sound", {delay = 0, gain = MusicVolume})
@@ -22,7 +16,6 @@ function MTWO.PlayMusic(music)
 	end
 
 	CurrentMusicPlaying = music
-	
 end
 
-return MTWO
+return PM

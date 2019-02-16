@@ -1,11 +1,6 @@
--- Put functions in this file to use them in several other scripts.
--- To get access to the functions, you need to put:
--- require "my_directory.my_file"
--- in any script using the functions.
+local RS = {}
 
-local MFOUR = {}
-
-function MFOUR.ResetScale()
+function RS.ResetScale()
 	if (DelayAllUserInput == 5) then
 		gui.set_scale( gui.get_node("SelectorLeft"), vmath.vector3(1, 1, 1) )
 		gui.set_scale( gui.get_node("SelectorLeft1"), vmath.vector3(1, 1, 1) )
@@ -25,4 +20,4 @@ function MFOUR.ResetScale()
 	end
 end
 
-return MFOUR
+return RS

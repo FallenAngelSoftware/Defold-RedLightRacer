@@ -1,11 +1,6 @@
--- Put functions in this file to use them in several other scripts.
--- To get access to the functions, you need to put:
--- require "my_directory.my_file"
--- in any script using the functions.
+local SM = {}
 
-local M = {}
-
-function M.StopMusic(music)
+function SM.StopMusic()
 	if (CurrentMusicPlaying == 0) then msg.post("level:/Audio#Title-BGM", "stop_sound")
 	elseif (CurrentMusicPlaying == 1) then msg.post("level:/Audio#Cutscenes-BGM", "stop_sound")
 	elseif (CurrentMusicPlaying == 2) then msg.post("level:/Audio#Level12-BGM", "stop_sound")
@@ -21,4 +16,4 @@ function M.StopMusic(music)
 	end
 end
 
-return M
+return SM

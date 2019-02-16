@@ -16,7 +16,7 @@ ________________________________________________________________________________
 
 function init(self)
     window.set_dim_mode(window.DIMMING_OFF)
-    
+
     ScreenFadeStatus = 0
     ScreenFadeAlpha = 1
 
@@ -41,8 +41,6 @@ function init(self)
         Platform = Platform_HTMLfive
     end
     
---Platform = Platform_iOS
-
     SecretCodesUnlocked = 0
 
     ButtonClicked = -1
@@ -135,8 +133,6 @@ function init(self)
     if not next(GameOptionsAndHighScoresTable) then
         print("Game data file not found.")
     else
---       pprint(GameOptionsAndHighScoresTable)
-                
         MusicVolume = table.remove(GameOptionsAndHighScoresTable, 1)
         EffectsVolume = table.remove(GameOptionsAndHighScoresTable, 1)
         GameMode = table.remove(GameOptionsAndHighScoresTable, 1)
@@ -181,8 +177,8 @@ function init(self)
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0
 
-    local mTwo = require "data/modules.PlayMusic"
-    mTwo.PlayMusic(0)
+    local PM = require "data/modules.PlayMusic"
+    PM.PlayMusic(0)
   
     sound.set_group_gain("music", MusicVolume)
     sound.set_group_gain("effects", EffectsVolume)
