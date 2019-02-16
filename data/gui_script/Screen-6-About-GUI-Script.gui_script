@@ -117,7 +117,10 @@ function init(self)
 	LoadStafTextLine("''88.josh''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
 	screenY = (screenY - 30)
 	LoadStafTextLine("''vlaaad''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
-						
+	screenY = (screenY - 30)
+	LoadStafTextLine("''paxer''", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0)
+
+	
 	screenY = (screenY - 100)
 	LoadStafTextLine("''Neo's Kiss'' G.U.I. System By:", 180, screenY, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0)
 	screenY = (screenY - 30)

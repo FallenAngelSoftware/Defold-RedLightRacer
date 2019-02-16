@@ -160,6 +160,11 @@ function init(self)
     Level = 0
     Speed = 0
 
+    Distance = 0
+    
+    Minutes = 0
+    Seconds = 0
+    
     StreetDivider = {}
     StreetDividerOffset = 0
     StreetDividerOriginalScreenY = 0
@@ -171,6 +176,7 @@ function init(self)
 
     Collision = false
     ClearedRoad = false
+    GameOverTimer = 0
         
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0

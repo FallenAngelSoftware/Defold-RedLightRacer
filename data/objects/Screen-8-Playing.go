@@ -58,6 +58,21 @@ components {
     w: 1.0
   }
 }
+components {
+  id: "Time"
+  component: "/data/labels/Time.label"
+  position {
+    x: 180.0
+    y: 600.0
+    z: 1.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
 embedded_components {
   id: "Street"
   type: "sprite"

@@ -4,6 +4,8 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 	CurrentScreen = 8
 	NextScreen = 2
+
+	self.timer = 0
 	
 --	go.set_position( vmath.vector3(180, 320+9999, 0), "PauseBG" )
 
@@ -45,9 +47,16 @@ function init(self)
 	StreetDividerOffset = (640/5)
 	StreetDividerOriginalScreenY = StreetDivider[5]
 
+	Collision = false
+	ClearedRoad = false
+	GameOverTimer = 0
+		
 	Score = 0
 	Level = 0
 	Speed = 0
+
+	Minutes = 0
+	Seconds = 59
 					
 end
 
@@ -65,7 +74,7 @@ function update(self, dt)
 	if (DelayAllUserInput > 0) then
 		DelayAllUserInput = (DelayAllUserInput - 1)
 	end
-
+	
 	if (GamePaused == false) then
 		go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 1.0) )
 		go.set_position( vmath.vector3(180, 320+9999, 1), "PauseBG" )
@@ -77,120 +86,154 @@ function update(self, dt)
 	end
 
 	if (GamePaused == false) then
-		if (Collision == false) then
-			if (Speed < 30) then
-				Speed = Speed + 0.1
-			end
-			
-			for index = 0, 5 do
-				StreetDivider[index] = StreetDivider[index] - (1 * Speed)
-			end
-
-			EnemyAppears = EnemyAppears + Speed
-			if (EnemyAppears > 3000) then
-				for index = 0, 4 do
-					if (EnemyAvailable[index] == true) then
-						local side = math.random(0, 1)
-						if (side == 0) then
-							EnemyScreenX[index] = 180-70
-						elseif (side == 1) then
-							EnemyScreenX[index] = 180+70
-						end
-							
-						EnemyScreenY[index] = 640+100
-						go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
-						go.set(  string.format("/Enemy%d#Enemy", index), "tint", vmath.vector4( math.random(3, 10)/10, math.random(3, 10)/10, math.random(3, 10)/10, 1 )  )		
-						EnemyAvailable[index] = false
-						EnemyAppears = 0
-						break
-					end
-				end	
-			end
-
-			for index = 0, 4 do
-				if (EnemyAvailable[index] == false) then
-					EnemyScreenY[index] = EnemyScreenY[index] - 5
-					go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
-
-					if (EnemyScreenY[index] < -100) then
-						EnemyAvailable[index] = true
-					end
-				end
-			end
-
-			go.set_position( vmath.vector3(180, StreetDivider[0], 0.3), "Street_Divider_01" )
-			go.set_position( vmath.vector3(180, StreetDivider[1], 0.3), "Street_Divider_011" )
-			go.set_position( vmath.vector3(180, StreetDivider[2], 0.3), "Street_Divider_012" )
-			go.set_position( vmath.vector3(180, StreetDivider[3], 0.3), "Street_Divider_013" )
-			go.set_position( vmath.vector3(180, StreetDivider[4], 0.3), "Street_Divider_014" )
-			go.set_position( vmath.vector3(180, StreetDivider[5], 0.3), "Street_Divider_015" )
-
-			if ( StreetDivider[5] < (StreetDividerOriginalScreenY - StreetDividerOffset) ) then
-				local screenY = 0
-				local screenYOffset = (640/5)
-				for index = 0, 5 do
-					StreetDivider[index] = screenY
-					screenY = screenY + screenYOffset
-				end
-
-				go.set_position( vmath.vector3(180, StreetDivider[0], 0.4), "Street_Divider_01" )
-				go.set_position( vmath.vector3(180, StreetDivider[1], 0.4), "Street_Divider_011" )
-				go.set_position( vmath.vector3(180, StreetDivider[2], 0.4), "Street_Divider_012" )
-				go.set_position( vmath.vector3(180, StreetDivider[3], 0.4), "Street_Divider_013" )
-				go.set_position( vmath.vector3(180, StreetDivider[4], 0.4), "Street_Divider_014" )
-				go.set_position( vmath.vector3(180, StreetDivider[5], 0.4), "Street_Divider_015" )
-
-				StreetDividerOffset = (640/5)
-				StreetDividerOriginalScreenY = StreetDivider[5]
-			end
-
-			if (PlayerDirection == -1) then
-				if (PlayerScreenX > 80) then
-					PlayerScreenX = PlayerScreenX - 5
-				end
+		if self.timer < 1 then
+			self.timer = self.timer + dt
+			print(self.timer)
+		end
+		if self.timer >= 1 then --and not self.timer_flag then
+			print("One second has passed!")
+			--		self.timer_flag = true
+			self.timer = 0
+			if (Seconds > 0) then
+				Seconds = Seconds - 1
+			elseif (Minutes > 0) then
+				Minutes = Minutes - 1
+				Seconds = 59
 			else
-				if (PlayerScreenX < 360-80) then
-					PlayerScreenX = PlayerScreenX + 5
+				if (GameOverTimer == 0) then
+					GameOverTimer = 250
 				end
 			end
 
-			PlayerDirection = 1
-			
-			go.set_position( vmath.vector3(PlayerScreenX, PlayerScreenY, 0.5), "Player" )
-			
-			for index = 0, 4  do
-				if (EnemyAvailable[index] == false) then
-					if ( (PlayerScreenX > EnemyScreenX[index]-100*0.9) and (PlayerScreenX < EnemyScreenX[index]+100*0.9) and (PlayerScreenY > EnemyScreenY[index]-203*0.9) and (PlayerScreenY < EnemyScreenY[index]+203*0.9) ) then
-						Collision = true
-						ClearedRoad = false
-						msg.post("level:/Audio#CarHorn", "play_sound", {delay = 0, gain = EffectsVolume})
-					end
-				end
-			end
-		elseif (Collision == true) then
-			Speed = 0
+			if (Seconds > 9) then
+				label.set_text("#Time", Minutes .. ":" .. Seconds)
+			else
+				label.set_text("#Time", Minutes .. ":0" .. Seconds)
+			end		
+		end
 
-			if (ClearedRoad == false) then
-				ClearedRoad = true
+		if (GameOverTimer > 0) then
+			GameOverTimer = GameOverTimer - 1
+			if (GameOverTimer == 1) then
+				NextScreen = 5
+				ScreenFadeStatus = 1
+			end				
+		else
+			if (Collision == false) then
+				if (Speed < 30) then
+					Speed = Speed + 0.05
+				end
+				
+				for index = 0, 5 do
+					StreetDivider[index] = StreetDivider[index] - (1 * Speed)
+				end
+
+				EnemyAppears = EnemyAppears + Speed
+				if (EnemyAppears > 3000) then
+					for index = 0, 4 do
+						if (EnemyAvailable[index] == true) then
+							local side = math.random(0, 1)
+							if (side == 0) then
+								EnemyScreenX[index] = 180-70
+							elseif (side == 1) then
+								EnemyScreenX[index] = 180+70
+							end
+								
+							EnemyScreenY[index] = 640+100
+							go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
+							go.set(  string.format("/Enemy%d#Enemy", index), "tint", vmath.vector4( math.random(3, 10)/10, math.random(3, 10)/10, math.random(3, 10)/10, 1 )  )		
+							EnemyAvailable[index] = false
+							EnemyAppears = 0
+							break
+						end
+					end	
+				end
+
 				for index = 0, 4 do
 					if (EnemyAvailable[index] == false) then
-						ClearedRoad = false
-						EnemyScreenY[index] = EnemyScreenY[index] + 30
+						EnemyScreenY[index] = EnemyScreenY[index] - 5
 						go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
 
-						if (EnemyScreenY[index] > 640+100) then
+						if (EnemyScreenY[index] < -100) then
 							EnemyAvailable[index] = true
 						end
 					end
 				end
-			end
 
-			if (ClearedRoad == true) then
-				Collision = false
+				go.set_position( vmath.vector3(180, StreetDivider[0], 0.3), "Street_Divider_01" )
+				go.set_position( vmath.vector3(180, StreetDivider[1], 0.3), "Street_Divider_011" )
+				go.set_position( vmath.vector3(180, StreetDivider[2], 0.3), "Street_Divider_012" )
+				go.set_position( vmath.vector3(180, StreetDivider[3], 0.3), "Street_Divider_013" )
+				go.set_position( vmath.vector3(180, StreetDivider[4], 0.3), "Street_Divider_014" )
+				go.set_position( vmath.vector3(180, StreetDivider[5], 0.3), "Street_Divider_015" )
+
+				if ( StreetDivider[5] < (StreetDividerOriginalScreenY - StreetDividerOffset) ) then
+					local screenY = 0
+					local screenYOffset = (640/5)
+					for index = 0, 5 do
+						StreetDivider[index] = screenY
+						screenY = screenY + screenYOffset
+					end
+
+					go.set_position( vmath.vector3(180, StreetDivider[0], 0.4), "Street_Divider_01" )
+					go.set_position( vmath.vector3(180, StreetDivider[1], 0.4), "Street_Divider_011" )
+					go.set_position( vmath.vector3(180, StreetDivider[2], 0.4), "Street_Divider_012" )
+					go.set_position( vmath.vector3(180, StreetDivider[3], 0.4), "Street_Divider_013" )
+					go.set_position( vmath.vector3(180, StreetDivider[4], 0.4), "Street_Divider_014" )
+					go.set_position( vmath.vector3(180, StreetDivider[5], 0.4), "Street_Divider_015" )
+
+					StreetDividerOffset = (640/5)
+					StreetDividerOriginalScreenY = StreetDivider[5]
+				end
+
+				if (PlayerDirection == -1) then
+					if (PlayerScreenX > 80) then
+						PlayerScreenX = PlayerScreenX - 5
+					end
+				else
+					if (PlayerScreenX < 360-80) then
+						PlayerScreenX = PlayerScreenX + 5
+					end
+				end
+
+				PlayerDirection = 1
+				
+				go.set_position( vmath.vector3(PlayerScreenX, PlayerScreenY, 0.5), "Player" )
+				
+				for index = 0, 4  do
+					if (EnemyAvailable[index] == false) then
+						if ( (PlayerScreenX > EnemyScreenX[index]-100*0.9) and (PlayerScreenX < EnemyScreenX[index]+100*0.9) and (PlayerScreenY > EnemyScreenY[index]-203*0.9) and (PlayerScreenY < EnemyScreenY[index]+203*0.9) ) then
+							Collision = true
+							ClearedRoad = false
+							msg.post("level:/Audio#CarHorn", "play_sound", {delay = 0, gain = EffectsVolume})
+						end
+					end
+				end
+			elseif (Collision == true) then
+				Speed = 0
+
+				if (ClearedRoad == false) then
+					ClearedRoad = true
+					for index = 0, 4 do
+						if (EnemyAvailable[index] == false) then
+							ClearedRoad = false
+							EnemyScreenY[index] = EnemyScreenY[index] + 30
+							go.set_position( vmath.vector3(EnemyScreenX[index], EnemyScreenY[index], 0.4), string.format("Enemy%d", index) )
+
+							if (EnemyScreenY[index] > 640+100) then
+								EnemyAvailable[index] = true
+							end
+						end
+					end
+				end
+
+				if (ClearedRoad == true) then
+					Collision = false
+				end
 			end
 		end
 	end
-				
+					
 	local m = require "data/modules.FPSandMouseXY"
 	m.UpdateFPSandMouseXY(dt)
 end
