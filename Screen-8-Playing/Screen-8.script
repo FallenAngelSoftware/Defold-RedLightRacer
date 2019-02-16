@@ -81,6 +81,9 @@ function init(self)
 	GameJustPlayed = true
 	GameWon = false
 
+	Distance = 0
+	End = 120000
+	
 	Minutes = 0
 	Seconds = 59
 end
@@ -148,7 +151,11 @@ function update(self, dt)
 				if (Speed < 30) then
 					Speed = Speed + 0.05
 				end
-				
+
+				Distance = Distance + Speed
+				go.set_position(  vmath.vector3( 15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress")  )
+				go.set_position(  vmath.vector3( 360-15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress1")  )
+								
 				for index = 0, 5 do
 					StreetDivider[index] = StreetDivider[index] - (1 * Speed)
 				end

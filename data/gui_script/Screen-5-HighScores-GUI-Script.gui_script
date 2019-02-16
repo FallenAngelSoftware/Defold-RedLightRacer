@@ -4,7 +4,7 @@ function LoadHighScoresText(text, screenX, screenY, scaleX, scaleY, scaleZ, red,
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
 	gui.set_pivot(text_nodes[TotalNumberOfTexts], gui.PIVOT_W)
 	
-	if (Platform == Platform_HTMLfive) then
+	if (Platform == Platform_HTMLfive or Platform == 0) then
 		gui.set_adjust_mode( text_nodes[TotalNumberOfTexts], gui.ADJUST_FIT )
 	else
 		gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)
@@ -18,7 +18,7 @@ function init(self)
 	msg.post("#", "show_level_select")
 	self.active = false
 
-	if (Platform == Platform_HTMLfive) then
+	if (Platform == Platform_HTMLfive or Platform == 0) then
 		gui.set_adjust_mode( gui.get_node("SelectorLine"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("SelectorLeft"), gui.ADJUST_FIT )	
 		gui.set_adjust_mode( gui.get_node("SelectorRight"), gui.ADJUST_FIT )

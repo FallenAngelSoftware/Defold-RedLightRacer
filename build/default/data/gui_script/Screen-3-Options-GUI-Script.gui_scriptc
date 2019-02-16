@@ -1,11 +1,11 @@
 
-‰
-È›function init(self)
+©
+Ù›function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
 			
-	if (Platform == Platform_HTMLfive) then
+	if (Platform == Platform_HTMLfive or Platform == 0) then
 		gui.set_adjust_mode( gui.get_node("SelectorLine"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("SelectorLeft"), gui.ADJUST_FIT )
 		gui.set_adjust_mode( gui.get_node("SelectorLeft1"), gui.ADJUST_FIT )
@@ -595,8 +595,8 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-end7/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptsLJ 8=/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÍ 	 D
-ÁØk4  7% % >4  7% % >) : 4 4  T€4	 7
+end7/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptsLJ 8=/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÜ 	 D
+ÄÛk4  7% % >4  7% % >) : 4 4  T€4 	  T€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -618,7 +618,7 @@ Child	Teen
 Adult#OptionsGameModeGameMode#OptionsEffectsVolumeEffectsVolume0%25%50%75%	100%#OptionsMusicVolumeset_text
 labelMusicVolumevector3
 vmathset_positionArrowsSelectedByKeyboardDisplayOptionsdata/modules.OptionsrequireButtonBackSelectorRight6SelectorRight5SelectorRight4SelectorRight3SelectorRight2SelectorRight1SelectorRightSelectorLeft6SelectorLeft5SelectorLeft4SelectorLeft3SelectorLeft2SelectorLeft1SelectorLeftADJUST_FITSelectorLineget_nodeset_adjust_modeguiPlatform_HTMLfivePlatformactiveshow_level_select#acquire_input_focus.	postmsg 
-€€ ÿ€€€ÿ€€Àþ									
+€€ ÿ€€€ÿ€€Àþ									
 
 
 
@@ -627,7 +627,7 @@ vmathset_positionArrowsSelectedByKeyboardDisplayOptionsdata/modules.Options
 
 
 
-   !!!!!!!!!!!"""###########$$$%%%%%%%%%%%&&&'''''''''''((()))))))))),,,------...//////00011111122233333344455555888999999:::;;;;;;<<<======>>>??????@@@AAAAADDDEEEEEEFFFGGGGGGHHHIIIIILLLLLMMMMMNNNNNOOOOOQQQQQQRRRRRRSSSSSSTTTTTTVVVVVVVVWWWWWXXXXXYYYYYZZZZZ\\\\\]]]]]^^^^^_____aaaaaaaaaaaaabbbbbbbbbbbbbcccccccccccccdddddddddddddfffffffffffffggggggggggggghhhhhhhhhhhhhiiiiiiiiiiiiikself  ÂO ¤žnode ˜ þ  	 Bn4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   m   x4  % >7>G  ResetScale#data/modules.OptionsResetScalerequireself  dt  ORS  œQ  R
+   !!!!!!!!!!!"""###########$$$%%%%%%%%%%%&&&'''''''''''((()))))))))),,,------...//////00011111122233333344455555888999999:::;;;;;;<<<======>>>??????@@@AAAAADDDEEEEEEFFFGGGGGGHHHIIIIILLLLLMMMMMNNNNNOOOOOQQQQQQRRRRRRSSSSSSTTTTTTVVVVVVVVWWWWWXXXXXYYYYYZZZZZ\\\\\]]]]]^^^^^_____aaaaaaaaaaaaabbbbbbbbbbbbbcccccccccccccdddddddddddddfffffffffffffggggggggggggghhhhhhhhhhhhhiiiiiiiiiiiiikself  ÅO §žnode ˜ þ  	 Bn4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   m   x4  % >7>G  ResetScale#data/modules.OptionsResetScalerequireself  dt  ORS  œQ  R
 ‰…}×4  % >4  % >)  4 % > T€7  T€7   T€4 7%	 %
  3	 4
  :

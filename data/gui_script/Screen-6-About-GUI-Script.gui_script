@@ -3,7 +3,7 @@ function LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, g
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
 
-	if (Platform == Platform_HTMLfive) then
+	if (Platform == Platform_HTMLfive or Platform == 0) then
 		gui.set_adjust_mode( text_nodes[TotalNumberOfTexts], gui.ADJUST_FIT )
 	else
 		gui.set_adjust_mode(text_nodes[TotalNumberOfTexts], gui.ADJUST_STRETCH)

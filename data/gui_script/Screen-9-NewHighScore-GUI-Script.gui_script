@@ -32,7 +32,7 @@ function init(self)
 		end
 	end
 		
-	if (Platform == Platform_HTMLfive) then
+	if (Platform == Platform_HTMLfive or Platform == 0) then
 		gui.set_adjust_mode( gui.get_node("ButtonExit"), gui.ADJUST_FIT )
 
 		for n = 0, 64 do
