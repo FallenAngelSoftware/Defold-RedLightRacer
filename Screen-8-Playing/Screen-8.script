@@ -57,6 +57,9 @@ function init(self)
 
 	EnemyAppears = 0
 
+	go.set_position( vmath.vector3(15, 83, 0.4), string.format("Progress") )
+	go.set_position( vmath.vector3(360-15, 83, 0.4), string.format("Progress1") )
+		
 	local screenY = 0
 	local screenYOffset = (640/5)
 	for index = 0, 5 do

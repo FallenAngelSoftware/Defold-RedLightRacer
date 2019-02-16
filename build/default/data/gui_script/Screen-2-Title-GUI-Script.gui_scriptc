@@ -1,6 +1,6 @@
 
-þ†
-ÉKfunction init(self)
+¤‡
+ÛKfunction init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
@@ -276,7 +276,7 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("music", MusicVolume)
 					sound.set_group_gain("effects", EffectsVolume)
 
-					PM.PlayMusic(0)
+					PM.PlayMusic(CurrentMusicPlaying)
 															
 					DelayAllUserInput = 20
 
@@ -326,7 +326,7 @@ function on_input(self, action_id, action)
 		gui.set_position(  rightArrow, vmath.vector3( 330, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 	end
 end
-5/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptø:LJ 6=/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptâ	  ¯¸4  7% % >4  7% % >) : 4 4  TZ€4	 7
+5/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptŒ;LJ 6=/data/gui_script/Screen-2-Title-GUI-Script.gui_scriptâ	  ¯¸4  7% % >4  7% % >) : 4 4  TZ€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -350,7 +350,7 @@ vmathset_positionSecretCodeSpeakerOFFset_textureEffectsVolumeMusicVolume	P
 self  ° þ  	 B!4  % > T€4 7% % >) : T€4  % > T€4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   ³  3@+	4  	  T€4 74 7% >4 7' ' ' > =4 4  T€4 4	  T€4 7
 4 7% >4 7'ü'ü' > =4 7
 4 7% >4 7'ü'ü' > =G  ButtonSelectorRightButtonSelectorLeftset_positionPlatform_iOSPlatform_AndroidPlatformvector3
-vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput	self  4dt  4 ¹*  H
+vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput	self  4dt  4 Í*  I
 ê¥6* 4  % >4 	  T€4 %	 > T€4 %	 > Tu€4 	  T€4 7%		 > T,€4 	 T€4 7%	
  > T#€4 	 T€4 7%	 > T€4 	 T€4 7%	 > T€4 	 T€4 7%	 > T€4 	 T€4 7%	 > 4 	  Tº€4 7	 4
  7
@@ -425,16 +425,16 @@ $ 3: >4 7%	; > 4 	  TK€4 71	 7
 ; >T	€'  5= '  5 4 7>	 %
 ? >4@ 7A%	B 4
 = >4@ 7A%	C 4
- >7D'	  >' 5 ' 5 ' 5 '  5 4 7%	E > 4 	  TC€4 71	 7
+ >7D4	E >' 5 ' 5 ' 5 '  5 4 7%	F > 4 	  TC€4 71	 7
 273>  T	;€4 	  T8€4 7	 4
  7
 
 ( ( ' >
  =4 7%	 %
- 3F 4 :>4= 	  T	€' 5= ' 5 4 7>	 %
+ 3G 4 :>4= 	  T	€' 5= ' 5 4 7>	 %
 ; >4@ 7A%	B 4
 = >4@ 7A%	C 4
- >7D'	  >'  5G ' 5 ' 5 '  5 5& ( 5' ' 5 4 7%	+ > 4 7,	 4
+ >7D'	  >'  5H ' 5 ' 5 '  5 5& ( 5' ' 5 4 7%	+ > 4 7,	 4
  7
 
 ' 4 	' >
@@ -443,7 +443,7 @@ $ 3: >4 7%	; > 4 	  TK€4 71	 7
 
 'J4 	' >
  =G  MusicTestBGM 
-delay 	PlayPlayMusiceffects
+delay 	PlayCurrentMusicPlayingPlayMusiceffects
 musicset_group_gain
 soundSpeakerOFFset_textureMusicVolume 
 delay SpeakerON 	code  

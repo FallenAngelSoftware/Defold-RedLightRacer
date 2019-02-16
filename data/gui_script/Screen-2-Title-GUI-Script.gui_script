@@ -274,7 +274,7 @@ function on_input(self, action_id, action)
 					sound.set_group_gain("music", MusicVolume)
 					sound.set_group_gain("effects", EffectsVolume)
 
-					PM.PlayMusic(0)
+					PM.PlayMusic(CurrentMusicPlaying)
 															
 					DelayAllUserInput = 20
 
