@@ -1,5 +1,5 @@
 function CheckForNewHighScore(self)
-	local PlayerRankOnGameOver = 999
+	PlayerRankOnGameOver = 999
 	for index = 9, 0, -1 do
 		if (Score > HighScoresScore[GameMode][index]) then
 			PlayerRankOnGameOver = index
@@ -21,6 +21,10 @@ function CheckForNewHighScore(self)
 	HighScoresName[GameMode][PlayerRankOnGameOver] = ""
 	HighScoresLevel[GameMode][PlayerRankOnGameOver] = Level
 	HighScoresScore[GameMode][PlayerRankOnGameOver] = Score
+
+	if (PlayerRankOnGameOver < 10) then
+		NextScreen = 9
+	end	
 end
 
 function init(self)

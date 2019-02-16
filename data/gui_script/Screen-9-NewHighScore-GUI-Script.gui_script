@@ -42,6 +42,11 @@ function init(self)
 end
 
 function final(self)
+	if (NewHighScoreName == "") then
+		HighScoresName[GameMode][PlayerRankOnGameOver] = " "
+	else
+		HighScoresName[GameMode][PlayerRankOnGameOver] = NewHighScoreName
+	end
 end
 
 function update(self, dt)

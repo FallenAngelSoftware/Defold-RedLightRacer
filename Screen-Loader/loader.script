@@ -82,7 +82,9 @@ function init(self)
     PlayerScreenY = 105
 
     PlayerDirection = 0
-    
+
+    PlayerRankOnGameOver = 999        
+
     HighScoresName = {}
     for i = 0, 2 do
         HighScoresName[i] = {}
