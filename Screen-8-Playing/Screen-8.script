@@ -163,6 +163,7 @@ function update(self, dt)
 					if ( (PlayerScreenX > EnemyScreenX[index]-100*0.9) and (PlayerScreenX < EnemyScreenX[index]+100*0.9) and (PlayerScreenY > EnemyScreenY[index]-203*0.9) and (PlayerScreenY < EnemyScreenY[index]+203*0.9) ) then
 						Collision = true
 						ClearedRoad = false
+						msg.post("level:/Audio#CarHorn", "play_sound", {delay = 0, gain = EffectsVolume})
 					end
 				end
 			end
