@@ -168,7 +168,10 @@ function init(self)
     EnemyScreenY = {}
     EnemyAvailable = {}
     EnemyAppears = 0
-    
+
+    Collision = false
+    ClearedRoad = false
+        
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0
 
