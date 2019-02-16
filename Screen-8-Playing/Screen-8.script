@@ -78,6 +78,17 @@ function init(self)
 --	Level = 0
 	Speed = 0
 
+	local PM = require "data/modules.PlayMusic"
+	if (Level == 2) then
+		PM.PlayMusic(3)
+	elseif (Level == 4) then
+		PM.PlayMusic(4)
+	elseif (Level == 6) then
+		PM.PlayMusic(5)
+	elseif (Level == 8) then
+		PM.PlayMusic(6)
+	end
+
 	GameJustPlayed = true
 	GameWon = false
 
