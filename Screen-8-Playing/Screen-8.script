@@ -11,6 +11,8 @@ function init(self)
 
 	math.randomseed( os.time() )
 
+	go.set_position( vmath.vector3(180, 320+9999, 0), "GameOverText" )
+	
 	PlayerScreenX = 180
 
 	if (GameMode == 0) then
@@ -74,17 +76,19 @@ function update(self, dt)
 	if (DelayAllUserInput > 0) then
 		DelayAllUserInput = (DelayAllUserInput - 1)
 	end
-	
-	if (GamePaused == false) then
-		go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 1.0) )
-		go.set_position( vmath.vector3(180, 320+9999, 1), "PauseBG" )
-		go.set_position( vmath.vector3(180, 320+9999, 1), "PauseText" )
-	else
-		go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 0.8) )
-		go.set_position( vmath.vector3(180, 320, 1), "PauseBG" )
-		go.set_position( vmath.vector3(180, 320, 1), "PauseText" )
-	end
 
+	if (GameOverTimer == 0) then
+		if (GamePaused == false) then
+			go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 1.0) )
+			go.set_position( vmath.vector3(180, 320+9999, 1), "PauseBG" )
+			go.set_position( vmath.vector3(180, 320+9999, 1), "PauseText" )
+		else
+			go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 0.8) )
+			go.set_position( vmath.vector3(180, 320, 1), "PauseBG" )
+			go.set_position( vmath.vector3(180, 320, 1), "PauseText" )
+		end
+	end
+		
 	if (GamePaused == false) then
 		if self.timer < 1 then
 			self.timer = self.timer + dt
@@ -101,6 +105,9 @@ function update(self, dt)
 				Seconds = 59
 			else
 				if (GameOverTimer == 0) then
+					go.set( "/PauseBG#PauseBG", "tint", vmath.vector4(1.0, 1.0, 1.0, 0.8) )
+					go.set_position( vmath.vector3(180, 320, 1), "PauseBG" )
+					go.set_position( vmath.vector3(180, 320, 1), "GameOverText" )
 					GameOverTimer = 250
 				end
 			end
@@ -112,7 +119,7 @@ function update(self, dt)
 			end		
 		end
 
-		if (GameOverTimer > 0) then
+		if (GameOverTimer > 1) then
 			GameOverTimer = GameOverTimer - 1
 			if (GameOverTimer == 1) then
 				NextScreen = 5
