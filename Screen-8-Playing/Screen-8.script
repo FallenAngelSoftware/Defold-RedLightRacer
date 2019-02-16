@@ -89,7 +89,11 @@ function init(self)
 end
 
 function final(self)
-	CheckForNewHighScore()
+	if (Distance < End) then
+		CheckForNewHighScore()
+	else
+		Level = Level + 1
+	end
 	
 	msg.post(".", "release_input_focus")
 	msg.post("@system:", "set_update_frequency", { frequency = 60 } )
@@ -155,7 +159,12 @@ function update(self, dt)
 				Distance = Distance + Speed
 				go.set_position(  vmath.vector3( 15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress")  )
 				go.set_position(  vmath.vector3( 360-15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress1")  )
-								
+
+				if (Distance > End) then
+					NextScreen = 8
+					ScreenFadeStatus = 1
+				end
+												
 				for index = 0, 5 do
 					StreetDivider[index] = StreetDivider[index] - (1 * Speed)
 				end
