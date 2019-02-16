@@ -156,7 +156,10 @@ function init(self)
     Level = 0
     Speed = 0
 
+    GameJustPlayed = false
+    
     Distance = 0
+    End = 0
     
     Minutes = 0
     Seconds = 0

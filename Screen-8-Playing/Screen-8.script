@@ -1,3 +1,28 @@
+function CheckForNewHighScore(self)
+	local PlayerRankOnGameOver = 999
+	for index = 9, 0, -1 do
+		if (Score > HighScoresScore[GameMode][index]) then
+			PlayerRankOnGameOver = index
+		end
+	end
+
+	if PlayerRankOnGameOver < 10 then
+		if PlayerRankOnGameOver < 9 then
+			for index = 9, PlayerRankOnGameOver, -1 do
+				if index > 0 then
+					HighScoresName[GameMode][index] = HighScoresName[GameMode][index-1]
+					HighScoresLevel[GameMode][index] = HighScoresLevel[GameMode][index-1]
+					HighScoresScore[GameMode][index] = HighScoresScore[GameMode][index-1]
+				end
+			end
+		end
+	end
+
+	HighScoresName[GameMode][PlayerRankOnGameOver] = ""
+	HighScoresLevel[GameMode][PlayerRankOnGameOver] = Level
+	HighScoresScore[GameMode][PlayerRankOnGameOver] = Score
+end
+
 function init(self)
 	msg.post(".", "acquire_input_focus")
 	CurrentScreen = 8
@@ -27,30 +52,34 @@ function init(self)
 	end
 
 	EnemyAppears = 0
-		
+
 	local screenY = 0
 	local screenYOffset = (640/5)
 	for index = 0, 5 do
 		StreetDivider[index] = screenY
 		screenY = screenY + screenYOffset
 	end
-	
+
 	StreetDividerOffset = (640/5)
 	StreetDividerOriginalScreenY = StreetDivider[5]
-	
+
 	Collision = false
 	ClearedRoad = false
 	GameOverTimer = 0
-		
-	Score = 0
-	Level = 0
+
+--	Score = 0
+--	Level = 0
 	Speed = 0
+
+	GameJustPlayed = true
 
 	Minutes = 0
 	Seconds = 59
 end
 
 function final(self)
+	CheckForNewHighScore()
+	
 	msg.post(".", "release_input_focus")
 	msg.post("@system:", "set_update_frequency", { frequency = 60 } )
 end

@@ -81,6 +81,8 @@ function on_input(self, action_id, action)
 							
 			if (ButtonSelectedByKeyboard == 0) then
 				NextScreen = 8--2
+				Score = 0
+				Level = 0
 			else
 				NextScreen = (ButtonSelectedByKeyboard + 2)
 			end
@@ -146,6 +148,9 @@ function on_input(self, action_id, action)
 				ScreenFadeAlpha = 0
 
 				ButtonSelectedByKeyboard = 0
+
+				Score = 0
+				Level = 0
 
 				ButtonClicked = node
 				ScreenFadeAlphaHalf = 0.5
