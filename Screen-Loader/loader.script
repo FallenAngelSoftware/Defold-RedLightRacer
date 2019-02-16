@@ -37,7 +37,7 @@ function init(self)
         Platform = Platform_Android
     elseif (info.system_name == "iPhone OS") then
         Platform = Platform_iOS
-    else -- if (info.system_name == "HTML5") then
+    elseif (info.system_name == "HTML5") then
         Platform = Platform_HTMLfive
     end
     

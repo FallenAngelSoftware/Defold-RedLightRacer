@@ -1,6 +1,6 @@
 
-ÛØ
-¤ufunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
+Þ×
+ætfunction LoadStafTextLine(text, screenX, screenY, scaleX, scaleY, scaleZ, red, green, blue)
 	text_nodes[TotalNumberOfTexts] = gui.new_text_node( vmath.vector3(screenX, screenY, 0), text )
 	gui.set_scale( text_nodes[TotalNumberOfTexts], vmath.vector3(scaleX, scaleY, scaleZ) )
 	gui.set_color( text_nodes[TotalNumberOfTexts], vmath.vector3(red, green, blue) )
@@ -318,18 +318,16 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
-	local SM = require "data/modules.StopMusic"
 	local PM = require "data/modules.PlayMusic"
 	
 	if action_id == hash("KeyEscape") and action.pressed and self.active then
 		msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
-		SM.StopMusic()
 		PM.PlayMusic(0)
 		NextScreen = 2
 		ScreenFadeStatus = 1
 	end
 end
-4data/gui_script/Screen-6-About-GUI-Script.gui_scriptûbLJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
+4data/gui_script/Screen-6-About-GUI-Script.gui_script¼bLJ 5=data/gui_script/Screen-6-About-GUI-Script.gui_script¥ 	 >Š4	  4
  4 74 7  '  >  >9
 	4	 7		4
   4 6
@@ -739,8 +737,7 @@ vmathset_positioncurrentPostext_nodesget_positionguiTotalNumberOfTexts €
 
 
 
-self  8dt  8% % %index #lastTextPos + ® 
-  #J¾4  % >4  % >4 % > T€7  T€7   T€4 7%	 %
- 3 4	 :	>7>7'  >' 5 ' 5 G  ScreenFadeStatusNextScreenPlayMusicStopMusic	gainEffectsVolume 
-delay play_soundlevel:/Audio#MenuClick	postmsgactivepressedKeyEscape	hashdata/modules.PlayMusicdata/modules.StopMusicrequire		self  $action_id  $action  $SM  PM  „  
-  Ê1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine   " ,$<.I>I  data/modules.StopMusicdata/modules.PlayMusic/data/modules/StopMusic.luac/data/modules/PlayMusic.luac" 
+self  8dt  8% % %index #lastTextPos + ï 	  @¾	4  % >4 % > T€7  T€7   T€4 7% %	 3
+ 4 :>7'  >' 5 ' 5 G  ScreenFadeStatusNextScreenPlayMusic	gainEffectsVolume 
+delay play_soundlevel:/Audio#MenuClick	postmsgactivepressedKeyEscape	hashdata/modules.PlayMusicrequire	self  action_id  action  PM  „  
+  È1   5  1  5  1  5  1  5  1  5 	 G  on_input update on_message 	init LoadStafTextLine   " ,$<.G>G  data/modules.PlayMusic/data/modules/PlayMusic.luac" 

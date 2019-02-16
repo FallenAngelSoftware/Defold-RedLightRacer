@@ -3,8 +3,8 @@ function init(self)
 	msg.post("#", "show_level_select")
 	self.active = false
 
-	local SM = require "data/modules.StopMusic"
 	local PM = require "data/modules.PlayMusic"
+	CurrentMusicPlaying = -1
 	PM.PlayMusic(0)
 end
 
