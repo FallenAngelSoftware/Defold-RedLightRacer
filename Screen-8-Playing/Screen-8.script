@@ -27,7 +27,7 @@ function CheckForNewHighScore(self)
 	elseif (PlayerRankOnGameOver < 10) then
 		NextScreen = 9
 	else
-		NextScreen =5
+		NextScreen = 5
 	end
 end
 
