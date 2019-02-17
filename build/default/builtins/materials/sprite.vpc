@@ -1,9 +1,11 @@
+
 #ifndef GL_ES
 #define lowp
 #define mediump
 #define highp
 #endif
 
+#line 0
 uniform mediump mat4 view_proj;
 
 // positions are in world space

@@ -91,7 +91,7 @@ function init(self)
 	GameWon = false
 
 	Distance = 0
-	End = 65000
+	End = 85000
 	
 	Minutes = 1
 	Seconds = 29
@@ -193,7 +193,7 @@ function update(self, dt)
 				label.set_text("#Score", Score)
 
 				EnemyAppears = EnemyAppears + Speed
-				if (  EnemyAppears > 2800 + ( (10-Level) * 100 )  ) then
+				if (  EnemyAppears > 2700 + ( (10-Level) * 50 )  ) then
 					for index = 0, 4 do
 						if (EnemyAvailable[index] == true) then
 							local side = math.random(0, 1)

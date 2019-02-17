@@ -25,5 +25,5 @@ package = com.fallenangelsoftware.redlightracer
 max_count = 13
 
 [html5]
-archive_location_suffix = ?version8
+archive_location_suffix = ?version12
 

@@ -1,5 +1,5 @@
 
-§
+©
 Ù›function init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
@@ -595,7 +595,7 @@ function on_input(self, action_id, action)
 			end
 		end
 	end
-end6data/gui_script/Screen-3-Options-GUI-Script.gui_scriptsLJ 7=data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÜ 	 D
+end7/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptsLJ 8=/data/gui_script/Screen-3-Options-GUI-Script.gui_scriptÜ 	 D
 ÄÛk4  7% % >4  7% % >) : 4 4  T€4 	  T€4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -725,4 +725,4 @@ delay play_soundlevel:/Audio#MenuClick	postmsgactivepressedKeyEscape	hash
 
 
 
-    ""%%%&&&&&&'''(((())))++-----.........///0000111133455566666777777999:;;;<<<<<======???@AAABBBBBCCCCCCEEEFGGGHHHHHIIIIIIKKKOOOOOPPPQQQQQQQQQQQRRRSSSSSSSSSSSTTTUUUUUUUUUUUVVVWWWWWWWWWWWXXXYYYYYYYYYYYZZZ[[[[[[[[[[[\\\]]]]]]]]]]``aabgggghhiiiiiijjkkkkkkllmmmmmmnnooooooppqqqqqqrrssssssttuuuuuwwwwwwwwxxxyyyyyyyyyy{{{{{{{{}€€€€ƒƒ†††‡‡‡‡‡‡ˆˆˆ‰‰‰‰ŠŠŠŠŒŒŽŽŽŽŽ‘‘‘‘’’’’””•–––—————˜˜˜˜˜˜ššš›œœœžžžžžž   ¡¢¢¢£££££¤¤¤¤¤¤¦¦¦§¨¨¨©©©©©ªªªªªª¬¬¬°°°°°±±±²²²²²²²²²²²³³³´´´´´´´´´´´µµµ¶¶¶¶¶¶¶¶¶¶¶···¸¸¸¸¸¸¸¸¸¸¸¹¹¹ººººººººººº»»»¼¼¼¼¼¼¼¼¼¼¼½½½¾¾¾¾¾¾¾¾¾¾ÁÁÂÂÃgÈÈÈÈÈÉÉÉÉÉÉÉÉÊÊÊËËËËËËËËËËÍÍÍÍÍÍÍÍÏÏÐÐÒÓÓ×self  Šaction_id  Šaction  ŠPM †O ƒnode ‚nodeSelectorLine Â¿È È Èindex ÆÊÈ È Èindex Æ f   	 Ô1   5  1  5  1  5  1  5  G  on_input update on_message 	init l  v n { x T} T  data/modules.Optionsdata/modules.OptionsResetScaledata/modules.PlayMusicdata/modules.Options/data/modules/Options.luac$/data/modules/OptionsResetScale.luac/data/modules/PlayMusic.luac/data/modules/Options.luac" 
+    ""%%%&&&&&&'''(((())))++-----.........///0000111133455566666777777999:;;;<<<<<======???@AAABBBBBCCCCCCEEEFGGGHHHHHIIIIIIKKKOOOOOPPPQQQQQQQQQQQRRRSSSSSSSSSSSTTTUUUUUUUUUUUVVVWWWWWWWWWWWXXXYYYYYYYYYYYZZZ[[[[[[[[[[[\\\]]]]]]]]]]``aabgggghhiiiiiijjkkkkkkllmmmmmmnnooooooppqqqqqqrrssssssttuuuuuwwwwwwwwxxxyyyyyyyyyy{{{{{{{{}€€€€ƒƒ†††‡‡‡‡‡‡ˆˆˆ‰‰‰‰ŠŠŠŠŒŒŽŽŽŽŽ‘‘‘‘’’’’””•–––—————˜˜˜˜˜˜ššš›œœœžžžžžž   ¡¢¢¢£££££¤¤¤¤¤¤¦¦¦§¨¨¨©©©©©ªªªªªª¬¬¬°°°°°±±±²²²²²²²²²²²³³³´´´´´´´´´´´µµµ¶¶¶¶¶¶¶¶¶¶¶···¸¸¸¸¸¸¸¸¸¸¸¹¹¹ººººººººººº»»»¼¼¼¼¼¼¼¼¼¼¼½½½¾¾¾¾¾¾¾¾¾¾ÁÁÂÂÃgÈÈÈÈÈÉÉÉÉÉÉÉÉÊÊÊËËËËËËËËËËÍÍÍÍÍÍÍÍÏÏÐÐÒÓÓ×self  Šaction_id  Šaction  ŠPM †O ƒnode ‚nodeSelectorLine Â¿È È Èindex ÆÊÈ È Èindex Æ f   	 Ô1   5  1  5  1  5  1  5  G  on_input update on_message 	init l  v n { x T} T  data/modules.Optionsdata/modules.OptionsResetScaledata/modules.PlayMusic/data/modules/Options.luac$/data/modules/OptionsResetScale.luac/data/modules/PlayMusic.luac" 
