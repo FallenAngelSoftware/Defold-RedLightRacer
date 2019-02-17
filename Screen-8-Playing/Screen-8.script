@@ -175,7 +175,7 @@ function update(self, dt)
 					NextScreen = 8
 					ScreenFadeStatus = 1
 				end
-												
+
 				for index = 0, 5 do
 					StreetDivider[index] = StreetDivider[index] - (1 * Speed)
 				end
@@ -231,13 +231,6 @@ function update(self, dt)
 						StreetDivider[index] = screenY
 						screenY = screenY + screenYOffset
 					end
-
-					go.set_position( vmath.vector3(180, StreetDivider[0], 0.4), "Street_Divider_01" )
-					go.set_position( vmath.vector3(180, StreetDivider[1], 0.4), "Street_Divider_011" )
-					go.set_position( vmath.vector3(180, StreetDivider[2], 0.4), "Street_Divider_012" )
-					go.set_position( vmath.vector3(180, StreetDivider[3], 0.4), "Street_Divider_013" )
-					go.set_position( vmath.vector3(180, StreetDivider[4], 0.4), "Street_Divider_014" )
-					go.set_position( vmath.vector3(180, StreetDivider[5], 0.4), "Street_Divider_015" )
 
 					StreetDividerOffset = (640/5)
 					StreetDividerOriginalScreenY = StreetDivider[5]
