@@ -32,7 +32,14 @@ function update(self, dt)
 	if (GamePaused == false) then
 		gui.set_position( gui.get_node("Exit"), vmath.vector3(180, 9999, 0.5) )
 	else
-		gui.set_position( gui.get_node("Exit"), vmath.vector3(180, 96, 0.5) )
+		local showExitIcon = true
+		if (SecretCode[0] == 9 and SecretCode[1] == 8 and SecretCode[2] == 7 and SecretCode[3] == 6) then
+			showExitIcon = false
+		end
+		
+		if (showExitIcon == true) then
+			gui.set_position( gui.get_node("Exit"), vmath.vector3(180, 96, 0.5) )
+		end
 	end
 end
 	
