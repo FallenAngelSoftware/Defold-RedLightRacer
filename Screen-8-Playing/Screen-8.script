@@ -93,8 +93,8 @@ function init(self)
 	Distance = 0
 	End = 60000
 	
-	Minutes = 0
-	Seconds = 59
+	Minutes = 1
+	Seconds = 29
 
 	if (Level < 10) then
 		label.set_text("#Level", "(" .. Level .. " of 10)")
