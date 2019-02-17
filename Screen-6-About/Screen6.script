@@ -17,7 +17,7 @@ function final(self)
 			NextScreen = 5
 		end
 
-		GameWon = false
+--		GameWon = false
 	end
 end
 

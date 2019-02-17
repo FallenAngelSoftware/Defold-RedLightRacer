@@ -45,6 +45,8 @@ function init(self)
 			Blue = 0.5
 		end	
 
+print("Score:", Score, "/Level", Level)
+		
 		LoadHighScoresText( index+1 .. ".", 4, screenY-(index*41), 0.75, 0.75, 1.0, 1.0, 1.0, 1.0 )
 		LoadHighScoresText( HighScoresName[GameMode][index], 30, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, Green, Blue )
 

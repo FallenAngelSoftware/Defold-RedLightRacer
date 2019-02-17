@@ -137,7 +137,7 @@ function init(self)
     Collision = false
     ClearedRoad = false
     GameOverTimer = 0
-        
+
     NewHighScoreName = ""
     NewHighScoreNameIndex = 0
 

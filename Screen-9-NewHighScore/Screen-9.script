@@ -10,6 +10,8 @@ function init(self)
 		local PM = require "data/modules.PlayMusic"
 		PM.PlayMusic(7)
 	end
+
+	GameWon = false
 end
 
 function final(self)

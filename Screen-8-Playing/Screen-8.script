@@ -21,14 +21,6 @@ function CheckForNewHighScore(self)
 	HighScoresName[GameMode][PlayerRankOnGameOver] = ""
 	HighScoresLevel[GameMode][PlayerRankOnGameOver] = Level
 	HighScoresScore[GameMode][PlayerRankOnGameOver] = Score
-
-	if (GameWon == true) then
-		NextScreen = 6
-	elseif (PlayerRankOnGameOver < 10) then
-		NextScreen = 9
-	else
-		NextScreen = 5
-	end
 end
 
 function init(self)
@@ -82,6 +74,8 @@ function init(self)
 --	Level = 0
 	Speed = 0
 
+	PlayerRankOnGameOver = 999
+	
 	local PM = require "data/modules.PlayMusic"
 	if (Level == 3) then
 		PM.PlayMusic(3)
@@ -104,10 +98,6 @@ function init(self)
 end
 
 function final(self)
-	if (Distance < End or GameWon == true) then
-		CheckForNewHighScore()
-	end
-	
 	msg.post(".", "release_input_focus")
 	msg.post("@system:", "set_update_frequency", { frequency = 60 } )
 end
@@ -159,11 +149,18 @@ function update(self, dt)
 
 		if (GameOverTimer > 1) then
 			GameOverTimer = GameOverTimer - 1
-			if (GameOverTimer == 1) then
-				NextScreen = 5
-				ScreenFadeStatus = 1
+			if (GameOverTimer == 2) then
+				CheckForNewHighScore()
+				
+				if (PlayerRankOnGameOver < 10) then
+					NextScreen = 9
+					ScreenFadeStatus = 1
+				else
+					NextScreen = 5
+					ScreenFadeStatus = 1
+				end
 			end				
-		else
+		elseif (GameOverTimer == 0 and GameWon == false) then
 			if (Collision == false) then
 				if (Speed < 30) then
 					Speed = Speed + 0.05
@@ -172,29 +169,6 @@ function update(self, dt)
 				Distance = Distance + Speed
 				go.set_position(  vmath.vector3( 15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress")  )
 				go.set_position(  vmath.vector3( 360-15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress1")  )
-
-				if (Distance > End) then
-					if (Level == 10) then
-						Level = 11
-						GameWon = true
-
-						local PM = require "data/modules.PlayMusic"
-						if (GameMode == 0) then
-							PM.PlayMusic(8)
-						elseif (GameMode == 1) then
-							PM.PlayMusic(9)
-						elseif (GameMode == 2) then
-							PM.PlayMusic(10)
-						end
-
-						NextScreen = 6
-						ScreenFadeStatus = 1
-					else
-						Level = Level + 1
-						NextScreen = 8
-						ScreenFadeStatus = 1
-					end
-				end
 
 				for index = 0, 5 do
 					StreetDivider[index] = StreetDivider[index] - (1 * Speed)
@@ -302,6 +276,33 @@ function update(self, dt)
 
 				if (ClearedRoad == true) then
 					Collision = false
+				end
+			end
+			
+			if (Distance > End) then
+				if (Level == 10) then
+					Level = 11
+					GameWon = true
+
+					CheckForNewHighScore()
+
+					local PM = require "data/modules.PlayMusic"
+					if (GameMode == 0) then
+						PM.PlayMusic(8)
+					elseif (GameMode == 1) then
+						PM.PlayMusic(9)
+					elseif (GameMode == 2) then
+						PM.PlayMusic(10)
+					end
+
+					Distance = 0
+					NextScreen = 6
+					ScreenFadeStatus = 1
+				elseif (Level < 10) then
+					Level = Level + 1
+					Distance = 0
+					NextScreen = 8
+					ScreenFadeStatus = 1
 				end
 			end
 		end
