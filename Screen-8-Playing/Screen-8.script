@@ -79,14 +79,22 @@ function init(self)
 	Speed = 0
 
 	local PM = require "data/modules.PlayMusic"
-	if (Level == 2) then
+	if (Level == 3) then
 		PM.PlayMusic(3)
-	elseif (Level == 4) then
+	elseif (Level == 5) then
 		PM.PlayMusic(4)
-	elseif (Level == 6) then
+	elseif (Level == 7) then
 		PM.PlayMusic(5)
-	elseif (Level == 8) then
+	elseif (Level == 9) then
 		PM.PlayMusic(6)
+	elseif (Level == 11) then
+		if (GameMode == 0) then
+			PM.PlayMusic(8)
+		elseif (GameMode == 1) then
+			PM.PlayMusic(9)
+		elseif (GameMode == 2) then
+			PM.PlayMusic(10)
+		end
 	end
 
 	GameJustPlayed = true
@@ -182,9 +190,9 @@ function update(self, dt)
 
 				Score = math.floor(  Score + ( Speed * (Level+1) )  )
 				label.set_text("#Score", Score)
-								
+
 				EnemyAppears = EnemyAppears + Speed
-				if (EnemyAppears > 3000) then
+				if (  EnemyAppears > 2800 + ( (10-Level) * 100 )  ) then
 					for index = 0, 4 do
 						if (EnemyAvailable[index] == true) then
 							local side = math.random(0, 1)

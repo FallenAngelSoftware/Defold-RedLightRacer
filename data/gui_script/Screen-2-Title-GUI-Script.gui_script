@@ -80,10 +80,16 @@ function on_input(self, action_id, action)
 			msg.post("level:/Audio#MenuClick", "play_sound", {delay = 0, gain = EffectsVolume})
 							
 			if (ButtonSelectedByKeyboard == 0) then
-				NextScreen = 8--2
+				NextScreen = 8
 				Score = 0
 				Level = 0
 				PM.PlayMusic(2)
+
+				if (SecretCode[0] == 9 and SecretCode[1] == 8 and SecretCode[2] == 7 and SecretCode[3] == 6) then
+					Score = 987648390
+					Level = 10
+					PM.PlayMusic(6)
+				end
 			else
 				NextScreen = (ButtonSelectedByKeyboard + 2)
 			end
@@ -152,9 +158,15 @@ function on_input(self, action_id, action)
 					ButtonSelectedByKeyboard = 0
 
 					Score = 0
-					Level = 0
+					Level = 1
 					PM.PlayMusic(2)
-					
+
+					if (SecretCode[0] == 9 and SecretCode[1] == 8 and SecretCode[2] == 7 and SecretCode[3] == 6) then
+						Score = 987648390
+						Level = 10
+						PM.PlayMusic(6)
+					end
+										
 					ButtonClicked = node
 					ScreenFadeAlphaHalf = 0.5
 				end
