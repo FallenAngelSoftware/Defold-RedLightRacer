@@ -22,9 +22,13 @@ function CheckForNewHighScore(self)
 	HighScoresLevel[GameMode][PlayerRankOnGameOver] = Level
 	HighScoresScore[GameMode][PlayerRankOnGameOver] = Score
 
-	if (PlayerRankOnGameOver < 10) then
+	if (GameWon == true) then
+		NextScreen = 6
+	elseif (PlayerRankOnGameOver < 10) then
 		NextScreen = 9
-	end	
+	else
+		NextScreen =5
+	end
 end
 
 function init(self)
@@ -87,14 +91,6 @@ function init(self)
 		PM.PlayMusic(5)
 	elseif (Level == 9) then
 		PM.PlayMusic(6)
-	elseif (Level == 11) then
-		if (GameMode == 0) then
-			PM.PlayMusic(8)
-		elseif (GameMode == 1) then
-			PM.PlayMusic(9)
-		elseif (GameMode == 2) then
-			PM.PlayMusic(10)
-		end
 	end
 
 	GameJustPlayed = true
@@ -108,10 +104,8 @@ function init(self)
 end
 
 function final(self)
-	if (Distance < End) then
+	if (Distance < End or GameWon == true) then
 		CheckForNewHighScore()
-	else
-		Level = Level + 1
 	end
 	
 	msg.post(".", "release_input_focus")
@@ -180,8 +174,26 @@ function update(self, dt)
 				go.set_position(  vmath.vector3( 360-15, 83+( 474*(Distance/End) ), 0.4 ), string.format("Progress1")  )
 
 				if (Distance > End) then
-					NextScreen = 8
-					ScreenFadeStatus = 1
+					if (Level == 10) then
+						Level = 11
+						GameWon = true
+
+						local PM = require "data/modules.PlayMusic"
+						if (GameMode == 0) then
+							PM.PlayMusic(8)
+						elseif (GameMode == 1) then
+							PM.PlayMusic(9)
+						elseif (GameMode == 2) then
+							PM.PlayMusic(10)
+						end
+
+						NextScreen = 6
+						ScreenFadeStatus = 1
+					else
+						Level = Level + 1
+						NextScreen = 8
+						ScreenFadeStatus = 1
+					end
 				end
 
 				for index = 0, 5 do
