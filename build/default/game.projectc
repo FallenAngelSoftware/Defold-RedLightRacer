@@ -115,7 +115,7 @@ custom_heap_size = 0
 include_dev_tool = 0
 htmlfile = /builtins/manifests/web/engine_template.html
 archive_location_prefix = archive
-archive_location_suffix = ?version7
+archive_location_suffix = ?version8
 
 [particle_fx]
 max_count = 64

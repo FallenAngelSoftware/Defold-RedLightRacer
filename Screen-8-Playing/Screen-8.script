@@ -91,7 +91,7 @@ function init(self)
 	GameWon = false
 
 	Distance = 0
-	End = 60000
+	End = 65000
 	
 	Minutes = 1
 	Seconds = 29
