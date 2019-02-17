@@ -8,6 +8,17 @@ end
 
 function final(self)
 	msg.post(".", "release_input_focus")
+
+	if (GameJustPlayed == true) then
+		if (PlayerRankOnGameOver < 10) then
+			NextScreen = 9
+--			ScreenFadeStatus = 1
+		else
+			NextScreen = 5
+		end
+
+		GameJustPlayed = false
+	end
 end
 
 function update(self, dt)
