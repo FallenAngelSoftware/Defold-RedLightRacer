@@ -1,6 +1,6 @@
 [project]
 title = Red Light Racer
-version = 1.0.1
+version = 1.0.2
 write_log = 0
 compress_archive = 1
 
@@ -95,7 +95,7 @@ bundle_identifier = example.unnamed
 infoplist = /builtins/manifests/ios/Info.plist
 
 [android]
-version_code = 3
+version_code = 4
 package = com.fallenangelsoftware.redlightracer
 manifest = /builtins/manifests/android/AndroidManifest.xml
 iap_provider = GooglePlay
