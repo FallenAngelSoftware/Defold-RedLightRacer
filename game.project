@@ -27,5 +27,5 @@ version_code = 3
 max_count = 13
 
 [html5]
-archive_location_suffix = ?version14
+archive_location_suffix = ?version15
 
