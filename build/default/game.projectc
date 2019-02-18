@@ -6,7 +6,7 @@ immersive_mode = 0
 input_method = KeyEvent
 manifest = /builtins/manifests/android/AndroidManifest.xml
 package = com.fallenangelsoftware.redlightracer
-version_code = 1
+version_code = 2
 
 [bootstrap]
 main_collection = /Screen-Loader/ScreenLoader.collectionc

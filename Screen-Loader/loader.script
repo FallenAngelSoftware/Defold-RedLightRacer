@@ -40,6 +40,8 @@ function init(self)
     elseif (info.system_name == "HTML5") then
         Platform = Platform_HTMLfive
     end
+
+--Platform = Platform_Android
     
     SecretCodesUnlocked = 0
 

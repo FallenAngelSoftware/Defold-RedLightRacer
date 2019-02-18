@@ -33,6 +33,6 @@ tracking: 0.0
 pivot: PIVOT_CENTER
 blend_mode: BLEND_MODE_ALPHA
 line_break: false
-text: "Alpha 0.9.0"
+text: "Beta 0.9.9"
 font: "/data/fonts/GameFont.font"
 material: "/builtins/fonts/label.material"
