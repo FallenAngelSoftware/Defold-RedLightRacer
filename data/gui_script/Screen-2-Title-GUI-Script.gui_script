@@ -349,6 +349,8 @@ function on_input(self, action_id, action)
 
 						if (Platform == Platform_Android) then
 							sys.open_url("https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer")
+						elseif (Platform == Platform_HTMLfive) then
+							html5.run("window.open('https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer','_self');")
 						else
 							sys.open_url("https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer")
 						end

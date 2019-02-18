@@ -1,6 +1,6 @@
 
-˝ö
-æWfunction init(self)
+—ù
+Xfunction init(self)
 	msg.post(".", "acquire_input_focus")
 	msg.post("#", "show_level_select")
 	self.active = false
@@ -351,6 +351,8 @@ function on_input(self, action_id, action)
 
 						if (Platform == Platform_Android) then
 							sys.open_url("https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer")
+						elseif (Platform == Platform_HTMLfive) then
+							html5.run("window.open('https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer','_self');")
 						else
 							sys.open_url("https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer")
 						end
@@ -369,7 +371,7 @@ function on_input(self, action_id, action)
 			gui.set_position(  rightArrow, vmath.vector3( 330, 430-(ButtonSelectedByKeyboard*50), 1 )  )
 		end
 	end
-end4data/gui_script/Screen-2-Title-GUI-Script.gui_scriptÉCLJ 5=data/gui_script/Screen-2-Title-GUI-Script.gui_scriptﬁ
+end4data/gui_script/Screen-2-Title-GUI-Script.gui_script•DLJ 5=data/gui_script/Screen-2-Title-GUI-Script.gui_scriptﬁ
   "æ«"4  7% % >4  7% % >) : 4 4  TÄ4 	  TZÄ4	 7
 4	 7% >4	 7>4	 7
 4	 7% >4	 7>4	 7
@@ -393,7 +395,7 @@ vmathset_positionSecretCodeSpeakerOFFset_textureEffectsVolumeMusicVolume	P
 
         "self  ø ˛  	 B%4  % > TÄ4 7% % >) : TÄ4  % > TÄ4 7% % >) : G  disablehide_level_selectactiveenable#	postmsgshow_level_select	hashself  message_id  message  sender   ˇ  @M/4  	  TÄ4 74 7% >4 7' ' ' > =4 74 7% >4 7' ' ' > =4 4	  TÄ4 4
   TÄ4 74 7% >4 7'¸'¸' > =4 74 7% >4 7'¸'¸' > =G  ButtonSelectorRightButtonSelectorLeftset_positionPlatform_iOSPlatform_AndroidPlatformGooglePlayvector3
-vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput													self  Adt  A ˝0  PÿÅ<∂* 4  % >4 	  TôÄ4 %	 > TÄ4 %	 > TèÄ4 	  TÄ4 7%		 > T,Ä4 	 TÄ4 7%	
+vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput													self  Adt  A ü2  Q·ì<∏* 4  % >4 	  TôÄ4 %	 > TÄ4 %	 > TèÄ4 	  TÄ4 7%		 > T,Ä4 	 TÄ4 7%	
  > T#Ä4 	 TÄ4 7%	 > TÄ4 	 TÄ4 7%	 > TÄ4 	 TÄ4 7%	 > TÄ4 	 TÄ4 7%	 > 4 	  T‘Ä4 7	 4
  7
 
@@ -420,7 +422,7 @@ vmathSpeakerONget_nodeset_scaleguiDelayAllUserInput
  7
 
 'J4 ' >
- =4 	  T7Ç4 %	2 > T2Ç4 7%		 > 4 73	 7
+ =4 	  T@Ç4 %	2 > T;Ç4 7%		 > 4 73	 7
 475>  T	>Ä4 	  T;Ä4 7	 4
  7
 
@@ -480,13 +482,13 @@ A >4B 7C%	D 4
  3H 4 :>4? 	  T	Ä' 5? ' 5 4 7@	 %
 = >4B 7C%	D 4
 ? >4B 7C%	E 4
- >7'	  >'  5I ' 5 ' 5 '  5 5( ( 5) ' 5 4 7%	J > 4 	  T/Ä4 73	 7
-475>  T	'Ä4 	  T$Ä4 7	 4
+ >7'	  >'  5I ' 5 ' 5 '  5 5( ( 5) ' 5 4 7%	J > 4 	  T8Ä4 73	 7
+475>  T	0Ä4 	  T-Ä4 7	 4
  7
 
 ( ( ' >
  =4 7%	 %
- 3K 4 :>4  4	L 	 TÄ4M 7N%	O >TÄ4M 7N%	O >5( ( 5) ' 5 4 7%	- > 4 7.	 4
+ 3K 4 :>4  4	L 	 TÄ4M 7N%	O >TÄ4  4	! 	 TÄ4" 7#%	P >TÄ4M 7N%	O >5( ( 5) ' 5 4 7%	- > 4 7.	 4
  7
 
 ' 4 ' >
@@ -494,7 +496,7 @@ A >4B 7C%	D 4
  7
 
 'J4 ' >
- =G  Xhttps://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightraceropen_urlsysPlatform_Android 
+ =G  pwindow.open('https://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightracer','_self');Xhttps://play.google.com/store/apps/details?id=com.fallenangelsoftware.redlightraceropen_urlsysPlatform_Android 
 delay GooglePlayMusicTestBGM 
 delay 	PlayCurrentMusicPlayingeffects
 musicset_group_gain
@@ -522,4 +524,4 @@ vmathset_scaleScreenFadeStatusButtonExitButtonAboutButtonHighScoresButtonH
                                                                                  " " " " " " " " " " " " " " " " # # $ $ % % % & ( ( ( + + + + , , - - - / / / / 0 0 0 0 0 2 2 2 2 2 2 6 7 7 9 9 : ; ; ; ; ; ; ; ; < < < < = = = = ? ? B B D D D D D D D D F F F F F G G G G G G G G G G G G H H H H H I I I I I I I I I I I I I J J J J J J J J K K K K L L L L N N Q Q S S S S S S S S U U U U U V V V V V V V V V V V V W W W W W X X X X X X X X X X X X [ [ [ \ \ \ \ \ ] ] ] ] ] ^ ^ ^ ^ ^ ^ ^ ^ _ _ _ ` ` ` ` ` ` ` ` ` ` b b b b b b b b d d e e f f h h j j k k l l l n n n n n n n n n n n n n n n n o o p p q q q t u u y y y y y z z z z z z z z { { { | | | | | | | | | | ~ ~ ~ ~ ~ ~ ~ ~ Ä Ä Å Å Ç Ç Ñ Ñ Ü á á ã ã ã ã ã å å å å å å å å ç ç ç é é é é é é é é é é ê ê ê ê ê ê ê ê í í ì ì î î ñ ñ ò ô ô ù ù ù ù ù û û û û û û û û ü ü ü † † † † † † † † † † ¢ ¢ ¢ ¢ ¢ ¢ ¢ ¢ § § • • ¶ ¶ ® ® ™ ´ ´ Ø Ø Ø Ø Ø ∞ ∞ ∞ ∞ ∞ ∞ ∞ ∞ ± ± ± ≤ ≤ ≤ ≤ ≤ ≤ ≤ ≤ ≤ ≤ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ¥ ∂ ∂ ∑ ∑ ∏ ∏ ∫ ∫ º Ω Ω ¡ ¡ ¡ ¡ ¡ ¬ ¬ ¬ ¬ ¬ ¬ ¬ ¬ √ √ √ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ƒ ∆ ∆ ∆ ∆ ∆ ∆ ∆ ∆ » » … …     Ã Ã Œ œ œ — — — — “ “ “ “ “ ‘ ‘ ‘ ‘ ‘ ‘ Ÿ Ÿ Ÿ Ÿ Ÿ ⁄ ⁄ ⁄ € € € € € € € € ‹ ‹ ‹ › › › › › › › › › › ﬂ ﬂ ﬂ ﬂ ﬂ ﬂ ﬂ ﬂ · · · · · · ‚ ‚ „ „ ‰ ‰ ‰ ‰ ‰ ‰ Ê Ê Á Á Ë Ë Ë Ë Ë Î Î Î Î Î Ï Ï Ï Ï Ï Ó Ó Ó   Ú Ú Û Û Ù Ù ˘ ˘ ˘ ˘ ˘ ˙ ˙ ˙ ˚ ˚ ˚ ˚ ˚ ˚ ˚ ˚ ¸ ¸ ¸ ˝ ˝ ˝ ˝ ˝ ˝ ˝ ˝ ˝ ˝ ˇ ˇ ˇ ˇ ˇ ˇ ˇ ˇ 
 
 
-        """"#####%%%%())++00000111111111111222223333333333336self  Ÿaction_id  Ÿaction  Ÿnode ◊info  ◊leftArrow  ◊rightArrow  ◊PM ‘ f   	 Ú1   5  1  5  1  5  1  5  G  on_input update on_message 	init #  - % : / r< r  data/modules.PlayMusic/data/modules/PlayMusic.luac" 
+        """"#####$$$$%%%%%''''*++--22222333333333333444445555555555558self  ‚action_id  ‚action  ‚node ‡info  ‡leftArrow  ‡rightArrow  ‡PM › f   	 Ù1   5  1  5  1  5  1  5  G  on_input update on_message 	init #  - % : / t< t  data/modules.PlayMusic/data/modules/PlayMusic.luac" 
