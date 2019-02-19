@@ -1,0 +1,60 @@
+images {
+  image: "/data/sprites/Button.png"
+}
+images {
+  image: "/data/sprites/ButtonSelectorLeft.png"
+}
+images {
+  image: "/data/sprites/ButtonSelectorRight.png"
+}
+images {
+  image: "/data/sprites/Defold-Logo.png"
+}
+images {
+  image: "/data/sprites/FAS-Statue.png"
+}
+images {
+  image: "/data/sprites/GooglePlayLogo.png"
+}
+images {
+  image: "/data/sprites/NameInputButton.png"
+}
+images {
+  image: "/data/sprites/Play.png"
+}
+images {
+  image: "/data/sprites/ReviewGooglePlayLogo.png"
+}
+images {
+  image: "/data/sprites/RLR-Android_192x192.png"
+}
+images {
+  image: "/data/sprites/RLR-Logo.png"
+}
+images {
+  image: "/data/sprites/ScreenFade.png"
+}
+images {
+  image: "/data/sprites/ScreenLine.png"
+}
+images {
+  image: "/data/sprites/SelectorLine.png"
+}
+images {
+  image: "/data/sprites/SpeakerOFF.png"
+}
+images {
+  image: "/data/sprites/SpeakerON.png"
+}
+images {
+  image: "/data/sprites/Title-BG.png"
+}
+images {
+  image: "/data/sprites/TitleFaded-BG.png"
+}
+images {
+  image: "/data/sprites/Exit.png"
+}
+margin: 1
+extrude_borders: 1
+inner_padding: 1

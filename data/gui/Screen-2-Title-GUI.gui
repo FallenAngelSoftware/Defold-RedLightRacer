@@ -5,35 +5,35 @@ fonts {
 }
 textures {
   name: "Button"
-  texture: "/data/atlases/Button.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "ButtonSelectorLeft"
-  texture: "/data/atlases/ButtonSelectorLeft.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "ButtonSelectorRight"
-  texture: "/data/atlases/ButtonSelectorRight.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "SpeakerOFF"
-  texture: "/data/atlases/SpeakerOFF.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "SpeakerON"
-  texture: "/data/atlases/SpeakerON.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "Play"
-  texture: "/data/atlases/Play.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "GetItOnGooglePlay"
-  texture: "/data/atlases/GetItOnGooglePlay.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "ReviewGooglePlayLogo"
-  texture: "/data/atlases/ReviewGooglePlayLogo.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 background_color {
   x: 0.0
@@ -61,8 +61,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -178,8 +178,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -295,8 +295,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -412,8 +412,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -529,8 +529,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -646,8 +646,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -763,8 +763,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -817,8 +817,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -871,8 +871,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 30.0
-    y: 30.0
+    x: 32.0
+    y: 32.0
     z: 0.0
     w: 1.0
   }
@@ -925,8 +925,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 30.0
-    y: 30.0
+    x: 32.0
+    y: 32.0
     z: 0.0
     w: 1.0
   }
@@ -979,8 +979,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 320.0
-    y: 101.0
+    x: 322.0
+    y: 103.0
     z: 0.0
     w: 1.0
   }

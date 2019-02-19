@@ -76,7 +76,7 @@ components {
 embedded_components {
   id: "BG"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/TitleFaded-BG.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"TitleFaded-BG\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -96,7 +96,7 @@ embedded_components {
 embedded_components {
   id: "LineTop"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"ScreenLine\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -116,7 +116,7 @@ embedded_components {
 embedded_components {
   id: "LineBottom"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"ScreenLine\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

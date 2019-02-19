@@ -121,7 +121,7 @@ components {
 embedded_components {
   id: "RLR-Logo"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/RLR-Logo.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"RLR-Logo\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -141,7 +141,7 @@ embedded_components {
 embedded_components {
   id: "Title-BG"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/Title-BG.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"Title-BG\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -161,7 +161,7 @@ embedded_components {
 embedded_components {
   id: "ScreenLine1"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"ScreenLine\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -181,7 +181,7 @@ embedded_components {
 embedded_components {
   id: "ScreenLine2"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"ScreenLine\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
@@ -201,7 +201,7 @@ embedded_components {
 embedded_components {
   id: "ScreenLine3"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/ScreenLine.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"ScreenLine\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

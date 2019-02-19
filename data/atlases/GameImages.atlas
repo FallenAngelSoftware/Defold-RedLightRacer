@@ -1,0 +1,33 @@
+images {
+  image: "/data/sprites/Car.png"
+}
+images {
+  image: "/data/sprites/Exit.png"
+}
+images {
+  image: "/data/sprites/Pause.png"
+}
+images {
+  image: "/data/sprites/Play.png"
+}
+images {
+  image: "/data/sprites/Progress.png"
+}
+images {
+  image: "/data/sprites/ScreenFade.png"
+}
+images {
+  image: "/data/sprites/SpeakerOFF.png"
+}
+images {
+  image: "/data/sprites/SpeakerON.png"
+}
+images {
+  image: "/data/sprites/Stree_Divider.png"
+}
+images {
+  image: "/data/sprites/Street.png"
+}
+margin: 1
+extrude_borders: 1
+inner_padding: 1

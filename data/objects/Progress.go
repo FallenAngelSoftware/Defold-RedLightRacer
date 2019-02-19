@@ -1,7 +1,7 @@
 embedded_components {
   id: "Progress"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/Progress.atlas\"\n"
+  data: "tile_set: \"/data/atlases/GameImages.atlas\"\n"
   "default_animation: \"Progress\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

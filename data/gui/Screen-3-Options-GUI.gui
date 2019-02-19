@@ -5,19 +5,19 @@ fonts {
 }
 textures {
   name: "Button"
-  texture: "/data/atlases/Button.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "ButtonSelectorLeft"
-  texture: "/data/atlases/ButtonSelectorLeft.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "ButtonSelectorRight"
-  texture: "/data/atlases/ButtonSelectorRight.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 textures {
   name: "SelectorLine"
-  texture: "/data/atlases/SelectorLine.atlas"
+  texture: "/data/atlases/TitleImages.atlas"
 }
 background_color {
   x: 0.0
@@ -45,8 +45,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 251.0
-    y: 38.0
+    x: 253.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -162,8 +162,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 360.0
-    y: 38.0
+    x: 362.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -216,8 +216,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -270,8 +270,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -324,8 +324,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -378,8 +378,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -432,8 +432,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -486,8 +486,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -540,8 +540,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -594,8 +594,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -648,8 +648,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -702,8 +702,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -756,8 +756,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -810,8 +810,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -864,8 +864,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }
@@ -918,8 +918,8 @@ nodes {
     w: 1.0
   }
   size {
-    x: 46.0
-    y: 38.0
+    x: 48.0
+    y: 40.0
     z: 0.0
     w: 1.0
   }

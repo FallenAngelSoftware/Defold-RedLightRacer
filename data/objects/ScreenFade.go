@@ -16,7 +16,7 @@ components {
 embedded_components {
   id: "ScreenFade"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/ScreenFade.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"ScreenFade\"\n"
   "material: \"/Screen-Loader/test.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"

@@ -76,7 +76,7 @@ components {
 embedded_components {
   id: "FAS-Statue"
   type: "sprite"
-  data: "tile_set: \"/data/atlases/FAS-Statue.atlas\"\n"
+  data: "tile_set: \"/data/atlases/TitleImages.atlas\"\n"
   "default_animation: \"FAS-Statue\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "blend_mode: BLEND_MODE_ALPHA\n"
