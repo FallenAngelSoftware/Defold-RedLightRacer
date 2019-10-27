@@ -5,6 +5,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -25,6 +27,8 @@ embedded_components {
   "looping: 0\n"
   "group: \"effects\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -45,6 +49,8 @@ embedded_components {
   "looping: 0\n"
   "group: \"effects\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -65,6 +71,8 @@ embedded_components {
   "looping: 0\n"
   "group: \"effects\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -85,6 +93,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -105,6 +115,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -125,6 +137,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -145,6 +159,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -165,6 +181,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -185,6 +203,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -205,6 +225,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -225,6 +247,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -245,6 +269,8 @@ embedded_components {
   "looping: 0\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -265,6 +291,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"music\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -285,6 +313,8 @@ embedded_components {
   "looping: 1\n"
   "group: \"master\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -305,6 +335,8 @@ embedded_components {
   "looping: 0\n"
   "group: \"master\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0
@@ -325,6 +357,8 @@ embedded_components {
   "looping: 0\n"
   "group: \"master\"\n"
   "gain: 1.0\n"
+  "pan: 0.0\n"
+  "speed: 1.0\n"
   ""
   position {
     x: 0.0

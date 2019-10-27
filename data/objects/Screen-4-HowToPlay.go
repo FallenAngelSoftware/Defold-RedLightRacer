@@ -119,7 +119,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "HowToPlay"
+  id: "HowToPlayOne"
   type: "label"
   data: "size {\n"
   "  x: 360.0\n"
@@ -160,21 +160,171 @@ embedded_components {
   "\"\n"
   "  \"Clicking/touching the screen will steer the car left.\\n"
   "\"\n"
-  "  \"Not clicking/touching the screen will steer the car right.\\n"
+  "  \"Not clicking/touching the screen will steer the car right.\"\n"
+  "font: \"/data/fonts/GameFont.font\"\n"
+  "material: \"/builtins/fonts/label.material\"\n"
+  ""
+  position {
+    x: 180.0
+    y: 500.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "HowToPlayThree"
+  type: "label"
+  data: "size {\n"
+  "  x: 360.0\n"
+  "  y: 320.0\n"
+  "  z: 0.0\n"
+  "  w: 0.0\n"
+  "}\n"
+  "scale {\n"
+  "  x: 1.0\n"
+  "  y: 0.9\n"
+  "  z: 1.0\n"
+  "  w: 0.0\n"
+  "}\n"
+  "color {\n"
+  "  x: 1.0\n"
+  "  y: 1.0\n"
+  "  z: 1.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "outline {\n"
+  "  x: 0.0\n"
+  "  y: 0.0\n"
+  "  z: 0.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "shadow {\n"
+  "  x: 0.0\n"
+  "  y: 0.0\n"
+  "  z: 0.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "leading: 1.0\n"
+  "tracking: 0.0\n"
+  "pivot: PIVOT_CENTER\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  "line_break: true\n"
+  "text: \"While driving you must steer your car away from obstacles.\\n"
   "\"\n"
-  "  \"\\n"
-  "\"\n"
-  "  \"Drive your car to the destination before the time runs out.\\n"
-  "\"\n"
-  "  \"\\n"
-  "\"\n"
-  "  \"While driving you must steer your car away from obstacles.\\n"
-  "\"\n"
-  "  \"If you hit an obstacle your car will slow down.\\n"
-  "\"\n"
-  "  \"\\n"
-  "\"\n"
-  "  \"Beat the clock to advance the level.\\n"
+  "  \"If you hit an obstacle your car will slow down.\"\n"
+  "font: \"/data/fonts/GameFont.font\"\n"
+  "material: \"/builtins/fonts/label.material\"\n"
+  ""
+  position {
+    x: 180.0
+    y: 230.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "HowToPlayTwo"
+  type: "label"
+  data: "size {\n"
+  "  x: 360.0\n"
+  "  y: 320.0\n"
+  "  z: 0.0\n"
+  "  w: 0.0\n"
+  "}\n"
+  "scale {\n"
+  "  x: 1.0\n"
+  "  y: 0.9\n"
+  "  z: 1.0\n"
+  "  w: 0.0\n"
+  "}\n"
+  "color {\n"
+  "  x: 1.0\n"
+  "  y: 1.0\n"
+  "  z: 1.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "outline {\n"
+  "  x: 0.0\n"
+  "  y: 0.0\n"
+  "  z: 0.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "shadow {\n"
+  "  x: 0.0\n"
+  "  y: 0.0\n"
+  "  z: 0.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "leading: 1.0\n"
+  "tracking: 0.0\n"
+  "pivot: PIVOT_CENTER\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  "line_break: true\n"
+  "text: \"Drive your car to the destination before the time runs out.\"\n"
+  "font: \"/data/fonts/GameFont.font\"\n"
+  "material: \"/builtins/fonts/label.material\"\n"
+  ""
+  position {
+    x: 180.0
+    y: 350.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+embedded_components {
+  id: "HowToPlayFour"
+  type: "label"
+  data: "size {\n"
+  "  x: 360.0\n"
+  "  y: 320.0\n"
+  "  z: 0.0\n"
+  "  w: 0.0\n"
+  "}\n"
+  "scale {\n"
+  "  x: 1.0\n"
+  "  y: 0.9\n"
+  "  z: 1.0\n"
+  "  w: 0.0\n"
+  "}\n"
+  "color {\n"
+  "  x: 1.0\n"
+  "  y: 1.0\n"
+  "  z: 1.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "outline {\n"
+  "  x: 0.0\n"
+  "  y: 0.0\n"
+  "  z: 0.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "shadow {\n"
+  "  x: 0.0\n"
+  "  y: 0.0\n"
+  "  z: 0.0\n"
+  "  w: 1.0\n"
+  "}\n"
+  "leading: 1.0\n"
+  "tracking: 0.0\n"
+  "pivot: PIVOT_CENTER\n"
+  "blend_mode: BLEND_MODE_ALPHA\n"
+  "line_break: true\n"
+  "text: \"Beat the clock to advance the level.\\n"
   "\"\n"
   "  \"Beat level 10 to win the game!\"\n"
   "font: \"/data/fonts/GameFont.font\"\n"
@@ -182,7 +332,7 @@ embedded_components {
   ""
   position {
     x: 180.0
-    y: 330.0
+    y: 110.0
     z: 0.0
   }
   rotation {
