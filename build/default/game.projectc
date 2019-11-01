@@ -1,81 +1,18 @@
-[project]
-title = Red Light Racer
-version = 1.0.7
-write_log = 0
-compress_archive = 1
-
-[display]
-width = 360
-height = 640
-high_dpi = 0
-samples = 0
-fullscreen = 0
-update_frequency = 60
-vsync = 0
-display_profiles = /builtins/render/default.display_profilesc
-dynamic_orientation = 0
-
-[physics]
-type = 2D
-gravity_y = -10
-debug = 0
-debug_alpha = 0.9
-world_count = 4
-gravity_x = 0
-gravity_z = 0
-scale = 1
-debug_scale = 30
-max_collisions = 64
-max_contacts = 128
-contact_impulse_limit = 0
-ray_cast_limit_2d = 64
-ray_cast_limit_3d = 128
-trigger_overlap_capacity = 16
+[android]
+app_icon_192x192 = /data/sprites/RLR-Android_192x192.png
+debuggable = 0
+iap_provider = GooglePlay
+immersive_mode = 0
+input_method = KeyEvent
+manifest = /builtins/manifests/android/AndroidManifest.xml
+minimum_sdk_version = 16
+package = com.fallenangelsoftware.redlightracer
+target_sdk_version = 28
+version_code = 7
 
 [bootstrap]
 main_collection = /Screen-Loader/ScreenLoader.collectionc
 render = /data/render/GameRender.renderc
-
-[graphics]
-default_texture_min_filter = linear
-default_texture_mag_filter = linear
-max_draw_calls = 1024
-max_characters = 8192
-max_debug_vertices = 10000
-texture_profiles = /builtins/graphics/default.texture_profiles
-
-[sound]
-gain = 1
-max_sound_data = 128
-max_sound_buffers = 32
-max_sound_sources = 16
-max_sound_instances = 256
-
-[resource]
-http_cache = 0
-max_resources = 1024
-
-[input]
-repeat_delay = 0.5
-repeat_interval = 0.2
-gamepads = /builtins/input/default.gamepadsc
-game_binding = /input/GameInput.input_bindingc
-use_accelerometer = 1
-
-[sprite]
-max_count = 128
-subpixels = 1
-
-[spine]
-max_count = 128
-
-[model]
-max_count = 128
-
-[gui]
-max_count = 64
-max_particlefx_count = 64
-max_particle_count = 1024
 
 [collection]
 max_instances = 1024
@@ -86,67 +23,128 @@ max_count = 13
 [collectionfactory]
 max_count = 128
 
+[display]
+display_profiles = /builtins/render/default.display_profilesc
+dynamic_orientation = 0
+fullscreen = 0
+height = 640
+high_dpi = 0
+samples = 0
+update_frequency = 60
+variable_dt = 0
+vsync = 0
+width = 360
+
 [factory]
 max_count = 128
 
-[ios]
-pre_renderered_icons = 0
-bundle_identifier = example.unnamed
-infoplist = /builtins/manifests/ios/Info.plist
+[graphics]
+default_texture_mag_filter = linear
+default_texture_min_filter = linear
+max_characters = 8192
+max_debug_vertices = 10000
+max_draw_calls = 1024
+texture_profiles = /builtins/graphics/default.texture_profilesc
 
-[android]
-version_code = 7
-minimum_sdk_version = 16
-target_sdk_version = 28
-package = com.fallenangelsoftware.redlightracer
-manifest = /builtins/manifests/android/AndroidManifest.xml
-iap_provider = GooglePlay
-input_method = KeyEvent
-immersive_mode = 0
-debuggable = 0
-app_icon_192x192 = /data/sprites/RLR-Android_192x192.png
-
-[osx]
-infoplist = /builtins/manifests/osx/Info.plist
-bundle_identifier = example.unnamed
-
-[windows]
+[gui]
+max_count = 64
+max_particle_count = 1024
+max_particlefx_count = 64
 
 [html5]
+archive_location_prefix = archive
+archive_location_suffix = ?version15
+cssfile = /builtins/manifests/web/light_theme.css
 custom_heap_size = 0
 heap_size = 256
 htmlfile = /builtins/manifests/web/engine_template.html
-cssfile = /builtins/manifests/web/light_theme.css
-archive_location_prefix = archive
+scale_mode = downscale_fit
+set_custom_heap_size = 0
 show_fullscreen_button = 1
 show_made_with_defold = 1
-scale_mode = downscale_fit
-archive_location_suffix = ?version15
-
-[particle_fx]
-max_count = 64
-max_particle_count = 1024
 
 [iap]
 auto_finish_transactions = 1
 
-[network]
-http_timeout = 0
+[input]
+game_binding = /input/GameInput.input_bindingc
+gamepads = /builtins/input/default.gamepadsc
+repeat_delay = 0.5
+repeat_interval = 0.2
+use_accelerometer = 1
 
-[library]
-
-[script]
-shared_state = 1
+[ios]
+bundle_identifier = example.unnamed
+infoplist = /builtins/manifests/ios/Info.plist
+pre_renderered_icons = 0
 
 [label]
 max_count = 64
 subpixels = 1
 
+[liveupdate]
+settings = /liveupdate.settings
+
+[model]
+max_count = 128
+
+[network]
+http_timeout = 0.0
+
+[osx]
+bundle_identifier = example.unnamed
+infoplist = /builtins/manifests/osx/Info.plist
+
+[particle_fx]
+max_count = 64
+max_particle_count = 1024
+
+[physics]
+contact_impulse_limit = 0.0
+debug = 0
+debug_alpha = 0.9
+debug_scale = 30.0
+gravity_x = 0.0
+gravity_y = -10.0
+gravity_z = 0.0
+max_collisions = 64
+max_contacts = 128
+ray_cast_limit_2d = 64
+ray_cast_limit_3d = 128
+scale = 1.0
+trigger_overlap_capacity = 16
+type = 2D
+world_count = 4
+
 [profiler]
 track_cpu = 0
 
-[liveupdate]
-settings = /liveupdate.settings
+[project]
+compress_archive = 1
+title = Red Light Racer
+version = 1.0.7
+write_log = 0
+
+[resource]
+http_cache = 0
+max_resources = 1024
+
+[script]
+shared_state = 1
+
+[sound]
+gain = 1.0
+max_sound_buffers = 32
+max_sound_data = 128
+max_sound_instances = 256
+max_sound_sources = 16
+
+[spine]
+max_count = 128
+
+[sprite]
+max_count = 128
+subpixels = 1
 
 [tilemap]
 max_count = 16

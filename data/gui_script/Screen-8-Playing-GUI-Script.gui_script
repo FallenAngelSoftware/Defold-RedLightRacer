@@ -33,10 +33,10 @@ function update(self, dt)
 		gui.set_position( gui.get_node("Exit"), vmath.vector3(180, 9999, 0.5) )
 	else
 		local showExitIcon = true
-		if (SecretCode[0] == 9 and SecretCode[1] == 8 and SecretCode[2] == 7 and SecretCode[3] == 6) then
+--[[		if (SecretCode[0] == 9 and SecretCode[1] == 8 and SecretCode[2] == 7 and SecretCode[3] == 6) then
 			showExitIcon = false
 		end
-		
+]]
 		if (showExitIcon == true) then
 			gui.set_position( gui.get_node("Exit"), vmath.vector3(180, 96, 0.5) )
 		end
@@ -109,10 +109,10 @@ function on_input(self, action_id, action)
 
 						if (GamePaused == false) then
 							GamePaused = true
-							gui.set_texture(node, "Play")
+							gui.play_flipbook(node, "Play")
 						else
 							GamePaused = false
-							gui.set_texture(node, "Pause")
+							gui.play_flipbook(node, "Pause")
 						end
 
 						DelayAllUserInput = 20

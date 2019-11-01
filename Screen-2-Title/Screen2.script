@@ -23,8 +23,14 @@ function init(self)
 			table.insert(GameOptionsAndHighScoresTable, HighScoresLevel[mode][rank])
 			table.insert(GameOptionsAndHighScoresTable, HighScoresScore[mode][rank])
 		end
-	end 
-	local my_file_path = sys.get_save_file("RedLightRacer", "RLR_PreAlpha2.cfg")
+	end
+
+	table.insert(GameOptionsAndHighScoresTable, SecretCode[0])
+	table.insert(GameOptionsAndHighScoresTable, SecretCode[1])
+	table.insert(GameOptionsAndHighScoresTable, SecretCode[2])
+	table.insert(GameOptionsAndHighScoresTable, SecretCode[3])
+				
+	local my_file_path = sys.get_save_file("RedLightRacer", "RLR_Alpha1.cfg")
 	if not sys.save(my_file_path, GameOptionsAndHighScoresTable) then
 		print("Save Failed!")
 	end

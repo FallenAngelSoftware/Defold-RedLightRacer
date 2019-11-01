@@ -87,10 +87,16 @@ function init(self)
 
     PlayerRankOnGameOver = 999        
 
+    SecretCode = {}
+    SecretCode[0] = 0
+    SecretCode[1] = 0
+    SecretCode[2] = 0
+    SecretCode[3] = 0
+        
     local CHS = require "data/modules.ClearHighScores"
     CHS.ClearHighScores()
 
-    local my_file_path = sys.get_save_file("RedLightRacer", "RLR_PreAlpha2.cfg")
+    local my_file_path = sys.get_save_file("RedLightRacer", "RLR_Alpha1.cfg")
     local GameOptionsAndHighScoresTable = sys.load(my_file_path)
     if not next(GameOptionsAndHighScoresTable) then
         print("Game data file not found.")
@@ -105,14 +111,13 @@ function init(self)
                 HighScoresLevel[mode][rank] = table.remove(GameOptionsAndHighScoresTable, 1)
                 HighScoresScore[mode][rank] = table.remove(GameOptionsAndHighScoresTable, 1)
             end
-        end  
-    end
+        end
 
-    SecretCode = {}
-    SecretCode[0] = 0
-    SecretCode[1] = 0
-    SecretCode[2] = 0
-    SecretCode[3] = 0
+        SecretCode[0] = table.remove(GameOptionsAndHighScoresTable, 1)
+        SecretCode[1] = table.remove(GameOptionsAndHighScoresTable, 1)
+        SecretCode[2] = table.remove(GameOptionsAndHighScoresTable, 1)
+        SecretCode[3] = table.remove(GameOptionsAndHighScoresTable, 1)      
+    end
 
     Score = 0
     Level = 0

@@ -1,24 +1,28 @@
 local UFPSAMXY = {}
 
 function UFPSAMXY.UpdateFPSandMouseXY(dt)
-	local frames = {}
-	local frame_sum = 0
-	local frame_index = 1
-	local MAX_SAMPLES = 10
-	UFPSAMXY.average_ms = 0
-	UFPSAMXY.raw_average_time = 0
-	UFPSAMXY.fps = 0
-	
-	if frames[frame_index] then frame_sum = frame_sum - frames[frame_index] end
-	frame_sum = frame_sum + dt
-	frames[frame_index] = dt
-	frame_index = math.fmod(frame_index + 1, MAX_SAMPLES)
-	UFPSAMXY.raw_average_time = frame_sum / MAX_SAMPLES
-	UFPSAMXY.average_ms = math.floor(UFPSAMXY.raw_average_time * 10000) / 100
-	UFPSAMXY.fps = math.floor(1.0 / UFPSAMXY.raw_average_time * 100) / 1000 + 1
-		
-	if (SecretCode[0] == 1 and SecretCode[1] == 0 and SecretCode[2] == 1 and SecretCode[3] == 0) then
-		label.set_text(   "#MouseXY", "FPS=" .. tostring( math.floor(UFPSAMXY.fps) ) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )	
+	FPS_FrameCount = FPS_FrameCount + 1
+	local currentTime = socket.gettime()
+	if ( currentTime > (FPS_LastSecond+1) ) then
+		FPS_LastSecond = socket.gettime()
+		FPS_TenSeconds[FPS_CurrentSecond] = FPS_FrameCount
+		FPS_FrameCount = 0
+		if (FPS_CurrentSecond < 9) then
+			FPS_CurrentSecond = FPS_CurrentSecond + 1
+		else
+			FPS_CurrentSecond = 0
+		end
+
+		FPS_Average = 0
+		local index = 0
+		for index = 0, 9 do
+			FPS_Average = FPS_Average + FPS_TenSeconds[index]
+		end
+		FPS_Average = (FPS_Average / 10)
+	end
+
+	if (SecretCode[0] == 2 and SecretCode[1] == 7 and SecretCode[2] == 7 and SecretCode[3] == 7) then
+		label.set_text(   "#MouseXY", "FPS=" .. tostring( math.floor(FPS_Average) ) .. " [" .. tostring(  math.floor( mX * (360/WindowWidthTrue) )  ) .. "," .. tostring(  math.floor( mY * (640/WindowHeightTrue) )  ) .. "]"   )	
 	end
 end
 
