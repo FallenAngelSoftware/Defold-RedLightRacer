@@ -165,7 +165,7 @@ function on_message(self, message_id, message, sender)
         msg.post("#proxy_level_" .. CurrentScreen, "unload")
         print(CurrentScreen .. " unload")
     elseif message_id == hash("proxy_unloaded") then
-        msg.post("#proxy_level_" .. NextScreen, "load")
+        msg.post("#proxy_level_" .. NextScreen, "async_load")
         print(NextScreen .. " load")
     elseif message_id == hash("proxy_loaded") then
         msg.post(sender, "init")

@@ -8,7 +8,7 @@ manifest = /builtins/manifests/android/AndroidManifest.xml
 minimum_sdk_version = 16
 package = com.fallenangelsoftware.redlightracer
 target_sdk_version = 28
-version_code = 7
+version_code = 8
 
 [bootstrap]
 main_collection = /Screen-Loader/ScreenLoader.collectionc
@@ -122,7 +122,7 @@ track_cpu = 0
 [project]
 compress_archive = 1
 title = Red Light Racer
-version = 1.0.7
+version = 1.0.8
 write_log = 0
 
 [resource]

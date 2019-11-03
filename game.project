@@ -7,7 +7,7 @@ shared_state = 1
 
 [project]
 title = Red Light Racer
-version = 1.0.7
+version = 1.0.8
 
 [display]
 width = 360
@@ -21,7 +21,7 @@ game_binding = /input/GameInput.input_bindingc
 [android]
 app_icon_192x192 = /data/sprites/RLR-Android_192x192.png
 package = com.fallenangelsoftware.redlightracer
-version_code = 7
+version_code = 8
 
 [collection_proxy]
 max_count = 13

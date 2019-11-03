@@ -59,7 +59,7 @@ print("Score:", Score, "/Level", Level)
 		LoadHighScoresText( HighScoresScore[GameMode][index], 270, screenY-(index*41), 0.7, 1.2, 1.0, 1.0, Green, Blue )
 	end
 
-	if (SecretCode[0] ~= 1 or SecretCode[1] ~= 0 or SecretCode[2] ~= 1 or SecretCode[3] ~= 0) then
+	if (SecretCode[0] ~= 2 or SecretCode[1] ~= 7 or SecretCode[2] ~= 7 or SecretCode[3] ~= 7) then
 		gui.set_position( gui.get_node("Exit"), vmath.vector3(-999, -999, 1) )
 	end
 end
